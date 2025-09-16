@@ -25,46 +25,101 @@ const Index = () => {
         {/* Hero Section */}
         <section className="min-h-screen flex items-center bg-gradient-section pt-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              {/* Video */}
-              <div className="mb-12">
-                <div className="aspect-video rounded-3xl overflow-hidden shadow-church-lg mb-6">
-                  <iframe
-                    src={latestSermon.url}
-                    title={latestSermon.title}
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+            <div className="max-w-7xl mx-auto">
+              
+              {/* Desktop Layout */}
+              <div className="hidden lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+                {/* Video Column */}
+                <div>
+                  <div className="aspect-video rounded-3xl overflow-hidden shadow-church-lg">
+                    <iframe
+                      src={latestSermon.url}
+                      title={latestSermon.title}
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+
+                {/* Content Column */}
+                <div className="space-y-8">
+                  <div>
+                    <h1 className="text-4xl xl:text-5xl font-bold leading-tight mb-6">
+                      Bem-vindo à{" "}
+                      <span className="text-primary">Igreja Esperança</span>
+                    </h1>
+                    <p className="text-lg xl:text-xl text-muted-foreground mb-8">
+                      Uma comunidade onde você encontra propósito, cresce na fé e 
+                      descobre o amor transformador de Deus.
+                    </p>
+                  </div>
+                  
+                  {/* Action Buttons - Vertical Layout */}
+                  <div className="space-y-4">
+                    <Button size="lg" className="w-full justify-start rounded-2xl text-lg px-8 py-6 h-auto">
+                      <Play className="w-6 h-6 mr-4" />
+                      <div className="text-left">
+                        <div className="font-semibold">Assista Online</div>
+                        <div className="text-sm opacity-80">Acompanhe nossos cultos ao vivo</div>
+                      </div>
+                    </Button>
+                    
+                    <Button size="lg" variant="outline" className="w-full justify-start rounded-2xl text-lg px-8 py-6 h-auto">
+                      <Calendar className="w-6 h-6 mr-4" />
+                      <div className="text-left">
+                        <div className="font-semibold">Planeje Sua Visita</div>
+                        <div className="text-sm opacity-80">Conheça nossa comunidade</div>
+                      </div>
+                    </Button>
+                    
+                    <Button size="lg" variant="outline" className="w-full justify-start rounded-2xl text-lg px-8 py-6 h-auto">
+                      <Heart className="w-6 h-6 mr-4" />
+                      <div className="text-left">
+                        <div className="font-semibold">Contribua</div>
+                        <div className="text-sm opacity-80">Faça parte da nossa missão</div>
+                      </div>
+                    </Button>
+                  </div>
                 </div>
               </div>
 
-              {/* Hero Content */}
-              <div className="text-center space-y-8">
-                <div>
-                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-                    Bem-vindo à{" "}
-                    <span className="text-primary">Igreja Esperança</span>
-                  </h1>
-                  <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-                    Uma comunidade onde você encontra propósito, cresce na fé e 
-                    descobre o amor transformador de Deus.
-                  </p>
+              {/* Mobile Layout */}
+              <div className="lg:hidden">
+                {/* Video */}
+                <div className="mb-8">
+                  <div className="aspect-video rounded-3xl overflow-hidden shadow-church-lg">
+                    <iframe
+                      src={latestSermon.url}
+                      title={latestSermon.title}
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
                 </div>
                 
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" className="rounded-2xl text-lg px-8 py-6">
-                    <Play className="w-5 h-5 mr-2" />
-                    Assista Online
+                {/* Buttons Only - No title/subtitle */}
+                <div className="space-y-4">
+                  <Button size="lg" className="w-full justify-start rounded-2xl text-lg px-6 py-4 h-auto">
+                    <Play className="w-5 h-5 mr-3" />
+                    <span className="font-semibold">Assista Online</span>
                   </Button>
-                  <Button size="lg" variant="outline" className="rounded-2xl text-lg px-8 py-6">
-                    <Calendar className="w-5 h-5 mr-2" />
-                    Planeje Sua Visita
+                  
+                  <Button size="lg" variant="outline" className="w-full justify-start rounded-2xl text-lg px-6 py-4 h-auto">
+                    <Calendar className="w-5 h-5 mr-3" />
+                    <span className="font-semibold">Planeje Sua Visita</span>
+                  </Button>
+                  
+                  <Button size="lg" variant="outline" className="w-full justify-start rounded-2xl text-lg px-6 py-4 h-auto">
+                    <Heart className="w-5 h-5 mr-3" />
+                    <span className="font-semibold">Contribua</span>
                   </Button>
                 </div>
               </div>
+              
             </div>
           </div>
         </section>
