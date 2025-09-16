@@ -6,14 +6,13 @@ import {
   Play, 
   Calendar, 
   Heart, 
-  Users, 
-  Baby, 
-  Zap, 
   Youtube, 
-  Instagram,
-  Hammer,
-  UserCheck
+  Instagram
 } from "lucide-react";
+import ministerioJovens from "@/assets/ministerio-jovens.jpg";
+import ministerioCriancas from "@/assets/ministerio-criancas.jpg";
+import projetoReforma from "@/assets/projeto-reforma.jpg";
+import pequenosGrupos from "@/assets/pequenos-grupos.jpg";
 import { Link } from "react-router-dom";
 import { latestSermon } from "@/data/sermons";
 
@@ -147,54 +146,66 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-              <Card className="rounded-2xl shadow-church hover:shadow-church-lg transition-all duration-300">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto">
-                    <Zap className="w-10 h-10 text-primary" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              <div className="relative overflow-hidden rounded-3xl shadow-church-lg group cursor-pointer">
+                <div className="aspect-[16/10] bg-cover bg-center" style={{ backgroundImage: `url(${ministerioJovens})` }}>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                    <h3 className="text-2xl font-bold mb-3">Ministério de Jovens</h3>
+                    <p className="text-lg mb-6 opacity-90">
+                      Um espaço para jovens crescerem na fé, fazerem amizades e descobrirem seu propósito.
+                    </p>
+                    <Button className="rounded-2xl px-6 py-3">
+                      Saiba Mais
+                    </Button>
                   </div>
-                  <CardTitle className="text-xl">Jovens</CardTitle>
-                  <p className="text-muted-foreground">
-                    Um espaço para jovens crescerem na fé, fazerem amizades e descobrirem seu propósito.
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
 
-              <Card className="rounded-2xl shadow-church hover:shadow-church-lg transition-all duration-300">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto">
-                    <Baby className="w-10 h-10 text-primary" />
+              <div className="relative overflow-hidden rounded-3xl shadow-church-lg group cursor-pointer">
+                <div className="aspect-[16/10] bg-cover bg-center" style={{ backgroundImage: `url(${ministerioCriancas})` }}>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                    <h3 className="text-2xl font-bold mb-3">Ministério Infantil</h3>
+                    <p className="text-lg mb-6 opacity-90">
+                      Programas especiais para crianças aprenderem sobre Deus de forma divertida e segura.
+                    </p>
+                    <Button className="rounded-2xl px-6 py-3">
+                      Saiba Mais
+                    </Button>
                   </div>
-                  <CardTitle className="text-xl">Crianças</CardTitle>
-                  <p className="text-muted-foreground">
-                    Programas especiais para crianças aprenderem sobre Deus de forma divertida e segura.
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
 
-              <Card className="rounded-2xl shadow-church hover:shadow-church-lg transition-all duration-300">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto">
-                    <Hammer className="w-10 h-10 text-primary" />
+              <div className="relative overflow-hidden rounded-3xl shadow-church-lg group cursor-pointer">
+                <div className="aspect-[16/10] bg-cover bg-center" style={{ backgroundImage: `url(${projetoReforma})` }}>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                    <h3 className="text-2xl font-bold mb-3">Projeto Reforma</h3>
+                    <p className="text-lg mb-6 opacity-90">
+                      Participe da renovação do nosso espaço para melhor servir a comunidade.
+                    </p>
+                    <Button className="rounded-2xl px-6 py-3">
+                      Participar
+                    </Button>
                   </div>
-                  <CardTitle className="text-xl">Projeto Reforma</CardTitle>
-                  <p className="text-muted-foreground">
-                    Participe da renovação do nosso espaço para melhor servir a comunidade.
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
 
-              <Card className="rounded-2xl shadow-church hover:shadow-church-lg transition-all duration-300">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto">
-                    <Users className="w-10 h-10 text-primary" />
+              <div className="relative overflow-hidden rounded-3xl shadow-church-lg group cursor-pointer">
+                <div className="aspect-[16/10] bg-cover bg-center" style={{ backgroundImage: `url(${pequenosGrupos})` }}>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                    <h3 className="text-2xl font-bold mb-3">Pequenos Grupos</h3>
+                    <p className="text-lg mb-6 opacity-90">
+                      Conecte-se em grupos menores para crescimento espiritual e relacionamentos profundos.
+                    </p>
+                    <Button className="rounded-2xl px-6 py-3">
+                      Encontrar Grupo
+                    </Button>
                   </div>
-                  <CardTitle className="text-xl">Pequenos Grupos</CardTitle>
-                  <p className="text-muted-foreground">
-                    Conecte-se em grupos menores para crescimento espiritual e relacionamentos profundos.
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
           </div>
         </section>
