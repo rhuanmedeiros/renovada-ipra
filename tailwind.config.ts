@@ -47,6 +47,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        church: {
+          primary: "hsl(var(--church-primary))",
+          "primary-light": "hsl(var(--church-primary-light))",
+          "primary-lighter": "hsl(var(--church-primary-lighter))",
+          "primary-dark": "hsl(var(--church-primary-dark))",
+          "primary-darker": "hsl(var(--church-primary-darker))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -62,6 +69,16 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "var(--radius-xl)",
+        "2xl": "1.5rem",
+        "3xl": "2rem",
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      boxShadow: {
+        church: "var(--shadow-church)",
+        "church-lg": "var(--shadow-church-lg)",
       },
       keyframes: {
         "accordion-down": {
