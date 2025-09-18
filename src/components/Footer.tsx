@@ -4,26 +4,24 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-muted/50 border-t border-border">
+    <footer className="bg-slate-900 text-white border-t border-slate-700">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                <Church className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold">Igreja Esperança</span>
+              <img src="/ICON-RENOVADA.png" alt="Logo Renovada" className="w-10 h-10 object-contain" />
+              <span className="text-xl font-bold text-white">Igreja Renovada</span>
             </div>
-            <p className="text-muted-foreground">
-              Uma comunidade acolhedora onde você pode crescer em fé, encontrar propósito e fazer a diferença.
+            <p className="text-slate-300">
+              A Igreja Renovada existe para aproximar as pessoas de Deus e ajudá-las a seguir os passos de Jesus.
             </p>
             {/* Social Links */}
             <div className="flex space-x-2">
-              <Button variant="ghost" size="icon" className="rounded-xl">
+              <Button variant="ghost" size="icon" className="rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white">
                 <Youtube className="w-5 h-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-xl">
+              <Button variant="ghost" size="icon" className="rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white">
                 <Instagram className="w-5 h-5" />
               </Button>
             </div>
@@ -31,18 +29,18 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4">Links Rápidos</h3>
+            <h3 className="font-semibold mb-4 text-white">Links Rápidos</h3>
             <div className="space-y-2">
-              <Link to="/sermoes" className="block text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/sermoes" className="block text-slate-300 hover:text-white transition-colors">
                 Sermões
               </Link>
-              <Link to="/ministerios" className="block text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/ministerios" className="block text-slate-300 hover:text-white transition-colors">
                 Ministérios
               </Link>
-              <Link to="/eventos" className="block text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/eventos" className="block text-slate-300 hover:text-white transition-colors">
                 Eventos
               </Link>
-              <Link to="/doe" className="block text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/doacoes" className="block text-slate-300 hover:text-white transition-colors">
                 Doações
               </Link>
             </div>
@@ -50,41 +48,41 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold mb-4">Contato</h3>
+            <h3 className="font-semibold mb-4 text-white">Contato</h3>
             <div className="space-y-3">
-              <div className="flex items-center space-x-2">
-                <MapPin className="w-4 h-4 text-muted-foreground" />
-                <span className="text-muted-foreground text-sm">
-                  Rua da Esperança, 123<br />Centro, São Paulo - SP
+              <div className="flex items-start space-x-2">
+                <MapPin className="w-4 h-4 text-slate-400 mt-1" />
+                <span className="text-slate-300 text-sm">
+                  Camilo Ramalho Matta 181<br />Astorga, PR, Brazil<br />86730-000
                 </span>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-muted-foreground" />
-                <span className="text-muted-foreground text-sm">(11) 9999-9999</span>
+                <Phone className="w-4 h-4 text-slate-400" />
+                <span className="text-slate-300 text-sm">+55 44 9861-9596</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-muted-foreground" />
-                <span className="text-muted-foreground text-sm">contato@igrejaesperanca.com</span>
+                <Mail className="w-4 h-4 text-slate-400" />
+                <span className="text-slate-300 text-sm">contato@renovada.org</span>
               </div>
             </div>
           </div>
 
           {/* Service Times */}
           <div>
-            <h3 className="font-semibold mb-4">Horários de Culto</h3>
+            <h3 className="font-semibold mb-4 text-white">Horários</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-2">
-                <Clock className="w-4 h-4 text-muted-foreground mt-1" />
+                <Clock className="w-4 h-4 text-slate-400 mt-1" />
                 <div>
-                  <p className="text-sm font-medium">Domingo</p>
-                  <p className="text-muted-foreground text-sm">9h e 19h</p>
+                  <p className="text-sm font-medium text-white">Cultos Domingo</p>
+                  <p className="text-slate-300 text-sm">10h e 18h</p>
                 </div>
               </div>
               <div className="flex items-start space-x-2">
-                <Clock className="w-4 h-4 text-muted-foreground mt-1" />
+                <Clock className="w-4 h-4 text-slate-400 mt-1" />
                 <div>
-                  <p className="text-sm font-medium">Quarta-feira</p>
-                  <p className="text-muted-foreground text-sm">19h30 - Oração</p>
+                  <p className="text-sm font-medium text-white">Oração Terça</p>
+                  <p className="text-slate-300 text-sm">18:30</p>
                 </div>
               </div>
             </div>
@@ -92,16 +90,16 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border pt-8">
+        <div className="border-t border-slate-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-muted-foreground text-sm">
-              © 2024 Igreja Esperança. Todos os direitos reservados.
+            <p className="text-slate-400 text-sm">
+              © 2024 Igreja Renovada. Todos os direitos reservados.
             </p>
             <div className="flex space-x-4 mt-4 md:mt-0">
-              <Link to="/privacidade" className="text-muted-foreground text-sm hover:text-primary">
+              <Link to="/privacidade" className="text-slate-400 text-sm hover:text-white">
                 Privacidade
               </Link>
-              <Link to="/termos" className="text-muted-foreground text-sm hover:text-primary">
+              <Link to="/termos" className="text-slate-400 text-sm hover:text-white">
                 Termos de Uso
               </Link>
             </div>

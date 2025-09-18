@@ -1,73 +1,93 @@
-# Welcome to your Lovable project
+# Site da Igreja Renovada
 
-## Project info
+## Sobre o Projeto
 
-**URL**: https://lovable.dev/projects/fa86049e-67ae-4464-98a9-ed5f4b2f556f
+Este é o site oficial da **Igreja Renovada**, localizada em Astorga, PR. O projeto foi desenvolvido para apresentar a igreja, seus ministérios, horários de culto e facilitar o contato com a comunidade.
 
-## How can I edit this code?
+## Características do Site
 
-There are several ways of editing your application.
+- **Página Principal**: Apresentação da igreja com vídeo de boas-vindas e cards dos ministérios
+- **Seção de Ministérios**: Informações sobre os ministérios de Jovens, Infantil e Casais
+- **Série Atual**: Destaque para a série bíblica em andamento
+- **Informações de Contato**: Endereço, telefone, email e horários de culto
+- **Design Responsivo**: Adaptado para desktop e dispositivos móveis
+- **Interface Moderna**: Utilizando componentes shadcn/ui com Tailwind CSS
 
-**Use Lovable**
+## Informações da Igreja
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/fa86049e-67ae-4464-98a9-ed5f4b2f556f) and start prompting.
+**Endereço**: Camilo Ramalho Matta 181, Astorga, PR, Brazil, 86730-000  
+**Telefone**: +55 44 9861-9596  
+**Email**: contato@renovada.org  
 
-Changes made via Lovable will be committed automatically to this repo.
+**Horários**:
+- Cultos Domingo: 10h e 18h
+- Oração Terça: 18:30
 
-**Use your preferred IDE**
+## Como executar o projeto
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Pré-requisitos
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js (recomendado instalar via [nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
+- npm
 
-Follow these steps:
+### Instalação e execução
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone o repositório
+git clone https://github.com/rhuanmedeiros/renovada-4803e07a.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navegue até o diretório do projeto
+cd renovada-4803e07a
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Instale as dependências
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Execute o servidor de desenvolvimento
 npm run dev
+
+# Para build de produção
+npm run build
 ```
 
-**Edit a file directly in GitHub**
+## Tecnologias Utilizadas
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Este projeto foi construído com:
 
-**Use GitHub Codespaces**
+- **Vite** - Ferramenta de build rápida
+- **TypeScript** - JavaScript com tipagem estática
+- **React** - Biblioteca para interfaces de usuário
+- **shadcn/ui** - Componentes de UI modernos
+- **Tailwind CSS** - Framework CSS utilitário
+- **Lucide React** - Ícones SVG
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Estrutura do Projeto
 
-## What technologies are used for this project?
+```
+src/
+├── components/          # Componentes reutilizáveis
+│   ├── ui/             # Componentes shadcn/ui
+│   ├── Header.tsx      # Cabeçalho do site
+│   ├── Footer.tsx      # Rodapé com informações de contato
+│   ├── CardsIniciais.tsx # Cards da página inicial
+│   └── MinisteriosSection.tsx # Seção de ministérios
+├── pages/              # Páginas principais
+│   ├── Principal.tsx   # Página inicial
+│   ├── Ministerios.tsx # Página de ministérios
+│   └── ...
+├── data/               # Dados estáticos
+└── assets/             # Imagens e recursos
+```
 
-This project is built with:
+## Contribuição
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Para contribuir com o projeto:
 
-## How can I deploy this project?
+1. Faça um fork do repositório
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+3. Commit suas mudanças (`git commit -am 'Adiciona nova feature'`)
+4. Push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
 
-Simply open [Lovable](https://lovable.dev/projects/fa86049e-67ae-4464-98a9-ed5f4b2f556f) and click on Share -> Publish.
+## Licença
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Este projeto é desenvolvido para a Igreja Renovada de Astorga, PR.
