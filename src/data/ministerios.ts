@@ -32,29 +32,38 @@ export const ministeriosData: Ministerio[] = [
   }
 ];
 
+// Interface estendida para suportar textos responsivos
+export interface CardInicialData extends Ministerio {
+  descricaoMobile?: string;
+}
+
 // Dados para a página inicial (todos os 4 cards)
-export const cardsInicialData: Ministerio[] = [
+export const cardsInicialData: CardInicialData[] = [
   {
     titulo: "Série Atual",
     descricao: "Acompanhe nossa série de estudos bíblicos atual.",
+    descricaoMobile: "Estudos bíblicos atuais",
     imagem: "/ministerios/4.svg",
     botao: "Acompanhar"
   },
   {
     titulo: "Ministério de Jovens",
     descricao: "Um espaço para jovens crescerem na fé, fazerem amizades e descobrirem seu propósito.",
+    descricaoMobile: "Crescimento espiritual para jovens",
     imagem: ministerioJovens,
     botao: "Saiba Mais"
   },
   {
     titulo: "Ministério Infantil",
     descricao: "Programas especiais para crianças aprenderem sobre Deus de forma divertida e segura.",
+    descricaoMobile: "Aprendizado divertido para crianças",
     imagem: ministerioCriancas,
     botao: "Saiba Mais"
   },
   {
     titulo: "Ministério de Casais",
     descricao: "Fortalecimento de relacionamentos e crescimento espiritual para casais.",
+    descricaoMobile: "Fortalecimento para casais",
     imagem: "/ministerios/3.svg",
     botao: "Saiba Mais"
   }

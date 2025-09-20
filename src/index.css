@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,21 +12,21 @@
     --background: 0 0% 100%;
     --foreground: 220 9% 15%;
 
-    /* Church brand colors - based on #009DDB */
-    --church-primary: 193 100% 43%;
-    --church-primary-light: 193 85% 55%;
-    --church-primary-lighter: 193 70% 85%;
-    --church-primary-dark: 193 100% 35%;
-    --church-primary-darker: 193 100% 25%;
+    /* Church brand colors - based on #009BDE */
+    --church-primary: 198 100% 44%;
+    --church-primary-light: 198 85% 55%;
+    --church-primary-lighter: 198 70% 85%;
+    --church-primary-dark: 198 100% 35%;
+    --church-primary-darker: 198 100% 25%;
     
     /* Semantic UI colors */
-    --primary: 193 100% 43%;
+    --primary: 198 100% 44%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 193 70% 85%;
-    --secondary-foreground: 193 100% 25%;
+    --secondary: 198 70% 85%;
+    --secondary-foreground: 198 100% 25%;
     
-    --accent: 193 85% 55%;
+    --accent: 198 85% 55%;
     --accent-foreground: 0 0% 100%;
     
     --muted: 220 14% 96%;
@@ -41,7 +41,7 @@
     
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 193 100% 43%;
+    --ring: 198 100% 44%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
@@ -49,7 +49,7 @@
     /* Church-specific gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--church-primary)), hsl(var(--church-primary-light)));
     --gradient-section: linear-gradient(180deg, hsl(var(--church-primary-lighter)), hsl(0 0% 100% / 0));
-    --gradient-contribute: linear-gradient(135deg, hsl(var(--church-primary-light)), hsl(var(--church-primary)));
+    --gradient-contribute: linear-gradient(135deg, hsl(198 100% 44%), hsl(198 85% 55%), hsl(198 70% 65%));
     
     /* Shadows with church colors */
     --shadow-church: 0 10px 30px -10px hsl(var(--church-primary) / 0.3);
@@ -58,6 +58,11 @@
     /* Spacing and layout */
     --radius: 1rem;
     --radius-xl: 1.5rem;
+
+    /* Hero section colors */
+    --hero-background: 220 14% 96%;
+    --hero-text: 220 9% 15%;
+    --hero-subtitle: 220 9% 46%;
 
     /* Sidebar light theme */
     --sidebar-background: 0 0% 98%;
@@ -72,52 +77,60 @@
 
   .dark {
     /* Base colors - dark theme */
-    --background: 220 9% 9%;
-    --foreground: 0 0% 98%;
+    --background: 220 15% 8%;
+    --foreground: 0 0% 95%;
 
-    /* Church brand colors remain the same */
-    --church-primary: 193 100% 43%;
-    --church-primary-light: 193 85% 55%;
-    --church-primary-lighter: 193 70% 85%;
-    --church-primary-dark: 193 100% 35%;
-    --church-primary-darker: 193 100% 25%;
+    /* Church brand colors - using #009BDE palette for dark theme */
+    --church-primary: 198 100% 55%;
+    --church-primary-light: 198 85% 65%;
+    --church-primary-lighter: 198 70% 75%;
+    --church-primary-dark: 198 100% 44%;
+    --church-primary-darker: 198 100% 35%;
     
     /* Semantic UI colors - dark */
-    --primary: 193 100% 43%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 198 100% 55%;
+    --primary-foreground: 220 15% 8%;
     
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 0 0% 95%;
     
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 198 85% 65%;
+    --accent-foreground: 220 15% 8%;
     
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 0 0% 65%;
     
     /* Neutral colors - dark */
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 95%;
     
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 0 0% 95%;
     
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 198 100% 55%;
     
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 95%;
     
     /* Sidebar dark theme */
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 220 15% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 198 100% 55%;
+    --sidebar-primary-foreground: 220 15% 8%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 220 20% 20%;
+    --sidebar-ring: 198 100% 55%;
+
+    /* Hero section colors - dark theme */
+    --hero-background: 220 20% 12%;
+    --hero-text: 0 0% 95%;
+    --hero-subtitle: 0 0% 85%;
+
+    /* Gradients - dark theme */
+    --gradient-contribute: linear-gradient(135deg, hsl(198 100% 35%), hsl(198 85% 45%), hsl(198 70% 55%));
   }
 }
 
@@ -128,7 +141,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   }
 }
 
@@ -164,5 +177,35 @@
   
   .border-church-primary {
     border-color: hsl(var(--church-primary));
+  }
+
+  .bg-hero {
+    background-color: hsl(var(--hero-background));
+  }
+
+  .text-hero {
+    color: hsl(var(--hero-text));
+  }
+
+  .text-hero-subtitle {
+    color: hsl(var(--hero-subtitle));
+  }
+
+  /* Moving border animation */
+  @keyframes moving-border {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-moving-border {
+    background: conic-gradient(from 0deg, transparent, currentColor, transparent);
+    animation: spin 4s linear infinite;
   }
 }

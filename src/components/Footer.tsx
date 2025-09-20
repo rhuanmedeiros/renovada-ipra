@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Church, Instagram, Youtube, MapPin, Clock, Phone, Mail } from "lucide-react";
+import { Church, Instagram, Youtube, MapPin, Clock, Phone, Mail, Facebook, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -18,11 +18,65 @@ const Footer = () => {
             </p>
             {/* Social Links */}
             <div className="flex space-x-2">
-              <Button variant="ghost" size="icon" className="rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white">
-                <Youtube className="w-5 h-5" />
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white"
+                asChild
+              >
+                <a 
+                  href="https://www.youtube.com/@renovadaigreja" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
+                  <Youtube className="w-5 h-5" />
+                </a>
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white">
-                <Instagram className="w-5 h-5" />
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white"
+                asChild
+              >
+                <a 
+                  href="https://www.instagram.com/renovadaigreja/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white"
+                asChild
+              >
+                <a 
+                  href="https://www.facebook.com/renovadaigreja" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white"
+                asChild
+              >
+                <a 
+                  href="https://x.com/renovadaigreja" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Twitter/X"
+                >
+                  <Twitter className="w-5 h-5" />
+                </a>
               </Button>
             </div>
           </div>
@@ -82,7 +136,7 @@ const Footer = () => {
                 <Clock className="w-4 h-4 text-slate-400 mt-1" />
                 <div>
                   <p className="text-sm font-medium text-white">Oração Terça</p>
-                  <p className="text-slate-300 text-sm">18:30</p>
+                  <p className="text-slate-300 text-sm">19h</p>
                 </div>
               </div>
             </div>

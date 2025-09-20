@@ -74,7 +74,7 @@ export default {
         "3xl": "2rem",
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['DM Sans', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         church: "var(--shadow-church)",

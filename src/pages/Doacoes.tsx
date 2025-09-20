@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
+import WhatsAppFloat from "@/components/ui/whatsapp-float";
+import { useToast } from "@/hooks/use-toast";
 import { 
   Heart, 
   CreditCard, 
@@ -14,6 +17,9 @@ import {
 import { useState } from "react";
 
 const Doacoes = () => {
+  useScrollToTop(); // Garante scroll para o topo ao carregar
+  
+  const { toast } = useToast();
   const [copiedPix, setCopiedPix] = useState(false);
   const [showQuiloModal, setShowQuiloModal] = useState(false);
 
@@ -21,6 +27,27 @@ const Doacoes = () => {
     navigator.clipboard.writeText(text);
     setCopiedPix(true);
     setTimeout(() => setCopiedPix(false), 2000);
+    
+    toast({
+      title: "Dados copiados!",
+      description: "As informações foram copiadas para sua área de transferência.",
+      duration: 3000,
+    });
+  };
+
+  const copyBankData = () => {
+    const bankData = `Banco: Sicredi (748)
+Agência: 0718
+Conta Corrente: 80381-2
+Favorecido: Igreja Renovada de Astorga
+CNPJ: 01.570.203/0001-86`;
+    
+    navigator.clipboard.writeText(bankData);
+    toast({
+      title: "Dados bancários copiados!",
+      description: "Todas as informações bancárias foram copiadas para sua área de transferência.",
+      duration: 3000,
+    });
   };
 
   const handleQuiloDoAmor = () => {
@@ -38,15 +65,15 @@ const Doacoes = () => {
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 bg-hero transition-colors duration-300">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-hero">
                 Sua <span className="text-primary">Generosidade</span> Faz a Diferença
               </h1>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-xl text-hero-subtitle mb-8">
                 Cada contribuição nos ajuda a impactar vidas, apoiar nossa comunidade 
-                e expandir o Reino de Deus através de diferentes formas de doação.
+                e expandir o Reino de Deus.
               </p>
             </div>
           </div>
@@ -58,42 +85,37 @@ const Doacoes = () => {
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-bold text-center mb-8">Doações Financeiras</h2>
               
-              {/* Alerta sobre dados fictícios */}
-              <div className="bg-yellow-50 border border-yellow-200 rounded-2xl p-4 mb-8 text-center">
-                <p className="text-yellow-800 font-medium">
-                  ⚠️ Os dados bancários apresentados são fictícios e servem apenas para demonstração
-                </p>
-              </div>
-              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* PIX */}
-                <Card className="rounded-3xl shadow-lg">
+                <Card className="rounded-3xl shadow-lg flex flex-col">
                   <CardHeader className="text-center pb-4">
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Smartphone className="w-8 h-8 text-primary" />
                     </div>
                     <CardTitle className="text-2xl">PIX</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div>
-                      <p className="text-sm text-muted-foreground mb-2">Chave PIX (CNPJ):</p>
-                      <div className="flex items-center gap-2 p-3 bg-slate-50 rounded-lg">
-                        <span className="font-mono text-sm flex-1">12.345.678/0001-90</span>
-                        <Button
-                          size="sm"
-                          variant="ghost"
-                          onClick={() => copyToClipboard('12.345.678/0001-90')}
-                          className="h-8 w-8 p-0"
-                        >
-                          {copiedPix ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                        </Button>
+                  <CardContent className="space-y-4 flex-1 flex flex-col">
+                    <div className="flex-1 space-y-4">
+                      <div>
+                        <p className="text-sm text-muted-foreground mb-2">Chave PIX (CNPJ):</p>
+                        <div className="flex items-center gap-2 p-3 bg-muted rounded-lg">
+                          <span className="font-mono text-sm flex-1">01.570.203/0001-86</span>
+                          <Button
+                            size="sm"
+                            variant="ghost"
+                            onClick={() => copyToClipboard('01.570.203/0001-86')}
+                            className="h-8 w-8 p-0"
+                          >
+                            {copiedPix ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                          </Button>
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-sm text-muted-foreground mb-2">Favorecido:</p>
+                        <p className="font-semibold">Igreja Renovada de Astorga</p>
                       </div>
                     </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground mb-2">Favorecido:</p>
-                      <p className="font-semibold">Igreja Renovada de Astorga</p>
-                    </div>
-                    <Button className="w-full rounded-2xl">
+                    <Button className="w-full bg-church-primary hover:bg-church-primary-dark text-white rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
                       <Smartphone className="w-4 h-4 mr-2" />
                       Doar via PIX
                     </Button>
@@ -101,37 +123,42 @@ const Doacoes = () => {
                 </Card>
 
                 {/* Transferência Bancária */}
-                <Card className="rounded-3xl shadow-lg">
+                <Card className="rounded-3xl shadow-lg flex flex-col">
                   <CardHeader className="text-center pb-4">
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                       <CreditCard className="w-8 h-8 text-primary" />
                     </div>
                     <CardTitle className="text-2xl">Transferência Bancária</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="space-y-3">
-                      <div>
-                        <p className="text-sm text-muted-foreground">Banco:</p>
-                        <p className="font-semibold">Banco do Brasil (001)</p>
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">Agência:</p>
-                        <p className="font-semibold">1234-5</p>
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">Conta Corrente:</p>
-                        <p className="font-semibold">67890-1</p>
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">Favorecido:</p>
-                        <p className="font-semibold">Igreja Renovada de Astorga</p>
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">CNPJ:</p>
-                        <p className="font-semibold">12.345.678/0001-90</p>
+                  <CardContent className="space-y-4 flex-1 flex flex-col">
+                    <div className="flex-1">
+                      <div className="space-y-3">
+                        <div>
+                          <p className="text-sm text-muted-foreground">Banco:</p>
+                          <p className="font-semibold">Sicredi (748)</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-muted-foreground">Agência:</p>
+                          <p className="font-semibold">0718</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-muted-foreground">Conta Corrente:</p>
+                          <p className="font-semibold">80381-2</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-muted-foreground">Favorecido:</p>
+                          <p className="font-semibold">Igreja Renovada de Astorga</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-muted-foreground">CNPJ:</p>
+                          <p className="font-semibold">01.570.203/0001-86</p>
+                        </div>
                       </div>
                     </div>
-                    <Button variant="outline" className="w-full rounded-2xl">
+                    <Button 
+                      onClick={copyBankData}
+                      className="w-full bg-church-primary hover:bg-church-primary-dark text-white rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                    >
                       <CreditCard className="w-4 h-4 mr-2" />
                       Copiar Dados Bancários
                     </Button>
@@ -162,7 +189,7 @@ const Doacoes = () => {
                     </p>
                   </div>
                   
-                  <div className="bg-slate-50 p-6 rounded-2xl">
+                  <div className="bg-muted p-6 rounded-2xl">
                     <h3 className="text-lg font-semibold mb-3">Como funciona:</h3>
                     <ul className="text-left space-y-2 max-w-lg mx-auto">
                       <li className="flex items-start gap-2">
@@ -184,14 +211,16 @@ const Doacoes = () => {
                     </ul>
                   </div>
 
-                  <Button 
-                    size="lg" 
-                    onClick={handleQuiloDoAmor}
-                    className="rounded-2xl text-lg px-8 py-6"
-                  >
-                    <Heart className="w-5 h-5 mr-2" />
-                    Participar da Campanha
-                  </Button>
+                  <div className="flex justify-center">
+                    <Button 
+                      size="lg" 
+                      onClick={handleQuiloDoAmor}
+                      className="bg-church-primary hover:bg-church-primary-dark text-white rounded-2xl text-lg px-8 py-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                    >
+                      <Heart className="w-5 h-5 mr-2" />
+                      Participar da Campanha
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -200,7 +229,7 @@ const Doacoes = () => {
 
         {/* Modal Quilo do Amor */}
         {showQuiloModal && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[90] p-4">
             <Card className="max-w-md w-full rounded-3xl">
               <CardContent className="p-8 text-center space-y-6">
                 <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
@@ -219,7 +248,7 @@ const Doacoes = () => {
                 <div className="space-y-3">
                   <Button 
                     onClick={goToQuiloSite}
-                    className="w-full rounded-2xl"
+                    className="w-full bg-church-primary hover:bg-church-primary-dark text-white rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Acessar Plataforma
@@ -227,7 +256,7 @@ const Doacoes = () => {
                   <Button 
                     variant="outline"
                     onClick={() => setShowQuiloModal(false)}
-                    className="w-full rounded-2xl"
+                    className="w-full rounded-2xl border-church-primary text-church-primary hover:bg-church-primary hover:text-white transition-all duration-300"
                   >
                     Fechar
                   </Button>
@@ -263,6 +292,7 @@ const Doacoes = () => {
       </main>
 
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };
