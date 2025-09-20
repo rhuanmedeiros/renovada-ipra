@@ -54,7 +54,7 @@ const Header = () => {
               <div className="hidden sm:inline-flex">
                 <Button 
                   size="sm"
-                  className="bg-church-primary hover:bg-church-primary-dark text-white rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                  className="bg-church-primary hover:bg-church-primary-dark text-white dark:text-black rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                 >
                   Doar Agora
                 </Button>
@@ -96,7 +96,7 @@ const Header = () => {
                 <div className="w-full mt-2">
                   <Button 
                     size="sm"
-                    className="w-full bg-church-primary hover:bg-church-primary-dark text-white rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                    className="w-full bg-church-primary hover:bg-church-primary-dark text-white dark:text-black rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                   >
                     Doar Agora
                   </Button>

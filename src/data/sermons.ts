@@ -23,27 +23,27 @@ export const sermonSeriesData: SermonSeries[] = [
       {
         title: 'Apresentação Teatro - 40 Dias de Comunidade',
         url: 'https://www.youtube.com/embed/XQNFl_Z8YK4',
-        date: '2024-09-01'
+        date: '01/09/2024'
       },
       {
         title: 'Lançamento - 40 Dias de Comunidade',
         url: 'https://www.youtube.com/embed/sO5r0WXS9EQ',
-        date: '2024-09-08'
+        date: '08/09/2024'
       },
       {
         title: '01 - Por Que Precisamos Uns dos Outros? - Pr. William Poso',
         url: 'https://www.youtube.com/embed/oCEn-Z_DZpg',
-        date: '2024-09-15'
+        date: '15/09/2024'
       },
       {
         title: '02 - Juntos Podemos Alcançar Mais - Pr. William Palma',
         url: 'https://www.youtube.com/embed/fuNmw-CY_98',
-        date: '2024-09-22'
+        date: '22/09/2024'
       },
       {
         title: '03 - O Que Destrói Relacionamentos e O Que Constrói - Pr. William Poso',
         url: 'https://www.youtube.com/embed/rq9jfNiQZyY',
-        date: '2024-09-29'
+        date: '29/09/2024'
       }
     ]
   },
@@ -56,42 +56,42 @@ export const sermonSeriesData: SermonSeries[] = [
       {
         title: '01 - CHEGUE MAIS PERTO PELA HUMILDADE - PR. WILLIAM POSO - SÉRIE CHEGUE MAIS PERTO',
         url: 'https://www.youtube.com/embed/DNpZHdmEOMI',
-        date: '2024-07-07'
+        date: '07/07/2024'
       },
       {
         title: '02 - CHEGUE MAIS PERTO PELA ORAÇÃO - PR. WILLIAM POSO - SÉRIE CHEGUE MAIS PERTO',
         url: 'https://www.youtube.com/embed/x_QDp9AQZfw',
-        date: '2024-07-14'
+        date: '14/07/2024'
       },
       {
         title: '03 - CHEGUE MAIS PERTO PELO ARREPENDIMENTO - PR. WILLIAM POSO - SÉRIE CHEGUE MAIS PERTO',
         url: 'https://www.youtube.com/embed/9A-_K3qOWsA',
-        date: '2024-07-21'
+        date: '21/07/2024'
       },
       {
         title: '04 - CHEGUE MAIS PERTO PELA PERSEVERANÇA - PR. WILLIAM POSO - SÉRIE CHEGUE MAIS PERTO',
         url: 'https://www.youtube.com/embed/loLbeL8Nigo',
-        date: '2024-07-28'
+        date: '28/07/2024'
       },
       {
         title: '05 - CHEGUE MAIS PERTO PELO JEJUM - PR. HUAN MARVYN - SÉRIE CHEGUE MAIS PERTO',
         url: 'https://www.youtube.com/embed/7NVy_8ls2LY',
-        date: '2024-08-04'
+        date: '04/08/2024'
       },
       {
         title: '06 - CHEGUE MAIS PERTO PELA PALAVRA - PR. WILLIAN PALMA - SÉRIE CHEGUE MAIS PERTO',
         url: 'https://www.youtube.com/embed/a3wLpkm9bUQ',
-        date: '2024-08-11'
+        date: '11/08/2024'
       },
       {
         title: '07 - CHEGUE MAIS PERTO PELA OBEDIÊNCIA - PR. WILLIAM POSO - SÉRIE CHEGUE MAIS PERTO',
         url: 'https://www.youtube.com/embed/yIHdEkcYLvo',
-        date: '2024-08-18'
+        date: '18/08/2024'
       },
       {
         title: 'https://www.youtube.com/watch?v=t_eXtBZz1dM',
         url: 'https://www.youtube.com/embed/t_eXtBZz1dM',
-        date: '2024-08-25'
+        date: '25/08/2024'
       }
     ]
   },
@@ -104,17 +104,17 @@ export const sermonSeriesData: SermonSeries[] = [
       {
         title: 'A Fonte da Esperança',
         url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        date: '2024-01-21'
+        date: '21/01/2024'
       },
       {
         title: 'Esperança que Não Decepciona',
         url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        date: '2024-01-14'
+        date: '14/01/2024'
       },
       {
         title: 'Vivendo com Esperança',
         url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        date: '2024-01-07'
+        date: '07/01/2024'
       }
     ]
   },
@@ -127,17 +127,17 @@ export const sermonSeriesData: SermonSeries[] = [
       {
         title: 'Descobrindo Seu Propósito',
         url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        date: '2023-12-31'
+        date: '31/12/2023'
       },
       {
         title: 'Respondendo ao Chamado',
         url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        date: '2023-12-24'
+        date: '24/12/2023'
       },
       {
         title: 'Vivendo com Propósito',
         url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        date: '2023-12-17'
+        date: '17/12/2023'
       }
     ]
   }
@@ -147,5 +147,5 @@ export const sermonSeriesData: SermonSeries[] = [
 export const latestSermon = {
   title: 'A Fonte da Esperança',
   url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-  date: '21 de Janeiro, 2024'
+  date: '21/01/2024'
 };

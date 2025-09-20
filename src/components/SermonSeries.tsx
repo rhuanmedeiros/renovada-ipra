@@ -1,7 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { SermonSeries as SermonSeriesType } from "@/data/sermons";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { SermonSeries as SermonSeriesType, SermonVideo } from "@/data/sermons";
+import { ChevronDown, ChevronUp, Play } from "lucide-react";
 import { useState } from "react";
+import VideoModal from "@/components/ui/video-modal";
 
 interface SermonSeriesProps {
   series: SermonSeriesType;
@@ -9,9 +11,21 @@ interface SermonSeriesProps {
 
 const SermonSeries = ({ series }: SermonSeriesProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState<SermonVideo | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
+  };
+
+  const openVideoModal = (video: SermonVideo) => {
+    setSelectedVideo(video);
+    setIsModalOpen(true);
+  };
+
+  const closeVideoModal = () => {
+    setIsModalOpen(false);
+    setSelectedVideo(null);
   };
 
   return (
@@ -54,18 +68,29 @@ const SermonSeries = ({ series }: SermonSeriesProps) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-in slide-in-from-top-4 duration-500">
           {series.videos.length > 0 ? (
             series.videos.map((video, index) => (
-              <Card key={index} className="overflow-hidden rounded-2xl shadow-church hover:shadow-church-lg transition-all duration-300">
+              <Card key={index} className="overflow-hidden rounded-2xl shadow-church hover:shadow-church-lg transition-all duration-300 group cursor-pointer">
                 <CardContent className="p-0">
-                  <div className="aspect-video">
+                  <div 
+                    className="aspect-video relative group"
+                    onClick={() => openVideoModal(video)}
+                  >
+                    {/* Thumbnail do vídeo */}
                     <iframe
                       src={video.url}
                       title={video.title}
-                      className="w-full h-full"
+                      className="w-full h-full pointer-events-none"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
                     />
+                    
+                    {/* Overlay com botão de play */}
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 border border-white/30">
+                        <Play className="h-8 w-8 text-white fill-white" />
+                      </div>
+                    </div>
                   </div>
+                  
                   <div className="p-3 md:p-4">
                     <h3 className="font-semibold text-base md:text-lg mb-1 overflow-hidden"
                         style={{
@@ -97,6 +122,13 @@ const SermonSeries = ({ series }: SermonSeriesProps) => {
           )}
         </div>
       )}
+
+      {/* Modal de Vídeo */}
+      <VideoModal 
+        isOpen={isModalOpen}
+        onClose={closeVideoModal}
+        video={selectedVideo}
+      />
     </div>
   );
 };

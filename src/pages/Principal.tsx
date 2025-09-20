@@ -20,6 +20,56 @@ import CardsIniciais from "@/components/CardsIniciais";
 const Index = () => {
   useScrollToTop(); // Garante scroll para o topo ao carregar
   
+  // Dados centralizados dos botões de ação
+  const actionButtons = [
+    {
+      id: 1,
+      text: "Series de Mensagens",
+      variant: "default" as const,
+      link: "/sermoes"
+    },
+    {
+      id: 2,
+      text: "Nossa Comunidade",
+      variant: "outline" as const,
+      link: "/ministerios"
+    },
+    {
+      id: 3,
+      text: "Junte-se a Nós",
+      variant: "outline" as const,
+      link: "/contato"
+    }
+  ];
+
+  // Componente reutilizável para os botões de ação
+  const ActionButton = ({ 
+    button, 
+    isDesktop = false 
+  }: { 
+    button: typeof actionButtons[0], 
+    isDesktop?: boolean 
+  }) => (
+    <Link to={button.link}>
+      <Button 
+        size="lg" 
+        variant={button.variant}
+        className={`w-full justify-between rounded-2xl h-auto ${
+          isDesktop 
+            ? "text-lg px-8 py-6" 
+            : "text-base px-6 py-4"
+        }`}
+      >
+        <div className={isDesktop ? "text-left" : ""}>
+          <div className={isDesktop ? "font-semibold" : ""}>
+            {button.text}
+          </div>
+        </div>
+        <ArrowRight className={isDesktop ? "w-6 h-6" : "w-5 h-5"} />
+      </Button>
+    </Link>
+  );
+  
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -44,25 +94,10 @@ const Index = () => {
                       A Igreja Renovada existe para aproximar as pessoas de Deus e ajudá-las a seguir os passos de Jesus.
                     </p>
                     {/* Action Buttons - Vertical Layout */}
-                    <div className="space-y-4">
-                      <Button size="lg" className="w-full justify-between rounded-2xl text-lg px-8 py-6 h-auto">
-                        <div className="text-left">
-                          <div className="font-semibold">Assista Online</div>
-                        </div>
-                        <ArrowRight className="w-6 h-6" />
-                      </Button>
-                      <Button size="lg" variant="outline" className="w-full justify-between rounded-2xl text-lg px-8 py-6 h-auto">
-                        <div className="text-left">
-                          <div className="font-semibold">Nossa Comunidade</div>
-                        </div>
-                        <ArrowRight className="w-6 h-6" />
-                      </Button>
-                      <Button size="lg" variant="outline" className="w-full justify-between rounded-2xl text-lg px-8 py-6 h-auto">
-                        <div className="text-left">
-                          <div className="font-semibold">Junte-se a Nós</div>
-                        </div>
-                        <ArrowRight className="w-6 h-6" />
-                      </Button>
+                    <div className="flex flex-col gap-4">
+                      {actionButtons.map(button => (
+                        <ActionButton key={button.id} button={button} isDesktop={true} />
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -80,19 +115,10 @@ const Index = () => {
                   <HeroVideo url="https://www.youtube.com/watch?v=rq9jfNiQZyY" />
                 </div>
                 {/* Action Buttons */}
-                <div className="space-y-3 px-4">
-                  <Button size="lg" className="w-full justify-between rounded-2xl text-base px-6 py-4 h-auto">
-                    <span>Assista Online</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </Button>
-                  <Button size="lg" variant="outline" className="w-full justify-between rounded-2xl text-base px-6 py-4 h-auto">
-                    <span>Nossa Comunidade</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </Button>
-                  <Button size="lg" variant="outline" className="w-full justify-between rounded-2xl text-base px-6 py-4 h-auto">
-                    <span>Junte-se a Nós</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </Button>
+                <div className="flex flex-col gap-3 px-4">
+                  {actionButtons.map(button => (
+                    <ActionButton key={button.id} button={button} isDesktop={false} />
+                  ))}
                 </div>
               </div>
               
@@ -128,7 +154,7 @@ const Index = () => {
                     <Link to="/doacoes">
                       <Button 
                         size="lg"
-                        className="bg-church-primary hover:bg-church-primary-dark text-white rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg px-8 py-3"
+                        className="bg-church-primary hover:bg-church-primary-dark text-white dark:text-black rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg px-8 py-3"
                       >
                         Doar Agora
                       </Button>
