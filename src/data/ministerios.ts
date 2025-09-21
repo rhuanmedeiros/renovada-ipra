@@ -8,6 +8,8 @@ export interface Ministerio {
   descricao: string;
   imagem: string;
   botao: string;
+  link?: string; // Link opcional para redirecionar
+  isExternal?: boolean; // Se é link externo ou navegação interna
 }
 
 // Dados para a página de ministérios (apenas ministérios 1, 2 e 3)
@@ -15,14 +17,18 @@ export const ministeriosData: Ministerio[] = [
   {
     titulo: "Ministério de Jovens",
     descricao: "Um espaço para jovens crescerem na fé, fazerem amizades e descobrirem seu propósito.",
-    imagem: ministerioJovens,
-    botao: "Saiba Mais"
+    imagem: "/ministerios/325249872_553508630132607_8977246601971800352_n.jpg",
+    botao: "Saiba Mais",
+    link: "https://www.instagram.com/renovadaalianca/",
+    isExternal: true
   },
   {
     titulo: "Ministério Infantil",
     descricao: "Programas especiais para crianças aprenderem sobre Deus de forma divertida e segura.",
     imagem: ministerioCriancas,
-    botao: "Saiba Mais"
+    botao: "Saiba Mais",
+    link: "https://www.instagram.com/renovadarenokids/",
+    isExternal: true
   },
   {
     titulo: "Ministério de Casais",
@@ -44,21 +50,27 @@ export const cardsInicialData: CardInicialData[] = [
     descricao: "Acompanhe nossa série de estudos bíblicos atual.",
     descricaoMobile: "Estudos bíblicos atuais",
     imagem: "/ministerios/4.svg",
-    botao: "Acompanhar"
+    botao: "Acompanhar",
+    link: "/sermoes#40-dias-de-comunidade",
+    isExternal: false
   },
   {
     titulo: "Ministério de Jovens",
     descricao: "Um espaço para jovens crescerem na fé, fazerem amizades e descobrirem seu propósito.",
     descricaoMobile: "Crescimento espiritual para jovens",
-    imagem: ministerioJovens,
-    botao: "Saiba Mais"
+    imagem: "/ministerios/325249872_553508630132607_8977246601971800352_n.jpg",
+    botao: "Saiba Mais",
+    link: "https://www.instagram.com/renovadaalianca/",
+    isExternal: true
   },
   {
     titulo: "Ministério Infantil",
     descricao: "Programas especiais para crianças aprenderem sobre Deus de forma divertida e segura.",
     descricaoMobile: "Aprendizado divertido para crianças",
     imagem: ministerioCriancas,
-    botao: "Saiba Mais"
+    botao: "Saiba Mais",
+    link: "https://www.instagram.com/renovadarenokids/",
+    isExternal: true
   },
   {
     titulo: "Ministério de Casais",

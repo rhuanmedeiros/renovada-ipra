@@ -29,34 +29,34 @@ const SermonSeries = ({ series }: SermonSeriesProps) => {
   };
 
   return (
-    <div className="mb-16">
+    <div className="mb-16 xl:mb-20 2xl:mb-24" id={series.id}>
       {/* Separator Line */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8"></div>
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8 xl:mb-12 2xl:mb-16"></div>
       
       {/* Series Banner - Clickable */}
       <div 
-        className="relative mb-8 overflow-hidden rounded-2xl shadow-church cursor-pointer hover:shadow-church-lg transition-all duration-300 group"
+        className="relative mb-8 xl:mb-12 2xl:mb-16 overflow-hidden rounded-2xl xl:rounded-3xl 2xl:rounded-[2rem] shadow-church cursor-pointer hover:shadow-church-lg xl:hover:shadow-2xl transition-all duration-300 group"
         onClick={toggleExpanded}
       >
         <img 
           src={series.banner} 
           alt={series.title}
-          className="w-full h-32 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-32 md:h-64 xl:h-80 2xl:h-96 object-cover transition-transform duration-300 group-hover:scale-105"
         />
         
         {/* Overlay with expand indicator */}
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all duration-300">
-          <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-3 border border-white/30">
+          <div className="absolute bottom-4 xl:bottom-6 2xl:bottom-8 right-4 xl:right-6 2xl:right-8 bg-white/20 backdrop-blur-sm rounded-full p-3 xl:p-4 2xl:p-5 border border-white/30">
             {isExpanded ? (
-              <ChevronUp className="h-6 w-6 text-white" />
+              <ChevronUp className="h-6 w-6 xl:h-8 xl:w-8 2xl:h-10 2xl:w-10 text-white" />
             ) : (
-              <ChevronDown className="h-6 w-6 text-white" />
+              <ChevronDown className="h-6 w-6 xl:h-8 xl:w-8 2xl:h-10 2xl:w-10 text-white" />
             )}
           </div>
           
           {/* Videos count info */}
-          <div className="absolute bottom-4 left-4">
-            <p className="text-sm text-white/90 drop-shadow-lg">
+          <div className="absolute bottom-4 xl:bottom-6 2xl:bottom-8 left-4 xl:left-6 2xl:left-8">
+            <p className="text-sm xl:text-base 2xl:text-lg text-white/90 drop-shadow-lg">
               {series.videos.length} vídeo{series.videos.length !== 1 ? 's' : ''} • Clique para {isExpanded ? 'ocultar' : 'ver todos'}
             </p>
           </div>
@@ -65,10 +65,10 @@ const SermonSeries = ({ series }: SermonSeriesProps) => {
 
       {/* Videos Grid - Expandable */}
       {isExpanded && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-in slide-in-from-top-4 duration-500">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 xl:gap-8 2xl:gap-10 animate-in slide-in-from-top-4 duration-500">
           {series.videos.length > 0 ? (
             series.videos.map((video, index) => (
-              <Card key={index} className="overflow-hidden rounded-2xl shadow-church hover:shadow-church-lg transition-all duration-300 group cursor-pointer">
+              <Card key={index} className="overflow-hidden rounded-2xl xl:rounded-3xl shadow-church hover:shadow-church-lg xl:hover:shadow-2xl transition-all duration-300 group cursor-pointer transform hover:scale-[1.02] xl:hover:scale-[1.03]">
                 <CardContent className="p-0">
                   <div 
                     className="aspect-video relative group"
@@ -85,14 +85,14 @@ const SermonSeries = ({ series }: SermonSeriesProps) => {
                     
                     {/* Overlay com botão de play */}
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 border border-white/30">
-                        <Play className="h-8 w-8 text-white fill-white" />
+                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 xl:p-5 2xl:p-6 border border-white/30">
+                        <Play className="h-8 w-8 xl:h-10 xl:w-10 2xl:h-12 2xl:w-12 text-white fill-white" />
                       </div>
                     </div>
                   </div>
                   
-                  <div className="p-3 md:p-4">
-                    <h3 className="font-semibold text-base md:text-lg mb-1 overflow-hidden"
+                  <div className="p-3 md:p-4 xl:p-5 2xl:p-6">
+                    <h3 className="font-semibold text-base md:text-lg xl:text-xl 2xl:text-2xl mb-1 xl:mb-2 overflow-hidden leading-tight"
                         style={{
                           display: '-webkit-box',
                           WebkitLineClamp: 2,
@@ -101,21 +101,21 @@ const SermonSeries = ({ series }: SermonSeriesProps) => {
                       {video.title}
                     </h3>
                     {video.date && (
-                      <p className="text-muted-foreground text-xs md:text-sm">{video.date}</p>
+                      <p className="text-muted-foreground text-xs md:text-sm xl:text-base 2xl:text-lg">{video.date}</p>
                     )}
                   </div>
                 </CardContent>
               </Card>
             ))
           ) : (
-            <div className="col-span-full flex flex-col items-center justify-center py-16 text-center">
-              <div className="bg-muted/30 rounded-full p-4 mb-4">
-                <svg className="w-12 h-12 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="col-span-full flex flex-col items-center justify-center py-16 xl:py-20 2xl:py-24 text-center">
+              <div className="bg-muted/30 rounded-full p-4 xl:p-6 2xl:p-8 mb-4 xl:mb-6 2xl:mb-8">
+                <svg className="w-12 h-12 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2">Vídeos em breve</h3>
-              <p className="text-muted-foreground max-w-md">
+              <h3 className="text-lg xl:text-xl 2xl:text-2xl font-semibold mb-2 xl:mb-3 2xl:mb-4">Vídeos em breve</h3>
+              <p className="text-muted-foreground xl:text-lg 2xl:text-xl max-w-md xl:max-w-lg 2xl:max-w-xl">
                 Os vídeos desta série serão adicionados em breve. Fique atento às atualizações!
               </p>
             </div>

@@ -5,23 +5,23 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-slate-900 text-white border-t border-slate-700">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <div className="container mx-auto px-4 py-16 xl:py-20 2xl:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 xl:gap-12 2xl:gap-16 mb-8 xl:mb-12 2xl:mb-16">
           {/* Logo and Description */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <img src="/ICON-RENOVADA.png" alt="Logo Renovada" className="w-10 h-10 object-contain" />
-              <span className="text-xl font-bold text-white">Igreja Renovada</span>
+          <div className="space-y-4 xl:space-y-6 2xl:space-y-8">
+            <div className="flex items-center space-x-2 xl:space-x-3 2xl:space-x-4">
+              <img src="/ICON-RENOVADA.png" alt="Logo Renovada" className="w-10 h-10 xl:w-12 xl:h-12 2xl:w-16 2xl:h-16 object-contain" />
+              <span className="text-xl xl:text-2xl 2xl:text-3xl font-bold text-white">Igreja Renovada</span>
             </div>
-            <p className="text-slate-300">
+            <p className="text-slate-300 xl:text-lg 2xl:text-xl leading-relaxed">
               A Igreja Renovada existe para aproximar as pessoas de Deus e ajudá-las a seguir os passos de Jesus.
             </p>
             {/* Social Links */}
-            <div className="flex space-x-2">
+            <div className="flex space-x-2 xl:space-x-3 2xl:space-x-4">
               <Button 
                 variant="ghost" 
                 size="icon" 
-                className="rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white"
+                className="rounded-xl xl:rounded-2xl hover:bg-slate-800 text-slate-300 hover:text-white xl:h-12 xl:w-12 2xl:h-16 2xl:w-16"
                 asChild
               >
                 <a 
@@ -30,13 +30,13 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label="YouTube"
                 >
-                  <Youtube className="w-5 h-5" />
+                  <Youtube className="w-5 h-5 xl:w-6 xl:h-6 2xl:w-8 2xl:h-8" />
                 </a>
               </Button>
               <Button 
                 variant="ghost" 
                 size="icon" 
-                className="rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white"
+                className="rounded-xl xl:rounded-2xl hover:bg-slate-800 text-slate-300 hover:text-white xl:h-12 xl:w-12 2xl:h-16 2xl:w-16"
                 asChild
               >
                 <a 
@@ -45,13 +45,13 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label="Instagram"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <Instagram className="w-5 h-5 xl:w-6 xl:h-6 2xl:w-8 2xl:h-8" />
                 </a>
               </Button>
               <Button 
                 variant="ghost" 
                 size="icon" 
-                className="rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white"
+                className="rounded-xl xl:rounded-2xl hover:bg-slate-800 text-slate-300 hover:text-white xl:h-12 xl:w-12 2xl:h-16 2xl:w-16"
                 asChild
               >
                 <a 
@@ -60,13 +60,13 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label="Facebook"
                 >
-                  <Facebook className="w-5 h-5" />
+                  <Facebook className="w-5 h-5 xl:w-6 xl:h-6 2xl:w-8 2xl:h-8" />
                 </a>
               </Button>
               <Button 
                 variant="ghost" 
                 size="icon" 
-                className="rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white"
+                className="rounded-xl xl:rounded-2xl hover:bg-slate-800 text-slate-300 hover:text-white xl:h-12 xl:w-12 2xl:h-16 2xl:w-16"
                 asChild
               >
                 <a 
@@ -75,7 +75,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label="Twitter/X"
                 >
-                  <Twitter className="w-5 h-5" />
+                  <Twitter className="w-5 h-5 xl:w-6 xl:h-6 2xl:w-8 2xl:h-8" />
                 </a>
               </Button>
             </div>
@@ -83,18 +83,18 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Links Rápidos</h3>
-            <div className="space-y-2">
-              <Link to="/sermoes" className="block text-slate-300 hover:text-white transition-colors">
+            <h3 className="font-semibold mb-4 xl:mb-6 2xl:mb-8 text-white text-lg xl:text-xl 2xl:text-2xl">Links Rápidos</h3>
+            <div className="space-y-2 xl:space-y-3 2xl:space-y-4">
+              <Link to="/sermoes" className="block text-slate-300 hover:text-white transition-colors xl:text-lg 2xl:text-xl">
                 Sermões
               </Link>
-              <Link to="/ministerios" className="block text-slate-300 hover:text-white transition-colors">
+              <Link to="/ministerios" className="block text-slate-300 hover:text-white transition-colors xl:text-lg 2xl:text-xl">
                 Ministérios
               </Link>
-              <Link to="/eventos" className="block text-slate-300 hover:text-white transition-colors">
+              <Link to="/eventos" className="block text-slate-300 hover:text-white transition-colors xl:text-lg 2xl:text-xl">
                 Eventos
               </Link>
-              <Link to="/doacoes" className="block text-slate-300 hover:text-white transition-colors">
+              <Link to="/doacoes" className="block text-slate-300 hover:text-white transition-colors xl:text-lg 2xl:text-xl">
                 Doações
               </Link>
             </div>
@@ -102,41 +102,41 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Contato</h3>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 text-slate-400 mt-1" />
-                <span className="text-slate-300 text-sm">
+            <h3 className="font-semibold mb-4 xl:mb-6 2xl:mb-8 text-white text-lg xl:text-xl 2xl:text-2xl">Contato</h3>
+            <div className="space-y-3 xl:space-y-4 2xl:space-y-6">
+              <div className="flex items-start space-x-2 xl:space-x-3 2xl:space-x-4">
+                <MapPin className="w-4 h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 text-slate-400 mt-1" />
+                <span className="text-slate-300 text-sm xl:text-base 2xl:text-lg leading-relaxed">
                   Camilo Ramalho Matta 181<br />Astorga, PR, Brazil<br />86730-000
                 </span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-slate-400" />
-                <span className="text-slate-300 text-sm">+55 44 9861-9596</span>
+              <div className="flex items-center space-x-2 xl:space-x-3 2xl:space-x-4">
+                <Phone className="w-4 h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 text-slate-400" />
+                <span className="text-slate-300 text-sm xl:text-base 2xl:text-lg">+55 44 9861-9596</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-slate-400" />
-                <span className="text-slate-300 text-sm">contato@renovada.org</span>
+              <div className="flex items-center space-x-2 xl:space-x-3 2xl:space-x-4">
+                <Mail className="w-4 h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 text-slate-400" />
+                <span className="text-slate-300 text-sm xl:text-base 2xl:text-lg">contato@renovada.org</span>
               </div>
             </div>
           </div>
 
           {/* Service Times */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Horários</h3>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-2">
-                <Clock className="w-4 h-4 text-slate-400 mt-1" />
+            <h3 className="font-semibold mb-4 xl:mb-6 2xl:mb-8 text-white text-lg xl:text-xl 2xl:text-2xl">Horários</h3>
+            <div className="space-y-3 xl:space-y-4 2xl:space-y-6">
+              <div className="flex items-start space-x-2 xl:space-x-3 2xl:space-x-4">
+                <Clock className="w-4 h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 text-slate-400 mt-1" />
                 <div>
-                  <p className="text-sm font-medium text-white">Cultos Domingo</p>
-                  <p className="text-slate-300 text-sm">10h e 18h</p>
+                  <p className="text-sm xl:text-base 2xl:text-lg font-medium text-white">Cultos Domingo</p>
+                  <p className="text-slate-300 text-sm xl:text-base 2xl:text-lg">10h e 18h</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-2">
-                <Clock className="w-4 h-4 text-slate-400 mt-1" />
+              <div className="flex items-start space-x-2 xl:space-x-3 2xl:space-x-4">
+                <Clock className="w-4 h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 text-slate-400 mt-1" />
                 <div>
-                  <p className="text-sm font-medium text-white">Oração Terça</p>
-                  <p className="text-slate-300 text-sm">19h</p>
+                  <p className="text-sm xl:text-base 2xl:text-lg font-medium text-white">Oração Terça</p>
+                  <p className="text-slate-300 text-sm xl:text-base 2xl:text-lg">19h</p>
                 </div>
               </div>
             </div>
@@ -144,16 +144,16 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-700 pt-8">
+        <div className="border-t border-slate-700 pt-8 xl:pt-12 2xl:pt-16">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-slate-400 text-sm">
+            <p className="text-slate-400 text-sm xl:text-base 2xl:text-lg">
               © 2024 Igreja Renovada. Todos os direitos reservados.
             </p>
-            <div className="flex space-x-4 mt-4 md:mt-0">
-              <Link to="/privacidade" className="text-slate-400 text-sm hover:text-white">
+            <div className="flex space-x-4 xl:space-x-6 2xl:space-x-8 mt-4 md:mt-0">
+              <Link to="/privacidade" className="text-slate-400 text-sm xl:text-base 2xl:text-lg hover:text-white">
                 Privacidade
               </Link>
-              <Link to="/termos" className="text-slate-400 text-sm hover:text-white">
+              <Link to="/termos" className="text-slate-400 text-sm xl:text-base 2xl:text-lg hover:text-white">
                 Termos de Uso
               </Link>
             </div>

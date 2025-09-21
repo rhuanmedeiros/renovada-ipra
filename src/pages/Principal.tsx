@@ -52,12 +52,12 @@ const Index = () => {
   }) => (
     <Link to={button.link}>
       <Button 
-        size="lg" 
+        size={isDesktop ? "lg" : "default"}
         variant={button.variant}
-        className={`w-full justify-between rounded-2xl h-auto ${
+        className={`w-full justify-between rounded-2xl xl:rounded-3xl h-auto transform transition-all duration-300 hover:scale-[1.02] ${
           isDesktop 
-            ? "text-lg px-8 py-6" 
-            : "text-base px-6 py-4"
+            ? "text-base xl:text-lg 2xl:text-xl px-6 xl:px-8 2xl:px-8 py-4 xl:py-6 2xl:py-8" 
+            : "text-sm px-4 py-2.5"
         }`}
       >
         <div className={isDesktop ? "text-left" : ""}>
@@ -65,7 +65,7 @@ const Index = () => {
             {button.text}
           </div>
         </div>
-        <ArrowRight className={isDesktop ? "w-6 h-6" : "w-5 h-5"} />
+        <ArrowRight className={isDesktop ? "w-5 h-5 xl:w-6 xl:h-6 2xl:w-8 2xl:h-8" : "w-4 h-4"} />
       </Button>
     </Link>
   );
@@ -76,25 +76,25 @@ const Index = () => {
       
       <main>
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center pt-10 bg-hero transition-colors duration-300">
+        <section className="min-h-screen flex items-center pt-10 md:pt-24 xl:pt-28 2xl:pt-32 bg-hero transition-colors duration-300">
           <div className="container mx-auto px-6">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl xl:max-w-8xl 2xl:max-w-9xl mx-auto">
               
               {/* Desktop Layout */}
               <div className="hidden lg:block">
-                <h1 className="text-4xl xl:text-5xl font-bold leading-tight mb-10 text-center text-hero">
+                <h1 className="text-4xl xl:text-6xl 2xl:text-7xl font-bold leading-tight mb-6 xl:mb-8 2xl:mb-10 text-center text-hero">
                   Bem-vindo à <span className="text-primary">Igreja Renovada</span>
                 </h1>
-                <div className="grid grid-cols-2 gap-16 items-start">
+                <p className="text-base xl:text-lg 2xl:text-xl text-hero-subtitle leading-relaxed text-center mb-10 xl:mb-16 2xl:mb-20 max-w-4xl mx-auto">
+                  A Igreja Renovada existe para aproximar as pessoas de Deus e ajudá-las a seguir os passos de Jesus.
+                </p>
+                <div className="grid grid-cols-2 gap-16 xl:gap-20 2xl:gap-24 items-center">
                   <div>
                     <HeroVideo url="https://www.youtube.com/watch?v=rq9jfNiQZyY" />
                   </div>
-                  <div className="flex flex-col gap-6">
-                    <p className="text-lg xl:text-xl text-hero-subtitle">
-                      A Igreja Renovada existe para aproximar as pessoas de Deus e ajudá-las a seguir os passos de Jesus.
-                    </p>
+                  <div className="flex flex-col gap-6 xl:gap-8 2xl:gap-10 justify-center">
                     {/* Action Buttons - Vertical Layout */}
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4 xl:gap-6 2xl:gap-8">
                       {actionButtons.map(button => (
                         <ActionButton key={button.id} button={button} isDesktop={true} />
                       ))}
@@ -105,17 +105,17 @@ const Index = () => {
 
               {/* Mobile Layout */}
               <div className="block lg:hidden text-center">
-                <h1 className="text-3xl font-bold leading-tight mb-6 text-hero">
+                <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-hero">
                   Bem-vindo à <span className="text-primary">Igreja Renovada</span>
                 </h1>
-                <p className="text-base text-hero-subtitle mb-8 px-2">
+                <p className="text-sm md:text-base text-hero-subtitle mb-8 leading-relaxed max-w-lg mx-auto">
                   A Igreja Renovada existe para aproximar as pessoas de Deus e ajudá-las a seguir os passos de Jesus.
                 </p>
-                <div className="mb-8">
+                <div className="mb-8 max-w-2xl mx-auto">
                   <HeroVideo url="https://www.youtube.com/watch?v=rq9jfNiQZyY" />
                 </div>
-                {/* Action Buttons */}
-                <div className="flex flex-col gap-3 px-4">
+                {/* Action Buttons - Alinhados com o vídeo */}
+                <div className="flex flex-col gap-3 max-w-2xl mx-auto">
                   {actionButtons.map(button => (
                     <ActionButton key={button.id} button={button} isDesktop={false} />
                   ))}
@@ -130,17 +130,17 @@ const Index = () => {
         <CardsIniciais />
 
         {/* Contribution Section */}
-        <section className="py-20">
+        <section className="py-20 xl:py-28 2xl:py-32">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <Card className="rounded-3xl overflow-hidden shadow-church-lg gradient-contribute text-white">
-                <CardContent className="p-8 md:p-12 text-center space-y-6 md:space-y-8">
+            <div className="max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto">
+              <Card className="rounded-3xl xl:rounded-[2rem] 2xl:rounded-[2.5rem] overflow-hidden shadow-church-lg xl:shadow-2xl gradient-contribute text-white transform transition-all duration-300 hover:scale-[1.01] xl:hover:scale-[1.02]">
+                <CardContent className="p-8 md:p-12 xl:p-16 2xl:p-20 text-center space-y-6 md:space-y-8 xl:space-y-12 2xl:space-y-16">
                   <div>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-3 md:mb-4 xl:mb-6 2xl:mb-8">
                       Sua Generosidade Faz a Diferença
                     </h2>
                     {/* Texto completo para desktop */}
-                    <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto hidden md:block px-4">
+                    <p className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl opacity-90 max-w-2xl xl:max-w-4xl 2xl:max-w-5xl mx-auto hidden md:block px-4 leading-relaxed">
                       Cada contribuição nos ajuda a impactar vidas, apoiar nossa comunidade 
                       e expandir o Reino de Deus.
                     </p>
@@ -154,7 +154,7 @@ const Index = () => {
                     <Link to="/doacoes">
                       <Button 
                         size="lg"
-                        className="bg-church-primary hover:bg-church-primary-dark text-white dark:text-black rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg px-8 py-3"
+                        className="bg-church-primary hover:bg-church-primary-dark text-white dark:text-black rounded-2xl xl:rounded-3xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg px-8 py-3 xl:px-12 xl:py-6 2xl:px-16 2xl:py-8 text-base xl:text-xl 2xl:text-2xl font-semibold"
                       >
                         Doar Agora
                       </Button>

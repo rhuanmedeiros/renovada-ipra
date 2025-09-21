@@ -7,6 +7,7 @@ import Index from "./pages/Principal";
 import Ministerios from "./pages/Ministerios";
 import Sermons from "./pages/Sermoes";
 import Doacoes from "./pages/Doacoes";
+import Contato from "./pages/Contato";
 import NotFound from "./pages/NotFound";
 // import do ReactPlayer removido, pois não é necessário aqui
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/sermoes" element={<Sermons />} />
           <Route path="/ministerios" element={<Ministerios />} />
           <Route path="/doacoes" element={<Doacoes />} />
+          <Route path="/contato" element={<Contato />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
