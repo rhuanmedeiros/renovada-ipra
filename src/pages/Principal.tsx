@@ -82,13 +82,7 @@ const Index = () => {
               
               {/* Desktop Layout */}
               <div className="hidden lg:block">
-                <h1 className="text-4xl xl:text-6xl 2xl:text-7xl font-bold leading-tight mb-6 xl:mb-8 2xl:mb-10 text-center text-hero">
-                  Bem-vindo à <span className="text-primary">Igreja Renovada</span>
-                </h1>
-                <p className="text-base xl:text-lg 2xl:text-xl text-hero-subtitle leading-relaxed text-center mb-10 xl:mb-16 2xl:mb-20 max-w-4xl mx-auto">
-                  A Igreja Renovada existe para aproximar as pessoas de Deus e ajudá-las a seguir os passos de Jesus.
-                </p>
-                <div className="grid grid-cols-2 gap-16 xl:gap-20 2xl:gap-24 items-center">
+                  <div className="grid grid-cols-2 gap-16 xl:gap-20 2xl:gap-24 items-center">
                   <div>
                     <HeroVideo url="https://www.youtube.com/watch?v=rq9jfNiQZyY" />
                   </div>
@@ -105,12 +99,6 @@ const Index = () => {
 
               {/* Mobile Layout */}
               <div className="block lg:hidden text-center">
-                <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-hero">
-                  Bem-vindo à <span className="text-primary">Igreja Renovada</span>
-                </h1>
-                <p className="text-sm md:text-base text-hero-subtitle mb-8 leading-relaxed max-w-lg mx-auto">
-                  A Igreja Renovada existe para aproximar as pessoas de Deus e ajudá-las a seguir os passos de Jesus.
-                </p>
                 <div className="mb-8 max-w-2xl mx-auto">
                   <HeroVideo url="https://www.youtube.com/watch?v=rq9jfNiQZyY" />
                 </div>

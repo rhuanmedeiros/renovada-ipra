@@ -29,7 +29,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3" onClick={closeMenu}>
             <img src="/ICON-RENOVADA.png" alt="Logo Renovada" className="w-12 h-10 xl:w-16 xl:h-12 2xl:w-20 2xl:h-16 object-contain" />
-            <span className="text-xl xl:text-2xl 2xl:text-3xl font-bold">Igreja Renovada</span>
+            <span className="text-xl xl:text-2xl 2xl:text-3xl font-bold">IGREJA RENOVADA</span>
           </Link>
 
           {/* Navigation - Desktop */}

@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="space-y-4 xl:space-y-6 2xl:space-y-8">
             <div className="flex items-center space-x-2 xl:space-x-3 2xl:space-x-4">
               <img src="/ICON-RENOVADA.png" alt="Logo Renovada" className="w-10 h-10 xl:w-12 xl:h-12 2xl:w-16 2xl:h-16 object-contain" />
-              <span className="text-xl xl:text-2xl 2xl:text-3xl font-bold text-white">Igreja Renovada</span>
+              <span className="text-xl xl:text-2xl 2xl:text-3xl font-bold text-white">IGREJA RENOVADA</span>
             </div>
             <p className="text-slate-300 xl:text-lg 2xl:text-xl leading-relaxed">
               A Igreja Renovada existe para aproximar as pessoas de Deus e ajudá-las a seguir os passos de Jesus.
