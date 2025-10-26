@@ -12,21 +12,21 @@
     --background: 0 0% 100%;
     --foreground: 220 9% 15%;
 
-    /* Church brand colors - based on #009BDE */
-    --church-primary: 198 100% 44%;
-    --church-primary-light: 198 85% 55%;
-    --church-primary-lighter: 198 70% 85%;
-    --church-primary-dark: 198 100% 35%;
-    --church-primary-darker: 198 100% 25%;
+    /* Church brand colors - based on #009BDD (logo color) */
+    --church-primary: 197 100% 43%;
+    --church-primary-light: 197 85% 55%;
+    --church-primary-lighter: 197 70% 85%;
+    --church-primary-dark: 197 100% 34%;
+    --church-primary-darker: 197 100% 25%;
     
     /* Semantic UI colors */
-    --primary: 198 100% 44%;
+    --primary: 197 100% 43%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 198 70% 85%;
-    --secondary-foreground: 198 100% 25%;
+    --secondary: 197 70% 85%;
+    --secondary-foreground: 197 100% 25%;
     
-    --accent: 198 85% 55%;
+    --accent: 197 85% 55%;
     --accent-foreground: 0 0% 100%;
     
     --muted: 220 14% 96%;
@@ -41,7 +41,7 @@
     
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 198 100% 44%;
+    --ring: 197 100% 43%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
@@ -49,7 +49,7 @@
     /* Church-specific gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--church-primary)), hsl(var(--church-primary-light)));
     --gradient-section: linear-gradient(180deg, hsl(var(--church-primary-lighter)), hsl(0 0% 100% / 0));
-    --gradient-contribute: linear-gradient(135deg, hsl(198 100% 44%), hsl(198 85% 55%), hsl(198 70% 65%));
+    --gradient-contribute: linear-gradient(135deg, hsl(197 100% 43%), hsl(197 85% 55%), hsl(197 70% 65%));
     
     /* Shadows with church colors */
     --shadow-church: 0 10px 30px -10px hsl(var(--church-primary) / 0.3);
@@ -80,21 +80,21 @@
     --background: 220 15% 8%;
     --foreground: 0 0% 95%;
 
-    /* Church brand colors - using #009BDE palette for dark theme */
-    --church-primary: 198 100% 55%;
-    --church-primary-light: 198 85% 65%;
-    --church-primary-lighter: 198 70% 75%;
-    --church-primary-dark: 198 100% 44%;
-    --church-primary-darker: 198 100% 35%;
+    /* Church brand colors - using #009BDD palette for dark theme */
+    --church-primary: 197 100% 55%;
+    --church-primary-light: 197 85% 65%;
+    --church-primary-lighter: 197 70% 75%;
+    --church-primary-dark: 197 100% 43%;
+    --church-primary-darker: 197 100% 34%;
     
     /* Semantic UI colors - dark */
-    --primary: 198 100% 55%;
+    --primary: 197 100% 55%;
     --primary-foreground: 220 15% 8%;
     
     --secondary: 220 20% 15%;
     --secondary-foreground: 0 0% 95%;
     
-    --accent: 198 85% 65%;
+    --accent: 197 85% 65%;
     --accent-foreground: 220 15% 8%;
     
     --muted: 220 15% 15%;
@@ -109,7 +109,7 @@
     
     --border: 220 20% 20%;
     --input: 220 20% 20%;
-    --ring: 198 100% 55%;
+    --ring: 197 100% 55%;
     
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 95%;
@@ -117,12 +117,12 @@
     /* Sidebar dark theme */
     --sidebar-background: 220 15% 10%;
     --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 198 100% 55%;
+    --sidebar-primary: 197 100% 55%;
     --sidebar-primary-foreground: 220 15% 8%;
     --sidebar-accent: 220 20% 15%;
     --sidebar-accent-foreground: 0 0% 90%;
     --sidebar-border: 220 20% 20%;
-    --sidebar-ring: 198 100% 55%;
+    --sidebar-ring: 197 100% 55%;
 
     /* Hero section colors - dark theme */
     --hero-background: 220 20% 12%;
@@ -130,7 +130,7 @@
     --hero-subtitle: 0 0% 85%;
 
     /* Gradients - dark theme */
-    --gradient-contribute: linear-gradient(135deg, hsl(198 100% 35%), hsl(198 85% 45%), hsl(198 70% 55%));
+    --gradient-contribute: linear-gradient(135deg, hsl(197 100% 35%), hsl(197 85% 45%), hsl(197 70% 55%));
   }
 }
 

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
@@ -19,7 +19,7 @@ import { useState } from "react";
 import { schedule } from "@/data/schedule";
 
 const Contato = () => {
-  useScrollToTop(); // Garante scroll para o topo ao carregar
+  useScrollToTop();
   
   const { toast } = useToast();
   const [copiedData, setCopiedData] = useState<string | null>(null);
@@ -51,24 +51,24 @@ const Contato = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-church-primary/25 dark:from-slate-900 dark:to-church-primary/20">
       <Header />
       
-      <main className="pt-20 xl:pt-24 2xl:pt-28">
-        {/* Informações de Contato - Clean Version */}
-        <section className="py-20 xl:py-28 2xl:py-32">
+      <main className="pt-16 xl:pt-24 2xl:pt-28">
+        <section className="py-16 xl:py-28 2xl:py-32">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto">
-              <h2 className="text-3xl xl:text-4xl 2xl:text-5xl font-bold text-center mb-12 xl:mb-16 2xl:mb-20">Estamos aqui para ouvir você <br></br>Orar juntos e caminhar ao seu lado</h2>
+              <h2 className="text-xl xl:text-4xl 2xl:text-5xl font-semibold text-center mb-12 xl:mb-16 2xl:mb-20">
+                Estamos aqui para ouvir você, orar juntos e caminhar ao seu lado.
+              </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-8 2xl:gap-12 mb-12 xl:mb-16 2xl:mb-20">
-                {/* Telefone */}
                 <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl shadow-lg xl:shadow-2xl text-center group hover:shadow-xl xl:hover:shadow-3xl transition-all duration-300 transform hover:scale-[1.02] xl:hover:scale-[1.03]">
                   <CardContent className="p-6 xl:p-8 2xl:p-10">
-                    <div className="w-14 h-14 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4 xl:mb-6 2xl:mb-8 group-hover:bg-blue-500/20 transition-colors duration-300">
-                      <Phone className="w-7 h-7 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10 text-blue-500" />
+                    <div className="w-14 h-14 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20 bg-church-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 xl:mb-6 2xl:mb-8 group-hover:bg-church-primary/20 transition-colors duration-300">
+                      <Phone className="w-7 h-7 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10 text-church-primary" />
                     </div>
-                    <h3 className="font-semibold text-lg xl:text-xl 2xl:text-2xl mb-2 xl:mb-3 2xl:mb-4">Telefone</h3>
+                    <h3 className="text-3xl font-semibold mb-4 text-foreground">Telefone</h3>
                     <div className="flex items-center gap-2 justify-center mb-3 xl:mb-4 2xl:mb-6">
                       <span className="text-sm xl:text-base 2xl:text-lg font-medium">(44) 3234-1284</span>
                       <Button
@@ -86,20 +86,19 @@ const Contato = () => {
                     <Button 
                       size="sm"
                       onClick={handlePhoneClick}
-                      className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4 xl:px-6 2xl:px-8 xl:py-3 2xl:py-4 xl:text-base 2xl:text-lg"
+                      className="bg-church-primary hover:bg-church-primary-dark text-white rounded-full px-4 xl:px-6 2xl:px-8 xl:py-3 2xl:py-4 xl:text-base 2xl:text-lg"
                     >
                       Ligar
                     </Button>
                   </CardContent>
                 </Card>
 
-                {/* Email */}
                 <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl shadow-lg xl:shadow-2xl text-center group hover:shadow-xl xl:hover:shadow-3xl transition-all duration-300 transform hover:scale-[1.02] xl:hover:scale-[1.03]">
                   <CardContent className="p-6 xl:p-8 2xl:p-10">
-                    <div className="w-14 h-14 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4 xl:mb-6 2xl:mb-8 group-hover:bg-blue-500/20 transition-colors duration-300">
-                      <Mail className="w-7 h-7 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10 text-blue-500" />
+                    <div className="w-14 h-14 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20 bg-church-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 xl:mb-6 2xl:mb-8 group-hover:bg-church-primary/20 transition-colors duration-300">
+                      <Mail className="w-7 h-7 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10 text-church-primary" />
                     </div>
-                    <h3 className="font-semibold text-lg xl:text-xl 2xl:text-2xl mb-2 xl:mb-3 2xl:mb-4">Email</h3>
+                    <h3 className="text-3xl font-semibold mb-4 text-foreground">Email</h3>
                     <div className="flex items-center gap-2 justify-center mb-3 xl:mb-4 2xl:mb-6">
                       <span className="text-sm xl:text-base 2xl:text-lg font-medium break-all">contato@renovada.org</span>
                       <Button
@@ -117,20 +116,19 @@ const Contato = () => {
                     <Button 
                       size="sm"
                       onClick={handleEmailClick}
-                      className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4"
+                      className="bg-church-primary hover:bg-church-primary-dark text-white rounded-full px-4"
                     >
                       Enviar
                     </Button>
                   </CardContent>
                 </Card>
 
-                {/* Endereço */}
                 <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6">
-                    <div className="w-14 h-14 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500/20 transition-colors duration-300">
-                      <MapPin className="w-7 h-7 text-blue-500" />
+                    <div className="w-14 h-14 bg-church-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-church-primary/20 transition-colors duration-300">
+                      <MapPin className="w-7 h-7 text-church-primary" />
                     </div>
-                    <h3 className="font-semibold text-lg mb-2">Endereço</h3>
+                    <h3 className="text-3xl font-semibold mb-4 text-foreground">Endereço</h3>
                     <div className="mb-3">
                       <p className="text-sm font-medium">Camilo Ramalho Mata, 181</p>
                       <p className="text-xs text-muted-foreground">Astorga - PR</p>
@@ -138,7 +136,7 @@ const Contato = () => {
                     <Button 
                       size="sm"
                       onClick={handleLocationClick}
-                      className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4"
+                      className="bg-church-primary hover:bg-church-primary-dark text-white rounded-full px-4"
                     >
                       Ver Mapa
                     </Button>
@@ -149,8 +147,7 @@ const Contato = () => {
           </div>
         </section>
 
-        {/* Mapa Interativo */}
-        <section className="py-20 bg-gradient-section">
+        <section className="py-2 bg-gradient-section">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-bold text-center mb-8">Nossa Localização</h2>
@@ -162,7 +159,6 @@ const Contato = () => {
               <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl overflow-hidden shadow-xl">
                 <CardContent className="p-0">
                   <div className="relative">
-                    {/* Google Maps Embed */}
                     <div className="w-full h-[400px] md:h-[500px] relative">
                       <iframe
                         src="https://maps.google.com/maps?q=Camilo+Ramalho+Mata+181,+Astorga,+PR,+Brazil&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -176,13 +172,12 @@ const Contato = () => {
                       ></iframe>
                     </div>
                     
-                    {/* Overlay com informações */}
                     <div className="absolute bottom-4 left-4 right-4">
                       <Card className="bg-white/95 backdrop-blur-sm border-0">
                         <CardContent className="p-4">
                           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                             <div>
-                              <h3 className="font-bold text-lg">Igreja Renovada</h3>
+                              <h3 className="text-3xl font-semibold mb-4 text-foreground">Igreja Renovada</h3>
                               <p className="text-sm text-muted-foreground">
                                 Camilo Ramalho Mata, 181 - Astorga, PR
                               </p>
@@ -205,7 +200,6 @@ const Contato = () => {
           </div>
         </section>
 
-        {/* Horários de Cultos (dados compartilhados) */}
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
@@ -215,8 +209,8 @@ const Contato = () => {
                     <div className="w-20 h-20 bg-church-primary/10 dark:bg-church-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
                       <Users className="w-10 h-10 text-church-primary" />
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Horários dos Cultos</h2>
-                    <p className="text-xl text-muted-foreground">Venha adorar e celebrar conosco em nossa programação semanal</p>
+                    <h2 className="text-2xl md:text-4xl font-bold mb-4 text-foreground">Horários dos Cultos</h2>
+                    <p className="text-base text-muted-foreground">Venha adorar e celebrar conosco em nossa programação semanal</p>
                   </div>
 
                   <div className="max-w-md mx-auto">
@@ -253,7 +247,6 @@ const Contato = () => {
           </div>
         </section>
 
-        {/* Chamada para Ação */}
         <section className="py-20 bg-gradient-section">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">

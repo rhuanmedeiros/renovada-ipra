@@ -60,7 +60,7 @@ CNPJ: 01.570.203/0001-86`;
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-church-primary/25 dark:from-slate-900 dark:to-church-primary/20">
       <Header />
       
       <main className="pt-16">
@@ -68,7 +68,7 @@ CNPJ: 01.570.203/0001-86`;
         <section className="py-20 xl:py-28 2xl:py-32">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto">
-              <h2 className="text-3xl xl:text-4xl 2xl:text-5xl font-bold text-center mb-8 xl:mb-12 2xl:mb-16">Doações Financeiras</h2>
+              <h2 className="text-3xl xl:text-4xl 2xl:text-5xl font-bold text-center mb-8 xl:mb-12 2xl:mb-16">Contribua</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16">
                 {/* PIX */}
@@ -170,7 +170,7 @@ CNPJ: 01.570.203/0001-86`;
         </section>
 
         {/* Campanha do Quilo do Amor */}
-        <section className="py-20 xl:py-28 2xl:py-32 bg-gradient-section">
+        <section className="py-8 xl:py-28 2xl:py-32 bg-gradient-section">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto">
               <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl 2xl:rounded-[2.5rem] overflow-hidden shadow-lg xl:shadow-2xl transform transition-all duration-300 hover:scale-[1.01] xl:hover:scale-[1.02]">
@@ -183,14 +183,14 @@ CNPJ: 01.570.203/0001-86`;
                     <h2 className="text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-4 xl:mb-6 2xl:mb-8">
                       Campanha do Quilo do Amor
                     </h2>
-                    <p className="text-xl xl:text-2xl 2xl:text-3xl text-muted-foreground max-w-2xl xl:max-w-4xl 2xl:max-w-5xl mx-auto leading-relaxed">
+                    <p className="text-lg xl:text-2xl 2xl:text-3xl text-muted-foreground max-w-2xl xl:max-w-4xl 2xl:max-w-5xl mx-auto leading-relaxed">
                       Ajude famílias necessitadas doando alimentos não perecíveis. 
                       Sua contribuição faz a diferença na vida de quem mais precisa.
                     </p>
                   </div>
                   
                   <div className="bg-muted p-6 xl:p-8 2xl:p-10 rounded-2xl xl:rounded-3xl">
-                    <h3 className="text-lg xl:text-xl 2xl:text-2xl font-semibold mb-3 xl:mb-4 2xl:mb-6">Como funciona:</h3>
+                    <h3 className="text-3xl font-semibold mb-4 text-foreground">Como funciona:</h3>
                     <ul className="text-left space-y-2 xl:space-y-3 2xl:space-y-4 max-w-lg xl:max-w-2xl 2xl:max-w-3xl mx-auto">
                       <li className="flex items-start gap-2 xl:gap-3 2xl:gap-4">
                         <span className="w-6 h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10 bg-primary text-white rounded-full text-sm xl:text-base 2xl:text-lg flex items-center justify-center mt-0.5 flex-shrink-0">1</span>
@@ -237,7 +237,7 @@ CNPJ: 01.570.203/0001-86`;
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl font-bold mb-3">Sistema de Doação Inteligente</h3>
+                  <h3 className="text-3xl font-semibold mb-4 text-foreground">Sistema de Doação Inteligente</h3>
                   <p className="text-muted-foreground">
                     Nossa plataforma permite que você veja em tempo real quais alimentos 
                     são mais necessários, evitando excesso de itens do mesmo tipo e 
@@ -267,7 +267,7 @@ CNPJ: 01.570.203/0001-86`;
         )}
 
         {/* Impacto */}
-        <section className="py-20 xl:py-28 2xl:py-32">
+        <section className="py-8 xl:py-28 2xl:py-28">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto text-center">
               <h2 className="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-8 xl:mb-12 2xl:mb-16">Nosso Impacto</h2>

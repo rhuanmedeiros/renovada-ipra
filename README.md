@@ -19,6 +19,14 @@ Site oficial da Igreja Renovada, localizada em Astorga, PR. Uma plataforma moder
 - **Doações**: Sistema para contribuições e ofertas
 - **Contato**: Localização, horários e formas de comunicação
 
+## 🔔 Novidades recentes
+
+- Header móvel flutuante com efeito glassmorphism (`MobileHeader.tsx`) que sobrepõe o hero no mobile.
+- Header desktop separado (`DesktopHeader.tsx`) e componente `Header.tsx` que compõe as variantes mobile/desktop.
+- Heurística de contraste (mobile-only) que ajusta automaticamente a cor do texto do header dependendo do fundo por baixo; usa amostragem de imagem com fallback para cor de fundo (ver limitações abaixo).
+- Padronização de bordas: botões e cards agora seguem regras responsivas de border-radius (mobile: `rounded-lg`, md: `rounded-2xl`, xl: `rounded-3xl`).
+- Menu mobile com animação de abertura suave (scale/opacity) e itens forçados para cor branca no tema claro quando apropriado.
+
 ## 🎨 Design System & Paleta de Cores
 
 ### Cores Principais
@@ -144,6 +152,10 @@ npm run lint         # Análise de código com ESLint
 - **React Player** - Player de vídeo com suporte a YouTube
 - **Framer Motion** - Animações fluidas e interativas (preparado)
 
+Observações de UI:
+- O header móvel (`MobileHeader.tsx`) tem lógica própria de contraste — a detecção procura vídeos/iframes/canvas sob o ponto do header e evita inverter a cor sobre vídeos escuros. Para imagens, tenta amostrar pixel via canvas (CORS pode bloquear amostragem; há fallback para cor do ancestor/body).
+- Botões e cards foram padronizados para manter consistência visual entre páginas e tamanhos de tela.
+
 ### Integrações & Serviços
 - **Google Sheets API** - Integração com planilhas para dados dinâmicos
 - **Instagram Basic Display API** - Mosaico de postagens sociais (preparado)
@@ -164,7 +176,9 @@ src/
 │   │   ├── card.tsx        # Cards informativos
 │   │   ├── whatsapp-float.tsx # Botão WhatsApp flutuante
 │   │   └── ...             # Outros componentes UI
-│   ├── Header.tsx          # Cabeçalho com navegação
+│   ├── Header.tsx          # Componente que compõe DesktopHeader + MobileHeader
+│   ├── MobileHeader.tsx    # Header flutuante para mobile (glassmorphism)
+│   ├── DesktopHeader.tsx   # Header para telas maiores
 │   ├── Footer.tsx          # Rodapé com contatos
 │   ├── HeroVideo.tsx       # Player de vídeo principal
 │   ├── CardsIniciais.tsx   # Cards da página inicial
@@ -193,6 +207,8 @@ public/
 ├── Series/                 # Imagens das séries bíblicas
 └── ...                     # Outros assets públicos
 ```
+
+Se tiver dúvidas sobre onde colocar um novo componente ou precisar padronizar um comportamento (ex.: lógica de contraste), abra uma issue ou PR — posso extrair a heurística para um hook `useContrastAware` e documentar o contrato.
 
 ## 🤝 Contribuindo
 
@@ -234,7 +250,7 @@ Contribuições são sempre bem-vindas! Para contribuir:
 ### Igreja Renovada - Astorga, PR
 
 **📍 Endereço**: Camilo Ramalho Matta 181, Astorga, PR, 86730-000  
-**📱 Telefone**: +55 44 9861-9596  
+**📱 Telefone**: +55 44 99861-9596  
 **✉️ Email**: contato@renovada.org  
 
 **🕐 Horários de Culto**:

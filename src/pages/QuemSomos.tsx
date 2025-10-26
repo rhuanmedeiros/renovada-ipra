@@ -4,72 +4,18 @@ import videoSrc from "@/assets/videoplayback.mp4";
 
 const QuemSomos = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+  <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-church-primary/25 dark:from-slate-900 dark:to-church-primary/20">
       <Header />
 
       <main className="flex-grow pt-28 pb-12">
-        <div className="container mx-auto px-6">
-          
-          {/* Seção principal: vídeo (esquerda) + conteúdo (direita) em desktop */}
-          <section className="max-w-6xl mx-auto mb-16 xl:mb-20 2xl:mb-24">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              {/* Video - esquerda */}
-              <div className="order-1 md:order-1">
-                <div className="aspect-video rounded-3xl overflow-hidden shadow-lg xl:rounded-[2rem] 2xl:rounded-[2.5rem] xl:shadow-2xl bg-black">
-                  <video
-                    src={videoSrc}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    controls
-                    className="w-full h-full object-cover"
-                    preload="metadata"
-                  >
-                    Seu navegador não suporta a tag de vídeo.
-                  </video>
-                </div>
-              </div>
+        <div className="container mx-auto px-6 text-black dark:text-foreground">
 
-              {/* Conteúdo - direita (alinhado verticalmente) */}
-              <div className="order-2 md:order-2 flex flex-col justify-center">
-                <h2 className="text-3xl font-semibold mb-4 text-foreground">Nossa Comunidade</h2>
-                <p className="text-muted-foreground mb-6">
-                  A Igreja Renovada busca acolher pessoas de todas as idades. Aqui você encontrará ministérios para crianças, jovens, famílias e oportunidades de servir.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Cards abaixo do vídeo e do texto, ocupando largura total */}
-          <section className="max-w-6xl mx-auto mb-12 xl:mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-6 bg-white dark:bg-slate-900 rounded-2xl shadow transition-all duration-300">
-                <h3 className="font-semibold text-lg text-foreground">Nossa Missão</h3>
-                <p className="text-muted-foreground">Amar a Deus e ao próximo, discipular vidas e servir a comunidade com compaixão.</p>
-              </div>
-
-              <div className="p-6 bg-white dark:bg-slate-900 rounded-2xl shadow transition-all duration-300">
-                <h3 className="font-semibold text-lg text-foreground">Visão</h3>
-                <p className="text-muted-foreground">Ver pessoas transformadas pelo poder do evangelho e impactando suas famílias e a cidade.</p>
-              </div>
-
-              <div className="p-6 bg-white dark:bg-slate-900 rounded-2xl shadow transition-all duration-300">
-                <h3 className="font-semibold text-lg text-foreground">Valores</h3>
-                <ul className="list-disc list-inside text-muted-foreground">
-                  <li>Adoração</li>
-                  <li>Comunhão</li>
-                  <li>Missão</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section className="max-w-4xl mx-auto">
+          {/* Equipe Pastoral - movida para o topo conforme solicitado */}
+          <section className="max-w-4xl mx-auto mb-12">
             <div className="text-center mb-12">
               <h3 className="text-3xl font-semibold mb-4 text-foreground">Equipe Pastoral</h3>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                Conheça os líderes que Deus levantou para servir e guiar a nossa comunidade. Na Igreja Renovada de Astorga, nossa equipe pastoral é dedicada a cuidar da nossa família da fé, ensinando a Palavra e liderando com um coração de servo.
+              <p className="mb-8 leading-relaxed text-black dark:text-muted-foreground">
+                Conheça os líderes que Deus levantou para servir e guiar a nossa comunidade. Na Igreja Renovada de Astorga, nossa equipe pastoral é dedicada a cuidar da nossa família da fé, ensinando a Palavra e liderando com coração de servo.
               </p>
             </div>
 
@@ -101,13 +47,64 @@ const QuemSomos = () => {
                 </p>
               </div>
             </div>
+          </section>
 
-            <div className="mt-12 p-6 bg-gradient-to-r from-church-primary/10 to-church-primary/5 dark:from-church-primary/20 dark:to-church-primary/10 rounded-2xl border border-church-primary/20">
-              <p className="text-center text-muted-foreground leading-relaxed">
-                <span className="font-semibold text-foreground">Juntos, eles trabalham em unidade para servir a Deus e à nossa comunidade.</span> Sinta-se à vontade para se conectar com eles em nossos cultos e eventos. Eles estão aqui para caminhar com você!
-              </p>
+          {/* Seção principal: vídeo (esquerda) + conteúdo (direita) em desktop */}
+          <section className="max-w-6xl mx-auto mb-16 xl:mb-20 2xl:mb-24">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              {/* Video - esquerda */}
+              <div className="order-1 md:order-1">
+                <div className="aspect-video rounded-3xl overflow-hidden shadow-lg xl:rounded-[2rem] 2xl:rounded-[2.5rem] xl:shadow-2xl bg-black">
+                  <video
+                    src={videoSrc}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    controls
+                    className="w-full h-full object-cover"
+                    preload="metadata"
+                  >
+                    Seu navegador não suporta a tag de vídeo.
+                  </video>
+                </div>
+              </div>
+
+              {/* Conteúdo - direita (alinhado verticalmente) */}
+              <div className="order-2 md:order-2 flex flex-col justify-center">
+                <h2 className="text-3xl font-semibold mb-4 text-foreground">Nossa Comunidade</h2>
+                <p className="mb-6 text-black dark:text-muted-foreground">
+                  A Igreja Renovada busca acolher pessoas de todas as idades. Aqui você encontrará ministérios para crianças, jovens, famílias e oportunidades de servir.
+                </p>
+              </div>
             </div>
           </section>
+
+          {/* Cards abaixo do vídeo e do texto, ocupando largura total */}
+          <section className="max-w-6xl mx-auto mb-12 xl:mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="p-6 bg-white dark:bg-slate-900 rounded-2xl shadow transition-all duration-300">
+                <h3 className="text-3xl font-semibold mb-4 text-foreground">Nossa Missão</h3>
+                <p className="text-muted-foreground">Amar a Deus e ao próximo, discipular vidas e servir a comunidade com compaixão.</p>
+              </div>
+
+              <div className="p-6 bg-white dark:bg-slate-900 rounded-2xl shadow transition-all duration-300">
+                <h3 className="text-3xl font-semibold mb-4 text-foreground">Visão</h3>
+                <p className="text-muted-foreground">Ver pessoas transformadas pelo poder do evangelho e impactando suas famílias e a cidade.</p>
+              </div>
+
+              <div className="p-6 bg-white dark:bg-slate-900 rounded-2xl shadow transition-all duration-300">
+                <h3 className="text-3xl font-semibold mb-4 text-foreground">Valores</h3>
+                <ul className="list-disc list-inside text-muted-foreground">
+                  <li>Adoração</li>
+                  <li>Comunhão</li>
+                  <li>Missão</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          
         </div>
       </main>
 

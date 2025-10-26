@@ -213,7 +213,7 @@ const MobileHeader = () => {
               alt="Logo Renovada"
               className="w-8 sm:w-10 h-6 sm:h-8 object-contain"
             />
-            <span className={`text-xs sm:text-sm font-bold truncate ${textClass}`}>
+            <span className={`text-base sm:text-sm font-bold truncate ${textClass}`}>
               IGREJA RENOVADA
             </span>
           </Link>
@@ -258,6 +258,16 @@ const MobileHeader = () => {
                     {item.label}
                   </Link>
                 ))}
+              </div>
+
+              {/* CTA: Contribua (mobile-only) */}
+              <div className="pt-3">
+                <Button
+                  onClick={() => { closeMenu(); window.location.href = '/doacoes'; }}
+                  className="w-full bg-church-primary hover:bg-church-primary-dark text-white rounded-lg md:rounded-2xl transition-all duration-200 py-3"
+                >
+                  Contribua
+                </Button>
               </div>
 
               {/* Theme Toggle for Mobile */}

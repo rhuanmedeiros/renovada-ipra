@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Users, Clock } from "lucide-react";
 import { schedule } from "@/data/schedule";
 
 const Cultos = () => {
@@ -13,26 +13,58 @@ const Cultos = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+  <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-church-primary/25 dark:from-slate-900 dark:to-church-primary/20">
       <Header />
 
-      <main className="flex-grow pt-28 pb-12 bg-background">
-        <div className="container mx-auto px-6">
-          <section className="text-center py-12">
-            <h1 className="text-4xl font-bold mb-4 text-foreground">Cultos e Horários</h1>
-          </section>
+  <main className="flex-grow pt-16 pb-12">
+        <div className="container mx-auto px-2">
+       {/* Horários de Cultos (dados compartilhados) */}
+          <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl overflow-hidden shadow-lg bg-white dark:bg-slate-900">
+                <CardContent className="p-8 md:p-12">
+                  <div className="text-center mb-8">
+                    <div className="w-20 h-20 bg-church-primary/10 dark:bg-church-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Users className="w-10 h-10 text-church-primary" />
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-foreground">Horários dos Cultos</h2>
+                    <p className="text-xs text-muted-foreground">Venha adorar e celebrar conosco.</p>
+                  </div>
 
-          <section className="max-w-3xl mx-auto bg-white dark:bg-slate-900 rounded-lg shadow p-6 mb-12">
-            <h2 className="text-2xl font-semibold mb-4 text-foreground">Agenda Semanal</h2>
-            <div className="space-y-4">
-              {schedule.map((s) => (
-                <div key={s.id} className="flex items-center justify-between border-b last:border-b-0 pb-2">
-                  <div className="text-lg font-medium text-foreground">{s.day}</div>
-                  <div className="text-muted-foreground">{s.times.join(' • ')}</div>
-                </div>
-              ))}
+                  <div className="max-w-md mx-auto">
+                    <div className="space-y-4">
+                      {schedule.map((s) => (
+                        <div key={s.id} className="flex items-center justify-between p-4 rounded-2xl border group transition-all duration-300" style={{background: 'transparent'}}>
+                          <div className="flex items-center gap-3">
+                            <div className={`w-3 h-3 rounded-full ${s.id === 'sabados' ? 'bg-orange-500' : 'bg-church-primary'}`}></div>
+                            <div>
+                              <span className="font-semibold text-lg text-foreground">{s.day}</span>
+                              {s.note && <div className="text-xs text-muted-foreground">{s.note}</div>}
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            {s.times.map((t) => (
+                              <div key={t} className={`font-bold ${s.id === 'sabados' ? 'text-orange-500' : 'text-church-primary'} text-lg`}>{t}</div>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-8 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-2xl border border-yellow-200 dark:border-yellow-800">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Clock className="w-5 h-5 text-yellow-600 dark:text-yellow-400" />
+                        <span className="font-semibold text-yellow-800 dark:text-yellow-200">Dica</span>
+                      </div>
+                      <p className="text-sm text-yellow-700 dark:text-yellow-300">Recomendamos chegar 15 minutos antes do início do culto para um melhor acolhimento.</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
-          </section>
+          </div>
+        </section>
 
           {/* Seção de Mapa */}
           <section className="py-12">
@@ -66,7 +98,7 @@ const Cultos = () => {
                         <CardContent className="p-4">
                           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                             <div>
-                              <h3 className="font-bold text-lg text-foreground">Igreja Renovada</h3>
+                              <h3 className="text-3xl font-semibold mb-4 text-foreground">Igreja Renovada</h3>
                               <p className="text-sm text-muted-foreground">
                                 Camilo Ramalho Mata, 181 - Astorga, PR
                               </p>

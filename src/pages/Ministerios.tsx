@@ -8,7 +8,7 @@ const Ministerios = () => {
   useScrollToTop(); // Garante scroll para o topo ao carregar
   
   return (
-    <div className="min-h-screen bg-background">
+  <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-church-primary/25 dark:from-slate-900 dark:to-church-primary/20">
       <Header />
       <main className="pt-20">
         {/* A seção de ministérios foi extraída para um componente reutilizável */}
