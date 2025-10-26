@@ -1,3 +1,7 @@
+import serieAtual from "@/assets/Series/1- 40-dias.png";
+import seriechegueMais from "@/assets/Series/Banner Chegue+.svg";
+import placeholderImg from "@/assets/placeholder.svg";
+
 export interface SermonVideo {
   title: string;
   url: string;
@@ -17,15 +21,10 @@ export const sermonSeriesData: SermonSeries[] = [
   {
     id: '40-dias-de-comunidade',
     title: '40 Dias de Comunidade',
-    banner: '/Series/1- 40-dias.png',
+    banner: serieAtual,
     description: 'Juntos somos melhores! Uma jornada de 40 dias descobrindo o poder da comunidade cristã.',
     videos: [
-      {
-        title: 'Apresentação Teatro - 40 Dias de Comunidade',
-        url: 'https://www.youtube.com/embed/XQNFl_Z8YK4',
-        date: '01/09/2024'
-      },
-      {
+     {
         title: 'Lançamento - 40 Dias de Comunidade',
         url: 'https://www.youtube.com/embed/sO5r0WXS9EQ',
         date: '08/09/2024'
@@ -44,13 +43,33 @@ export const sermonSeriesData: SermonSeries[] = [
         title: '03 - O Que Destrói Relacionamentos e O Que Constrói - Pr. William Poso',
         url: 'https://www.youtube.com/embed/rq9jfNiQZyY',
         date: '29/09/2024'
-      }
+      },
+      { 
+        title: '04 - COMO AJUDAMOS UNS AOS OUTROS CRESCER - CAMPANHA 40 DIAS DE COMUNIDADE - PR. HUAN MARVYN',
+        url: 'https://www.youtube.com/embed/XiuRocfGrhk',
+        date: '14/09/2024'
+      },
+      { 
+        title: '05 - SERVINDO JUNTOS É MELHOR - CAMPANHA 40 DIAS DE COMUNIDADE - PR. WILLIAM POSO',
+        url: 'https://www.youtube.com/embed/BHmO5iw2Wa0',
+        date: '21/09/2024'
+      },
+      { 
+        title: '06 - ADORANDO JUNTOS É MELHOR - CAMPANHA 40 DIAS DE COMUNIDADE - PR. WILLIAM POSO',
+        url: 'https://www.youtube.com/embed/ygJHZSClVak',
+        date: '28/09/2024'
+      },
+      { 
+        title: '07 - VIVENDO A COMUNIDADE - PR. WILLIAM POSO, PR. WILLIAN PALMA E PR. HUAN MARVYN',
+        url: 'https://www.youtube.com/embed/3HDXsniozH8',
+        date: '05/10/2024'
+      },
     ]
   },
   {
     id: 'chegue-mais',
     title: 'Chegue+',
-    banner: '/Series/Banner Chegue+.svg',
+    banner: seriechegueMais,
     description: 'Uma série sobre se aproximar mais de Deus e experimentar Sua presença de forma mais intensa.',
     videos: [
       {
@@ -89,63 +108,10 @@ export const sermonSeriesData: SermonSeries[] = [
         date: '18/08/2024'
       },
       {
-        title: 'https://www.youtube.com/watch?v=t_eXtBZz1dM',
+        title: '08 - Vídeo da série Chegue Mais',
         url: 'https://www.youtube.com/embed/t_eXtBZz1dM',
         date: '25/08/2024'
       }
     ]
   },
-  {
-    id: 'esperanca-em-tempos-dificeis',
-    title: 'Esperança em Tempos Difíceis',
-    banner: '/placeholder.svg',
-    description: 'Uma série sobre encontrar esperança e propósito mesmo nos momentos mais desafiadores da vida.',
-    videos: [
-      {
-        title: 'A Fonte da Esperança',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        date: '21/01/2024'
-      },
-      {
-        title: 'Esperança que Não Decepciona',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        date: '14/01/2024'
-      },
-      {
-        title: 'Vivendo com Esperança',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        date: '07/01/2024'
-      }
-    ]
-  },
-  {
-    id: 'proposito-e-chamado',
-    title: 'Propósito e Chamado',
-    banner: '/placeholder.svg',
-    description: 'Descobrindo o chamado único que Deus tem para sua vida e como viver com propósito.',
-    videos: [
-      {
-        title: 'Descobrindo Seu Propósito',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        date: '31/12/2023'
-      },
-      {
-        title: 'Respondendo ao Chamado',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        date: '24/12/2023'
-      },
-      {
-        title: 'Vivendo com Propósito',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        date: '17/12/2023'
-      }
-    ]
-  }
-];
-
-// Último sermão para a página inicial
-export const latestSermon = {
-  title: 'A Fonte da Esperança',
-  url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-  date: '21/01/2024'
-};
+]

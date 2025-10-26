@@ -35,7 +35,7 @@ const SermonSeries = ({ series }: SermonSeriesProps) => {
       
       {/* Series Banner - Clickable */}
       <div 
-        className="relative mb-8 xl:mb-12 2xl:mb-16 overflow-hidden rounded-2xl xl:rounded-3xl 2xl:rounded-[2rem] shadow-church cursor-pointer hover:shadow-church-lg xl:hover:shadow-2xl transition-all duration-300 group"
+        className="relative mb-8 xl:mb-12 2xl:mb-16 overflow-hidden rounded-lg md:rounded-2xl xl:rounded-3xl 2xl:rounded-[2rem] shadow-church cursor-pointer hover:shadow-church-lg xl:hover:shadow-2xl transition-all duration-300 group"
         onClick={toggleExpanded}
       >
         <img 
@@ -68,7 +68,7 @@ const SermonSeries = ({ series }: SermonSeriesProps) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 xl:gap-8 2xl:gap-10 animate-in slide-in-from-top-4 duration-500">
           {series.videos.length > 0 ? (
             series.videos.map((video, index) => (
-              <Card key={index} className="overflow-hidden rounded-2xl xl:rounded-3xl shadow-church hover:shadow-church-lg xl:hover:shadow-2xl transition-all duration-300 group cursor-pointer transform hover:scale-[1.02] xl:hover:scale-[1.03]">
+              <Card key={index} className="overflow-hidden rounded-lg md:rounded-2xl xl:rounded-3xl shadow-church hover:shadow-church-lg xl:hover:shadow-2xl transition-all duration-300 group cursor-pointer transform hover:scale-[1.02] xl:hover:scale-[1.03]">
                 <CardContent className="p-0">
                   <div 
                     className="aspect-video relative group"
@@ -93,11 +93,15 @@ const SermonSeries = ({ series }: SermonSeriesProps) => {
                   
                   <div className="p-3 md:p-4 xl:p-5 2xl:p-6">
                     <h3 className="font-semibold text-base md:text-lg xl:text-xl 2xl:text-2xl mb-1 xl:mb-2 overflow-hidden leading-tight"
-                        style={{
-                          display: '-webkit-box',
-                          WebkitLineClamp: 2,
-                          WebkitBoxOrient: 'vertical' as any
-                        }}>
+                        style={
+                          // Linha truncada com -webkit-box para suportar multiline clamp
+                          // Tipamos explicitamente para evitar uso de `any` que ativa o lint
+                          {
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2 as unknown as number,
+                            WebkitBoxOrient: "vertical" as unknown as string,
+                          } as React.CSSProperties
+                        }>
                       {video.title}
                     </h3>
                     {video.date && (

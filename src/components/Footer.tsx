@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Church, Instagram, Youtube, MapPin, Clock, Phone, Mail, Facebook, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
+import iconRenovada from "@/assets/ICON-RENOVADA.png";
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="space-y-4 xl:space-y-6 2xl:space-y-8">
             <div className="flex items-center space-x-2 xl:space-x-3 2xl:space-x-4">
-              <img src="/ICON-RENOVADA.png" alt="Logo Renovada" className="w-10 h-10 xl:w-12 xl:h-12 2xl:w-16 2xl:h-16 object-contain" />
+              <img src={iconRenovada} alt="Logo Renovada" className="w-10 h-10 xl:w-12 xl:h-12 2xl:w-16 2xl:h-16 object-contain" />
               <span className="text-xl xl:text-2xl 2xl:text-3xl font-bold text-white">IGREJA RENOVADA</span>
             </div>
             <p className="text-slate-300 xl:text-lg 2xl:text-xl leading-relaxed">
@@ -107,12 +108,12 @@ const Footer = () => {
               <div className="flex items-start space-x-2 xl:space-x-3 2xl:space-x-4">
                 <MapPin className="w-4 h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 text-slate-400 mt-1" />
                 <span className="text-slate-300 text-sm xl:text-base 2xl:text-lg leading-relaxed">
-                  Camilo Ramalho Matta 181<br />Astorga, PR, Brazil<br />86730-000
+                  Camilo Ramalho Mata 181<br />Astorga, PR, Brazil<br />86730-000
                 </span>
               </div>
               <div className="flex items-center space-x-2 xl:space-x-3 2xl:space-x-4">
                 <Phone className="w-4 h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 text-slate-400" />
-                <span className="text-slate-300 text-sm xl:text-base 2xl:text-lg">+55 44 9861-9596</span>
+                <span className="text-slate-300 text-sm xl:text-base 2xl:text-lg">+55 44 99861-9596</span>
               </div>
               <div className="flex items-center space-x-2 xl:space-x-3 2xl:space-x-4">
                 <Mail className="w-4 h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 text-slate-400" />
@@ -139,17 +140,35 @@ const Footer = () => {
                   <p className="text-slate-300 text-sm xl:text-base 2xl:text-lg">19h</p>
                 </div>
               </div>
+              <div className="flex items-start space-x-2 xl:space-x-3 2xl:space-x-4">
+                <Clock className="w-4 h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 text-slate-400 mt-1" />
+                <div>
+                  <p className="text-sm xl:text-base 2xl:text-lg font-medium text-white">Aliança Sábados</p>
+                  <p className="text-slate-300 text-sm xl:text-base 2xl:text-lg">20h</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-slate-700 pt-8 xl:pt-12 2xl:pt-16">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-y-4">
             <p className="text-slate-400 text-sm xl:text-base 2xl:text-lg">
               © 2024 Igreja Renovada. Todos os direitos reservados.
             </p>
-            <div className="flex space-x-4 xl:space-x-6 2xl:space-x-8 mt-4 md:mt-0">
+            <p className="text-slate-400 text-sm xl:text-base 2xl:text-lg">
+                Construído com amor por{' '}
+                <a
+                  href="https://geniusite.online"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-white"
+                >
+                  GeniuSite
+                </a>
+            </p>
+            <div className="flex space-x-4 xl:space-x-6 2xl:space-x-8">
               <Link to="/privacidade" className="text-slate-400 text-sm xl:text-base 2xl:text-lg hover:text-white">
                 Privacidade
               </Link>

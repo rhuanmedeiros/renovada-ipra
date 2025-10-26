@@ -4,6 +4,7 @@ import SermonSeries from "@/components/SermonSeries";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { sermonSeriesData } from "@/data/sermons";
 import WhatsAppFloat from "@/components/ui/whatsapp-float";
+import celebracaoImg from "@/assets/Celebracao.png";
 
 const Sermons = () => {
   useScrollToTop(); // Garante scroll para o topo ao carregar
@@ -18,7 +19,7 @@ const Sermons = () => {
           <div 
             className="h-[180px] sm:h-[220px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px] overflow-hidden"
             style={{
-              backgroundImage: "url('/Celebracao.png')",
+              backgroundImage: `url(${celebracaoImg})`,
               backgroundSize: "cover",
               backgroundPosition: "center"
             }}

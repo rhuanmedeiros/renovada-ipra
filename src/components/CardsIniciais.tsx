@@ -22,7 +22,7 @@ const CardsIniciais = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto">
           {cardsInicialData.map((card: CardInicialData, i) => (
-            <div key={i} className="relative overflow-hidden rounded-3xl xl:rounded-[2rem] 2xl:rounded-[2.5rem] shadow-church-lg xl:shadow-2xl group cursor-pointer transform transition-all duration-300 hover:scale-[1.02] xl:hover:scale-[1.03]">
+            <div key={i} className="relative overflow-hidden rounded-lg md:rounded-2xl xl:rounded-3xl 2xl:rounded-[2.5rem] shadow-church-lg xl:shadow-2xl group cursor-pointer transform transition-all duration-300 hover:scale-[1.02] xl:hover:scale-[1.03]">
               <div className="aspect-[16/10] xl:aspect-[16/11] 2xl:aspect-[16/12] bg-cover bg-center" style={{ backgroundImage: `url(${card.imagem})` }}>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 xl:p-10 2xl:p-12 text-white">
@@ -36,7 +36,7 @@ const CardsIniciais = () => {
                       e.stopPropagation();
                       handleCardClick(card);
                     }}
-                    className="rounded-2xl xl:rounded-3xl px-4 py-2 md:px-6 md:py-3 xl:px-8 xl:py-4 2xl:px-10 2xl:py-5 text-sm md:text-base xl:text-lg 2xl:text-xl font-semibold"
+                    className="rounded-lg md:rounded-2xl xl:rounded-3xl px-4 py-2 md:px-6 md:py-3 xl:px-8 xl:py-4 2xl:px-10 2xl:py-5 text-sm md:text-base xl:text-lg 2xl:text-xl font-semibold"
                   >
                     {card.botao}
                   </Button>

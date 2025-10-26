@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { GoogleSheetsService, SheetSermonData } from '@/services/googleSheetsService';
 import { SermonSeries, SermonVideo } from '@/data/sermons';
 
@@ -17,7 +17,7 @@ export const useSermonData = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const transformSheetDataToSeries = (sheetData: SheetSermonData[]): SermonSeriesWithPdfs[] => {
+  const transformSheetDataToSeries = useCallback((sheetData: SheetSermonData[]): SermonSeriesWithPdfs[] => {
     // Agrupar dados por série
     const seriesMap = new Map<string, SermonSeriesWithPdfs>();
 
@@ -73,9 +73,9 @@ export const useSermonData = () => {
     });
 
     return Array.from(seriesMap.values());
-  };
+  }, []);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -92,11 +92,11 @@ export const useSermonData = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [transformSheetDataToSeries]);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return { 
     sermonsData, 

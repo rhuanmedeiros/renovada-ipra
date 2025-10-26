@@ -72,7 +72,7 @@ CNPJ: 01.570.203/0001-86`;
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16">
                 {/* PIX */}
-                <Card className="rounded-3xl xl:rounded-[2rem] 2xl:rounded-[2.5rem] shadow-lg xl:shadow-2xl flex flex-col transform transition-all duration-300 hover:scale-[1.02] xl:hover:scale-[1.03]">
+                <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl 2xl:rounded-[2.5rem] shadow-lg xl:shadow-2xl flex flex-col transform transition-all duration-300 hover:scale-[1.02] xl:hover:scale-[1.03]">
                   <CardHeader className="text-center pb-4 xl:pb-6 2xl:pb-8">
                     <div className="w-16 h-16 xl:w-20 xl:h-20 2xl:w-24 2xl:h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 xl:mb-6 2xl:mb-8">
                       <Smartphone className="w-8 h-8 xl:w-10 xl:h-10 2xl:w-12 2xl:h-12 text-primary" />
@@ -100,7 +100,7 @@ CNPJ: 01.570.203/0001-86`;
                         <p className="font-semibold xl:text-lg 2xl:text-xl">Igreja Renovada de Astorga</p>
                       </div>
                     </div>
-                    <Button className="w-full bg-church-primary hover:bg-church-primary-dark text-white rounded-2xl xl:rounded-3xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg xl:py-4 2xl:py-5 xl:text-lg 2xl:text-xl">
+                    <Button className="w-full bg-church-primary hover:bg-church-primary-dark text-white rounded-lg md:rounded-2xl xl:rounded-3xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg xl:py-4 2xl:py-5 xl:text-lg 2xl:text-xl">
                       <Smartphone className="w-4 h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-2" />
                       Doar via PIX
                     </Button>
@@ -108,7 +108,7 @@ CNPJ: 01.570.203/0001-86`;
                 </Card>
 
                 {/* Transferência Bancária */}
-                <Card className="rounded-3xl xl:rounded-[2rem] 2xl:rounded-[2.5rem] shadow-lg xl:shadow-2xl flex flex-col transform transition-all duration-300 hover:scale-[1.02] xl:hover:scale-[1.03]">
+                <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl 2xl:rounded-[2.5rem] shadow-lg xl:shadow-2xl flex flex-col transform transition-all duration-300 hover:scale-[1.02] xl:hover:scale-[1.03]">
                   <CardHeader className="text-center pb-4 xl:pb-6 2xl:pb-8">
                     <div className="w-16 h-16 xl:w-20 xl:h-20 2xl:w-24 2xl:h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 xl:mb-6 2xl:mb-8">
                       <CreditCard className="w-8 h-8 xl:w-10 xl:h-10 2xl:w-12 2xl:h-12 text-primary" />
@@ -142,7 +142,7 @@ CNPJ: 01.570.203/0001-86`;
                     </div>
                     <Button 
                       onClick={copyBankData}
-                      className="w-full bg-church-primary hover:bg-church-primary-dark text-white rounded-2xl xl:rounded-3xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg xl:py-4 2xl:py-5 xl:text-lg 2xl:text-xl"
+                      className="w-full bg-church-primary hover:bg-church-primary-dark text-white rounded-lg md:rounded-2xl xl:rounded-3xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg xl:py-4 2xl:py-5 xl:text-lg 2xl:text-xl"
                     >
                       <CreditCard className="w-4 h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 mr-2" />
                       Copiar Dados Bancários
@@ -173,7 +173,7 @@ CNPJ: 01.570.203/0001-86`;
         <section className="py-20 xl:py-28 2xl:py-32 bg-gradient-section">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto">
-              <Card className="rounded-3xl xl:rounded-[2rem] 2xl:rounded-[2.5rem] overflow-hidden shadow-lg xl:shadow-2xl transform transition-all duration-300 hover:scale-[1.01] xl:hover:scale-[1.02]">
+              <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl 2xl:rounded-[2.5rem] overflow-hidden shadow-lg xl:shadow-2xl transform transition-all duration-300 hover:scale-[1.01] xl:hover:scale-[1.02]">
                 <CardContent className="p-12 xl:p-16 2xl:p-20 text-center space-y-8 xl:space-y-12 2xl:space-y-16">
                   <div className="w-20 h-20 xl:w-24 xl:h-24 2xl:w-28 2xl:h-28 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
                     <ShoppingCart className="w-10 h-10 xl:w-12 xl:h-12 2xl:w-14 2xl:h-14 text-orange-600" />
@@ -215,7 +215,7 @@ CNPJ: 01.570.203/0001-86`;
                     <Button 
                       size="lg" 
                       onClick={handleQuiloDoAmor}
-                      className="bg-church-primary hover:bg-church-primary-dark text-white rounded-2xl xl:rounded-3xl text-lg xl:text-xl 2xl:text-2xl px-8 py-6 xl:px-12 xl:py-8 2xl:px-16 2xl:py-10 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                      className="bg-church-primary hover:bg-church-primary-dark text-white rounded-lg md:rounded-2xl xl:rounded-3xl text-lg xl:text-xl 2xl:text-2xl px-8 py-6 xl:px-12 xl:py-8 2xl:px-16 2xl:py-10 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                     >
                       <Heart className="w-5 h-5 xl:w-6 xl:h-6 2xl:w-8 2xl:h-8 mr-2" />
                       Participar da Campanha
@@ -230,7 +230,7 @@ CNPJ: 01.570.203/0001-86`;
         {/* Modal Quilo do Amor */}
         {showQuiloModal && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[90] p-4">
-            <Card className="max-w-md w-full rounded-3xl">
+            <Card className="max-w-md w-full rounded-lg md:rounded-2xl xl:rounded-3xl">
               <CardContent className="p-8 text-center space-y-6">
                 <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
                   <Heart className="w-8 h-8 text-orange-600" />
@@ -248,7 +248,7 @@ CNPJ: 01.570.203/0001-86`;
                 <div className="space-y-3">
                   <Button 
                     onClick={goToQuiloSite}
-                    className="w-full bg-church-primary hover:bg-church-primary-dark text-white rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                    className="w-full bg-church-primary hover:bg-church-primary-dark text-white rounded-lg md:rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Acessar Plataforma
@@ -256,7 +256,7 @@ CNPJ: 01.570.203/0001-86`;
                   <Button 
                     variant="outline"
                     onClick={() => setShowQuiloModal(false)}
-                    className="w-full rounded-2xl border-church-primary text-church-primary hover:bg-church-primary hover:text-white transition-all duration-300"
+                    className="w-full rounded-lg md:rounded-2xl border-church-primary text-church-primary hover:bg-church-primary hover:text-white transition-all duration-300"
                   >
                     Fechar
                   </Button>
