@@ -262,12 +262,13 @@ const MobileHeader = () => {
 
               {/* CTA: Contribua (mobile-only) */}
               <div className="pt-3">
-                <Button
-                  onClick={() => { closeMenu(); window.location.href = '/doacoes'; }}
-                  className="w-full bg-church-primary hover:bg-church-primary-dark text-white rounded-lg md:rounded-2xl transition-all duration-200 py-3"
-                >
-                  Contribua
-                </Button>
+                <Link to="/doacoes" onClick={closeMenu} className="block">
+                  <Button
+                    className="w-full bg-church-primary hover:bg-church-primary-dark text-white rounded-lg md:rounded-2xl transition-all duration-200 py-3"
+                  >
+                    Contribua
+                  </Button>
+                </Link>
               </div>
 
               {/* Theme Toggle for Mobile */}

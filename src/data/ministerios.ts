@@ -1,7 +1,6 @@
 import ministerioJovens from "@/assets/ministerios/1.svg";
 import ministerioCriancas from "@/assets/ministerios/2.svg";
 import ministerioCasais from "@/assets/ministerios/3.svg";
-import serieAtual from "@/assets/ministerios/4.svg";
 import jovemsFoto from "@/assets/ministerios/325249872_553508630132607_8977246601971800352_n.jpg";
 
 export interface Ministerio {
@@ -40,15 +39,6 @@ export interface CardInicialData extends Ministerio {
 
 // Dados para a página inicial (todos os 4 cards)
 export const cardsInicialData: CardInicialData[] = [
-  {
-    titulo: "Série Atual",
-    descricao: "Acompanhe nossa série de atual.",
-    descricaoMobile: " ",
-    imagem: serieAtual,
-    botao: "Acompanhar",
-    link: "/sermoes#40-dias-de-comunidade",
-    isExternal: false
-  },
   {
     titulo: "Aliança Jovem",
     descricao: "Um espaço para jovens crescerem na fé, fazerem amizades e descobrirem seu propósito.",

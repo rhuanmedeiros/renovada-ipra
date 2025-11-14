@@ -1,0 +1,13 @@
+# SPA React Router – rewrite para index.html
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Se for arquivo ou diretório real, serve normalmente
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Qualquer outra rota cai em index.html
+  RewriteRule . /index.html [L]
+</IfModule>
