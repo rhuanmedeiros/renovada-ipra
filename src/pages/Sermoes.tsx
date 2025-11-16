@@ -31,8 +31,7 @@ const Sermons = () => {
             <div className="container mx-auto">
               <div className="max-w-2xl sm:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto text-center">
                 <p className="text-gray-800 md:text-gray-800 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-medium md:drop-shadow-lg leading-relaxed">
-                  Explore nossas mensagens que irão fortalecer sua fé e 
-                  inspirar seu crescimento espiritual.
+                  Explore nossas mensagens que irão inspirar seu crescimento espiritual.
                 </p>
               </div>
             </div>
@@ -41,7 +40,7 @@ const Sermons = () => {
 
         {/* Sermon Series */}
         <section className="py-0 xl:py-18 2xl:py-24">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-2 sm:px-4">
             {sermonSeriesData.map((series) => (
               <SermonSeries key={series.id} series={series} />
             ))}

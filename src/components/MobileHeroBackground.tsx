@@ -3,8 +3,9 @@ import video1 from "@/assets/Imagens-Fotos/Mobile/video1.mp4";
 import video2 from "@/assets/Imagens-Fotos/Mobile/video2.mp4";
 import video3 from "@/assets/Imagens-Fotos/Mobile/video3.mp4";
 import video4 from "@/assets/Imagens-Fotos/Mobile/video4.mp4";
+import video5 from "@/assets/Imagens-Fotos/Mobile/video5.mp4";
 
-const videos = [video1, video2, video3, video4];
+const videos = [video1, video2, video3, video4, video5];
 
 const TRANSITION_DURATION_MS = 100;
 

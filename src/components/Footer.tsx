@@ -144,7 +144,7 @@ const Footer = () => {
                 <Clock className="w-4 h-4 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 text-slate-400 mt-1" />
                 <div>
                   <p className="text-sm xl:text-base 2xl:text-lg font-medium text-white">Aliança Sábados</p>
-                  <p className="text-slate-300 text-sm xl:text-base 2xl:text-lg">20h</p>
+                  <p className="text-slate-300 text-sm xl:text-base 2xl:text-lg">19h</p>
                 </div>
               </div>
             </div>

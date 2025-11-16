@@ -1,6 +1,6 @@
 import serieAtual from "@/assets/Series/1- 40-dias.png";
 import seriechegueMais from "@/assets/Series/Banner Chegue+.svg";
-import placeholderImg from "@/assets/placeholder.svg";
+import espiritosantoImg from "@/assets/Series/CapaSerieEspiritoSanto.png";
 
 export interface SermonVideo {
   title: string;
@@ -18,6 +18,39 @@ export interface SermonSeries {
 
 // Exemplo de dados de sermões
 export const sermonSeriesData: SermonSeries[] = [
+  {
+    id: 'espirito-santo',
+    title: 'Espirito Santo',
+    banner: espiritosantoImg,
+    description: 'O Espírito não veio apenas visitar a Igreja — Ele veio viver nela.',
+    videos: [
+      {
+        title: 'Sermão 01',
+        url: 'https://www.youtube.com/embed/zUFkmcMNQEI',
+        date: ''
+      },
+      {
+        title: 'Sermão 02',
+        url: 'https://www.youtube.com/watch?v=62iImcdVXFY',
+        date: ''
+      },
+      {
+        title: 'Sermão 03',
+        url: 'https://www.youtube.com/embed/q6AW7Ey8xPg',
+        date: ''
+      },
+      {
+        title: 'Sermão 04',
+        url: 'https://www.youtube.com/embed/xyR5KU3Nrgk',
+        date: ''
+      },
+      {
+        title: 'Sermão 05',
+        url: 'https://www.youtube.com/embed/6wSmLkafMyU',
+        date: ''
+      }
+    ]
+  },
   {
     id: '40-dias-de-comunidade',
     title: '40 Dias de Comunidade',

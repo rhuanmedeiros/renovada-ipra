@@ -55,7 +55,7 @@ CNPJ: 01.570.203/0001-86`;
   };
 
   const goToQuiloSite = () => {
-    window.open('https://quilodoamor.paginaexemplo.site/', '_blank');
+    window.open('https://quilodoamor.renovada.org/', '_blank');
     setShowQuiloModal(false);
   };
 
@@ -274,11 +274,11 @@ CNPJ: 01.570.203/0001-86`;
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 <div className="space-y-2">
-                  <div className="text-3xl md:text-4xl font-bold text-primary">250+</div>
+                  <div className="text-3xl md:text-4xl font-bold text-primary">30+</div>
                   <p className="text-sm md:text-base text-muted-foreground">Famílias Assistidas</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-3xl md:text-4xl font-bold text-primary">1.5k</div>
+                  <div className="text-3xl md:text-4xl font-bold text-primary">500kg</div>
                   <p className="text-sm md:text-base text-muted-foreground">Quilos de Alimentos</p>
                 </div>
                 <div className="space-y-2">
