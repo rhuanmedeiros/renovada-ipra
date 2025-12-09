@@ -31,28 +31,6 @@ export default defineConfig(({ mode }) => ({
           }
           return `assets/[name]-[hash][extname]`;
         },
-        // Code splitting para melhor cache
-        manualChunks(id) {
-          // Separa node_modules em chunks próprios
-          if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) {
-              return 'vendor-react';
-            }
-            if (id.includes('lucide-react')) {
-              return 'vendor-icons';
-            }
-            return 'vendor';
-          }
-          // Separa assets de mídia
-          if (id.includes('assets/Imagens-Fotos')) {
-            if (id.includes('/Mobile/')) {
-              return 'media-mobile';
-            }
-            if (id.includes('/Desktop/')) {
-              return 'media-desktop';
-            }
-          }
-        },
       },
     },
     // Aumenta o limite de aviso de chunk para arquivos de mídia

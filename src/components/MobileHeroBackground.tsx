@@ -1,35 +1,22 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import video1 from "@/assets/Imagens-Fotos/Mobile/video1.mp4";
-import video2 from "@/assets/Imagens-Fotos/Mobile/video2.mp4";
-import video3 from "@/assets/Imagens-Fotos/Mobile/video3.mp4";
-import video4 from "@/assets/Imagens-Fotos/Mobile/video4.mp4";
-import video5 from "@/assets/Imagens-Fotos/Mobile/video5.mp4";
+import video1webm from "@/assets/Imagens-Fotos/Mobile/video1.webm";
+import video4webm from "@/assets/Imagens-Fotos/Mobile/video4.webm";
+import video5webm from "@/assets/Imagens-Fotos/Mobile/video5.webm";
 
-const videos = [video1, video2, video3, video4, video5];
-
+const videos = [
+  { webm: video1webm },
+  { webm: video4webm },
+  { webm: video5webm },
+];
 const TRANSITION_DURATION_MS = 100;
 
 type VideoRef = HTMLVideoElement | null;
 
 const MobileHeroBackground = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [videosLoaded, setVideosLoaded] = useState<boolean[]>([false, false, false, false, false]);
   const videoRefs = useRef<VideoRef[]>([]);
 
-  // Marca vídeos como carregados progressivamente
-  useEffect(() => {
-    // Primeiro vídeo disponível imediatamente
-    setVideosLoaded([true, false, false, false, false]);
-    
-    // Marca outros vídeos como carregáveis após 2 segundos
-    const timer = setTimeout(() => {
-      setVideosLoaded([true, true, true, true, true]);
-    }, 2000);
-    
-    return () => clearTimeout(timer);
-  }, []);
-
-  const playVideoAtIndex = useCallback((index: number) => {
+  const playVideo = useCallback((index: number) => {
     const video = videoRefs.current[index];
     if (!video) return;
 
@@ -37,72 +24,45 @@ const MobileHeroBackground = () => {
     const playPromise = video.play();
     if (playPromise) {
       playPromise.catch(() => {
-        // Ignore autoplay restrictions silently
+        // Autoplay was prevented.
       });
     }
   }, []);
 
-  useEffect(() => {
-    if (!videosLoaded[0]) return;
-
-    // Start playing the first video when mounted
-    playVideoAtIndex(0);
-  }, [videosLoaded, playVideoAtIndex]);
+  const handleVideoEnd = () => {
+    setCurrentIndex((prev) => (prev + 1) % videos.length);
+  };
 
   useEffect(() => {
     videoRefs.current.forEach((video, index) => {
       if (!video) return;
+
       if (index === currentIndex) {
-  playVideoAtIndex(index);
+        playVideo(index);
       } else {
         video.pause();
       }
     });
-  }, [currentIndex, playVideoAtIndex]);
-
-  const handleVideoEnd = () => {
-    if (videos.length <= 1) {
-      playVideoAtIndex(0);
-      return;
-    }
-
-    setTimeout(() => {
-      setCurrentIndex((prev) => (prev + 1) % videos.length);
-    }, TRANSITION_DURATION_MS);
-  };
-
-  // Mostra placeholder enquanto carrega primeiro vídeo
-  if (!videosLoaded[0]) {
-    return (
-      <div className="absolute inset-0 lg:hidden -z-10 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900" />
-    );
-  }
+  }, [currentIndex, playVideo]);
 
   return (
     <div className="absolute inset-0 lg:hidden -z-10">
-      {videos.map((src, index) => {
-        // Só renderiza vídeo se estiver marcado como carregado
-        if (!videosLoaded[index]) return null;
-        
-        return (
-          <video
-            key={src}
-            ref={(element) => {
-              videoRefs.current[index] = element;
-            }}
-            src={src}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity ease-linear ${
-              currentIndex === index ? "opacity-100" : "opacity-0"
-            }`}
-            style={{ transitionDuration: `${TRANSITION_DURATION_MS}ms` }}
-            muted
-            playsInline
-            preload={index === 0 ? "auto" : "metadata"}
-            onEnded={handleVideoEnd}
-            autoPlay={currentIndex === index}
-          />
-        );
-      })}
+      {videos.map((src, index) => (
+        <video
+          key={src.webm}
+          ref={(el) => (videoRefs.current[index] = el)}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity ease-linear ${
+            currentIndex === index ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ transitionDuration: `${TRANSITION_DURATION_MS}ms` }}
+          muted
+          playsInline
+          preload={index === 0 ? "auto" : "metadata"}
+          onEnded={handleVideoEnd}
+        >
+          <source src={src.webm} type="video/webm" />
+        </video>
+      ))}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
     </div>
   );

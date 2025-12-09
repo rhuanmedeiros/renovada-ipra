@@ -25,29 +25,44 @@ export const sermonSeriesData: SermonSeries[] = [
     description: 'O Espírito não veio apenas visitar a Igreja — Ele veio viver nela.',
     videos: [
       {
-        title: 'Sermão 01',
+        title: '01 - O PODER QUE MOVE A IGREJA - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
         url: 'https://www.youtube.com/embed/zUFkmcMNQEI',
         date: ''
       },
       {
-        title: 'Sermão 02',
+        title: '02 - ANTES DO VENTO SOPRAR - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
         url: 'https://www.youtube.com/watch?v=62iImcdVXFY',
         date: ''
       },
       {
-        title: 'Sermão 03',
+        title: '03 - ISTO É O QUE FOI DITO - SÉRIE ESPÍRITO SANTO - PR. HUAN MARVYN',
         url: 'https://www.youtube.com/embed/q6AW7Ey8xPg',
         date: ''
       },
       {
-        title: 'Sermão 04',
+        title: '04 - ESTE JESUS, A QUEM VOCÊS CRUCIFICARAM - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
         url: 'https://www.youtube.com/embed/xyR5KU3Nrgk',
         date: ''
       },
       {
-        title: 'Sermão 05',
+        title: '05 - QUANDO A VERDADE ATINGE O CORAÇÃO NADA MAIS FICA COMO ANTES - SÉRIE ESPÍRITO SANTO - PB IVERSON',
         url: 'https://www.youtube.com/embed/6wSmLkafMyU',
         date: ''
+      }
+      ,
+      {
+        title: '06 - AVIVAMENTO COMEÇA COM COMPROMETIMENTO - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
+        url: 'https://www.youtube.com/embed/r8WCGpTeUsY',
+        date: ''
+      },
+      {
+        title: '07 - ENTRE A DOR E A GRAÇA - SÉRIE ESPÍRITO SANTO - PR. WILLIAN PALMA',
+        url: 'https://www.youtube.com/embed/qFuK4DmrFlU',
+        date: ''
+      },
+      {
+        title: '08 - OS DOIS TEMPLOS - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
+        url: 'https://youtu.be/2ypEiChnom8?si=j7_ANz4WDCGTc5na'
       }
     ]
   },

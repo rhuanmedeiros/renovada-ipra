@@ -1,6 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import videoSrc from "@/assets/videoplayback.mp4";
+import pastorWilliam from "@/assets/Pastores/Untitled design/1.png";
+import pastorHuan from "@/assets/Pastores/Untitled design/3.png";
+import pastorPalma from "@/assets/Pastores/Untitled design/2.png";
+import presbiterosImg from "@/assets/Presbiteros/presbiteros.jpg";
 
 const QuemSomos = () => {
   return (
@@ -20,13 +24,13 @@ const QuemSomos = () => {
             </div>
 
             <div className="space-y-16 md:space-y-20 xl:space-y-24">
-              {/* Pastor Willian Poso */}
+              {/* Pastor William Poso */}
               <div className="relative p-6 md:p-10 xl:p-12 bg-white dark:bg-slate-900 rounded-2xl md:rounded-3xl shadow-lg transition-all duration-300 hover:shadow-xl overflow-visible">
                 {/* Imagem do Pastor - Responsiva */}
                 <div className="absolute top-0 right-0 w-40 h-40 md:w-56 md:h-56 xl:w-72 xl:h-72 2xl:w-80 2xl:h-80 opacity-90 dark:opacity-70 pointer-events-none transition-transform duration-300 hover:scale-105">
                   <img 
-                    src="/src/assets/Pastores/Untitled design/1.png"
-                    alt="Pastor Willian Poso"
+                    src={pastorWilliam}
+                    alt="Pastor William Poso"
                     className="w-full h-full object-cover rounded-full translate-x-[15%] -translate-y-[25%] md:translate-x-[20%] md:-translate-y-[30%] xl:translate-x-[0%] xl:-translate-y-[15%]"
                     style={{
                       filter: 'grayscale(30%)'
@@ -36,10 +40,10 @@ const QuemSomos = () => {
                 
                 {/* Conteúdo do Card */}
                 <div className="relative z-10 md:max-w-[60%] xl:max-w-[65%]">
-                  <h4 className="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-semibold text-church-primary mb-2 xl:mb-3">Willian Poso</h4>
+                  <h4 className="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-semibold text-church-primary mb-2 xl:mb-3">William Poso</h4>
                   <p className="font-medium text-foreground mb-10 xl:mb-4 text-sm md:text-base xl:text-lg 2xl:text-xl">Pastor Sênior</p>
                   <p className="text-muted-foreground leading-relaxed text-sm md:text-base xl:text-lg 2xl:text-xl">
-                    Com visão clara e sabedoria, <br></br>o pastor Willian lidera nossa igreja, garantindo que nosso caminho esteja sempre alinhado com os ensinamentos de Cristo e o propósito de Deus para nossa comunidade.
+                    Com visão clara e sabedoria, <br></br>o pastor William lidera nossa igreja, garantindo que nosso caminho esteja sempre alinhado com os ensinamentos de Cristo e o propósito de Deus para nossa comunidade.
                   </p>
                 </div>
               </div>
@@ -49,7 +53,7 @@ const QuemSomos = () => {
                 {/* Imagem do Pastor - Responsiva */}
                 <div className="absolute top-0 right-0 w-40 h-40 md:w-56 md:h-56 xl:w-72 xl:h-72 2xl:w-80 2xl:h-80 opacity-90 dark:opacity-70 pointer-events-none transition-transform duration-300 hover:scale-105">
                   <img 
-                    src="/src/assets/Pastores/Untitled design/3.png"
+                    src={pastorHuan}
                     alt="Pastor Huan Marvyn"
                     className="w-full h-full object-cover rounded-full translate-x-[15%] -translate-y-[35%] md:translate-x-[20%] md:-translate-y-[25%] xl:translate-x-[0%] xl:-translate-y-[15%]"
                     style={{
@@ -72,8 +76,7 @@ const QuemSomos = () => {
               <div className="relative p-6 md:p-10 xl:p-12 bg-white dark:bg-slate-900 rounded-2xl md:rounded-3xl shadow-lg transition-all duration-300 hover:shadow-xl overflow-visible">
                 {/* Imagem do Pastor - Responsiva */}
                 <div className="absolute top-0 right-0 w-40 h-40 md:w-56 md:h-56 xl:w-72 xl:h-72 2xl:w-80 2xl:h-80 opacity-90 dark:opacity-70 pointer-events-none transition-transform duration-300 hover:scale-105">
-                  <img 
-                    src="/src/assets/Pastores/Untitled design/2.png"
+                  <img src={pastorPalma}
                     alt="Pastor Wilian Palma"
                     className="w-full h-full object-cover rounded-full translate-x-[15%] -translate-y-[35%] md:translate-x-[20%] md:-translate-y-[30%] xl:translate-x-[0%] xl:-translate-y-[15%]"
                     style={{
@@ -91,6 +94,24 @@ const QuemSomos = () => {
                   </p>
                 </div>
               </div>
+            </div>
+          </section>
+
+          {/* Conselho de Presbíteros */}
+          <section className="max-w-4xl mx-auto mb-12 mt-16 md:mt-24">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-semibold mb-4 text-foreground">Conselho de Presbíteros</h3>
+              <p className="mb-12 leading-relaxed text-black dark:text-muted-foreground">
+                Homens de Deus que compõem o conselho atual da igreja, auxiliando na liderança e no cuidado com a Igreja.
+              </p>
+            </div>
+            
+            <div className="relative p-4 md:p-6 bg-white dark:bg-slate-900 rounded-2xl md:rounded-3xl shadow-lg overflow-hidden">
+               <img 
+                 src={presbiterosImg} 
+                 alt="Conselho de Presbíteros" 
+                 className="w-full h-auto rounded-xl md:rounded-2xl object-cover"
+               />
             </div>
           </section>
 
@@ -160,3 +181,4 @@ const QuemSomos = () => {
 };
 
 export default QuemSomos;
+

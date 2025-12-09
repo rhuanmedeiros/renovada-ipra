@@ -15,6 +15,7 @@ import {
   Check
 } from "lucide-react";
 import { useState } from "react";
+import { DynamicBackgroundDesktop } from "@/components/DynamicBackgroundDesktop";
 
 const Doacoes = () => {
   useScrollToTop(); // Garante scroll para o topo ao carregar
@@ -60,7 +61,8 @@ CNPJ: 01.570.203/0001-86`;
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-church-primary/25 dark:from-slate-900 dark:to-church-primary/20">
+  <DynamicBackgroundDesktop enableMobile={true}>
+    <div className="min-h-screen flex flex-col">
       <Header />
       
       <main className="pt-16">
@@ -294,6 +296,7 @@ CNPJ: 01.570.203/0001-86`;
       <Footer />
       <WhatsAppFloat />
     </div>
+  </DynamicBackgroundDesktop>
   );
 };
 

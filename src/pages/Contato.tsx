@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { schedule } from "@/data/schedule";
+import { DynamicBackgroundDesktop } from "@/components/DynamicBackgroundDesktop";
 
 const Contato = () => {
   useScrollToTop();
@@ -51,7 +52,8 @@ const Contato = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-church-primary/25 dark:from-slate-900 dark:to-church-primary/20">
+  <DynamicBackgroundDesktop enableMobile={true}>
+    <div className="min-h-screen flex flex-col">
       <Header />
       
       <main className="pt-16 xl:pt-24 2xl:pt-28">
@@ -285,6 +287,7 @@ const Contato = () => {
       <Footer />
       <WhatsAppFloat />
     </div>
+  </DynamicBackgroundDesktop>
   );
 };
 
