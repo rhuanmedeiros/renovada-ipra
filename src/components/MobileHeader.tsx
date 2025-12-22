@@ -2,8 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { ThemeToggle } from "./ui/theme-toggle";
-import iconRenovada from "@/assets/ICON-RENOVADA.png";
+import iconRenovada from "@/assets/Icon.svg";
 
 // Itens do menu unificados
 const menuItems = [
@@ -204,7 +203,7 @@ const MobileHeader = () => {
   return (
   <header ref={headerRef} className="fixed top-0 left-0 right-0 z-[9999] md:hidden p-3 sm:p-4 pointer-events-none">
       {/* Header Flutuante com Glassmorphism */}
-      <div className="mx-auto max-w-md rounded-2xl bg-white/15 dark:bg-black/25 backdrop-blur-xl border border-white/30 dark:border-white/15 shadow-xl pointer-events-auto">
+      <div className="mx-auto max-w-md rounded-2xl bg-black/10 backdrop-blur-md border border-white/20 shadow-xl pointer-events-auto">
         <div className="px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-1.5 sm:space-x-2" onClick={closeMenu}>
@@ -264,19 +263,11 @@ const MobileHeader = () => {
               <div className="pt-3">
                 <Link to="/doacoes" onClick={closeMenu} className="block">
                   <Button
-                    className="w-full bg-church-primary hover:bg-church-primary-dark text-white rounded-lg md:rounded-2xl transition-all duration-200 py-3"
+                    className="w-full bg-[#009bde] hover:bg-[#008ac6] text-white rounded-lg md:rounded-2xl transition-all duration-200 py-3"
                   >
                     Contribua
                   </Button>
                 </Link>
-              </div>
-
-              {/* Theme Toggle for Mobile */}
-              <div className="flex items-center justify-start py-2 border-t border-white/10 dark:border-white/5 mt-2 pt-3">
-                <span className={`text-xs font-medium mr-2 ${textClass}`}>
-                  Tema:
-                </span>
-                <ThemeToggle />
               </div>
             </div>
           </div>

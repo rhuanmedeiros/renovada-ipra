@@ -1,29 +1,51 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Card, CardContent } from "@/components/ui/card";
+import { GlassCard, GlassCardContent } from "@/components/ui/glass-card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Users, Clock } from "lucide-react";
 import { schedule } from "@/data/schedule";
+import { DynamicBackgroundDesktop } from "@/components/DynamicBackgroundDesktop";
+import { useEffect, useState } from "react";
 
 const Cultos = () => {
+  const [overlayOpacity, setOverlayOpacity] = useState(0.85);
+
   const handleLocationClick = () => {
     const address = "Camilo Ramalho Mata 181, Astorga, PR, Brazil";
     const encodedAddress = encodeURIComponent(address);
     window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const y = window.scrollY;
+      // Start more opaque and reveal the photo background as the user scrolls.
+      const nextOpacity = Math.max(0.35, 0.85 - (y / 800));
+      setOverlayOpacity(nextOpacity);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-  <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-church-primary/25 dark:from-slate-900 dark:to-church-primary/20">
+  <DynamicBackgroundDesktop enableMobile>
+    <div className="min-h-screen flex flex-col relative">
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 -z-10 bg-black transition-opacity duration-300"
+        style={{ opacity: overlayOpacity }}
+      />
       <Header />
 
-  <main className="flex-grow pt-16 pb-12">
-        <div className="container mx-auto px-2">
-       {/* Horários de Cultos (dados compartilhados) */}
-          <section className="py-20">
-          <div className="container mx-auto px-4">
+    <main className="flex-grow pt-16 pb-12">
+          <div className="container mx-auto px-2">
+         {/* Horários de Cultos (dados compartilhados) */}
+            <section className="py-20">
+            <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl overflow-hidden shadow-lg bg-white dark:bg-slate-900">
-                <CardContent className="p-8 md:p-12">
+              <GlassCard className="rounded-lg md:rounded-2xl xl:rounded-3xl overflow-hidden shadow-lg">
+                <GlassCardContent className="p-8 md:p-12">
                   <div className="text-center mb-8">
                     <div className="w-20 h-20 bg-church-primary/10 dark:bg-church-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
                       <Users className="w-10 h-10 text-church-primary" />
@@ -60,8 +82,8 @@ const Cultos = () => {
                       <p className="text-sm text-yellow-700 dark:text-yellow-300">Recomendamos chegar 15 minutos antes do início do culto para um melhor acolhimento.</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </GlassCardContent>
+              </GlassCard>
             </div>
           </div>
         </section>
@@ -75,8 +97,8 @@ const Cultos = () => {
                 e obter direções detalhadas até nossa igreja.
               </p>
               
-              <Card className="rounded-3xl overflow-hidden shadow-xl bg-white dark:bg-slate-900">
-                <CardContent className="p-0">
+              <GlassCard className="rounded-3xl overflow-hidden shadow-xl">
+                <GlassCardContent className="p-0">
                   <div className="relative">
                     {/* Google Maps Embed */}
                     <div className="w-full h-[400px] md:h-[500px] relative">
@@ -94,8 +116,8 @@ const Cultos = () => {
                     
                     {/* Overlay com informações */}
                     <div className="absolute bottom-4 left-4 right-4">
-                      <Card className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-0">
-                        <CardContent className="p-4">
+                      <GlassCard className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-0">
+                        <GlassCardContent className="p-4">
                           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                             <div>
                               <h3 className="text-3xl font-semibold mb-4 text-foreground">Igreja Renovada</h3>
@@ -111,19 +133,20 @@ const Cultos = () => {
                               Abrir no Maps
                             </Button>
                           </div>
-                        </CardContent>
-                      </Card>
+                        </GlassCardContent>
+                      </GlassCard>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </GlassCardContent>
+              </GlassCard>
             </div>
           </section>
-        </div>
-      </main>
+          </div>
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+  </DynamicBackgroundDesktop>
   );
 };
 

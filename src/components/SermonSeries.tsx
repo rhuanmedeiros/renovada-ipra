@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { GlassCard, GlassCardContent } from "@/components/ui/glass-card";
 import { Button } from "@/components/ui/button";
 import { SermonSeries as SermonSeriesType, SermonVideo } from "@/data/sermons";
 import { ChevronDown, ChevronUp, Play } from "lucide-react";
@@ -113,8 +113,8 @@ const SermonSeries = ({ series }: SermonSeriesProps) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 xl:gap-8 2xl:gap-10 animate-in slide-in-from-top-4 duration-500">
           {series.videos.length > 0 ? (
             series.videos.map((video, index) => (
-              <Card key={index} className="overflow-hidden rounded-lg md:rounded-2xl xl:rounded-3xl shadow-church hover:shadow-church-lg xl:hover:shadow-2xl transition-all duration-300 group cursor-pointer transform hover:scale-[1.02] xl:hover:scale-[1.03]">
-                <CardContent className="p-0">
+              <GlassCard key={index} className="overflow-hidden rounded-lg md:rounded-2xl xl:rounded-3xl shadow-church hover:shadow-church-lg xl:hover:shadow-2xl transition-all duration-300 group cursor-pointer transform hover:scale-[1.02] xl:hover:scale-[1.03]">
+                <GlassCardContent className="p-0">
                   <div 
                     className="aspect-video relative group bg-slate-100 dark:bg-slate-800"
                     onClick={() => openVideoModal(video)}
@@ -181,8 +181,8 @@ const SermonSeries = ({ series }: SermonSeriesProps) => {
                       <p className="text-muted-foreground text-xs md:text-sm xl:text-base 2xl:text-lg">{video.date}</p>
                     )}
                   </div>
-                </CardContent>
-              </Card>
+                </GlassCardContent>
+              </GlassCard>
             ))
           ) : (
             <div className="col-span-full flex flex-col items-center justify-center py-16 xl:py-20 2xl:py-24 text-center">

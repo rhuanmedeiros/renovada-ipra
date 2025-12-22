@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { GlassCard, GlassCardContent } from "@/components/ui/glass-card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
@@ -15,7 +15,7 @@ import {
   Users,
   ExternalLink
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { schedule } from "@/data/schedule";
 import { DynamicBackgroundDesktop } from "@/components/DynamicBackgroundDesktop";
 
@@ -24,6 +24,7 @@ const Contato = () => {
   
   const { toast } = useToast();
   const [copiedData, setCopiedData] = useState<string | null>(null);
+  const [overlayOpacity, setOverlayOpacity] = useState(0.85);
 
   const copyToClipboard = (text: string, type: string) => {
     navigator.clipboard.writeText(text);
@@ -51,9 +52,26 @@ const Contato = () => {
     window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const y = window.scrollY;
+      // Start more opaque and reveal the photo background as the user scrolls.
+      const nextOpacity = Math.max(0.35, 0.85 - (y / 800));
+      setOverlayOpacity(nextOpacity);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
   <DynamicBackgroundDesktop enableMobile={true}>
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative">
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 -z-10 bg-black transition-opacity duration-300"
+        style={{ opacity: overlayOpacity }}
+      />
       <Header />
       
       <main className="pt-16 xl:pt-24 2xl:pt-28">
@@ -61,12 +79,12 @@ const Contato = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto">
               <h2 className="text-xl xl:text-4xl 2xl:text-5xl font-semibold text-center mb-12 xl:mb-16 2xl:mb-20">
-                Estamos aqui para ouvir você, orar juntos e caminhar ao seu lado.
+                Estamos aqui para ouvir você, <br></br>orar juntos e caminhar ao seu lado.
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-8 2xl:gap-12 mb-12 xl:mb-16 2xl:mb-20">
-                <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl shadow-lg xl:shadow-2xl text-center group hover:shadow-xl xl:hover:shadow-3xl transition-all duration-300 transform hover:scale-[1.02] xl:hover:scale-[1.03]">
-                  <CardContent className="p-6 xl:p-8 2xl:p-10">
+                <GlassCard className="rounded-lg md:rounded-2xl xl:rounded-3xl shadow-lg xl:shadow-2xl text-center group hover:shadow-xl xl:hover:shadow-3xl transition-all duration-300 transform hover:scale-[1.02] xl:hover:scale-[1.03]">
+                  <GlassCardContent className="p-6 xl:p-8 2xl:p-10">
                     <div className="w-14 h-14 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20 bg-church-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 xl:mb-6 2xl:mb-8 group-hover:bg-church-primary/20 transition-colors duration-300">
                       <Phone className="w-7 h-7 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10 text-church-primary" />
                     </div>
@@ -88,15 +106,15 @@ const Contato = () => {
                     <Button 
                       size="sm"
                       onClick={handlePhoneClick}
-                      className="bg-church-primary hover:bg-church-primary-dark text-white rounded-full px-4 xl:px-6 2xl:px-8 xl:py-3 2xl:py-4 xl:text-base 2xl:text-lg"
+                      className="bg-[#009bde] hover:bg-[#008ac6] text-white rounded-full px-4 xl:px-6 2xl:px-8 xl:py-3 2xl:py-4 xl:text-base 2xl:text-lg"
                     >
                       Ligar
                     </Button>
-                  </CardContent>
-                </Card>
+                  </GlassCardContent>
+                </GlassCard>
 
-                <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl shadow-lg xl:shadow-2xl text-center group hover:shadow-xl xl:hover:shadow-3xl transition-all duration-300 transform hover:scale-[1.02] xl:hover:scale-[1.03]">
-                  <CardContent className="p-6 xl:p-8 2xl:p-10">
+                <GlassCard className="rounded-lg md:rounded-2xl xl:rounded-3xl shadow-lg xl:shadow-2xl text-center group hover:shadow-xl xl:hover:shadow-3xl transition-all duration-300 transform hover:scale-[1.02] xl:hover:scale-[1.03]">
+                  <GlassCardContent className="p-6 xl:p-8 2xl:p-10">
                     <div className="w-14 h-14 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20 bg-church-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 xl:mb-6 2xl:mb-8 group-hover:bg-church-primary/20 transition-colors duration-300">
                       <Mail className="w-7 h-7 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10 text-church-primary" />
                     </div>
@@ -118,32 +136,32 @@ const Contato = () => {
                     <Button 
                       size="sm"
                       onClick={handleEmailClick}
-                      className="bg-church-primary hover:bg-church-primary-dark text-white rounded-full px-4"
+                      className="bg-[#009bde] hover:bg-[#008ac6] text-white rounded-full px-4"
                     >
                       Enviar
                     </Button>
-                  </CardContent>
-                </Card>
+                  </GlassCardContent>
+                </GlassCard>
 
-                <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="w-14 h-14 bg-church-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-church-primary/20 transition-colors duration-300">
-                      <MapPin className="w-7 h-7 text-church-primary" />
+                <GlassCard className="rounded-lg md:rounded-2xl xl:rounded-3xl shadow-lg xl:shadow-2xl text-center group hover:shadow-xl xl:hover:shadow-3xl transition-all duration-300 transform hover:scale-[1.02] xl:hover:scale-[1.03]">
+                  <GlassCardContent className="p-6 xl:p-8 2xl:p-10">
+                    <div className="w-14 h-14 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20 bg-church-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 xl:mb-6 2xl:mb-8 group-hover:bg-church-primary/20 transition-colors duration-300">
+                      <MapPin className="w-7 h-7 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10 text-church-primary" />
                     </div>
                     <h3 className="text-3xl font-semibold mb-4 text-foreground">Endereço</h3>
-                    <div className="mb-3">
-                      <p className="text-sm font-medium">Camilo Ramalho Mata, 181</p>
-                      <p className="text-xs text-muted-foreground">Astorga - PR</p>
+                    <div className="mb-3 xl:mb-4 2xl:mb-6">
+                      <p className="text-sm xl:text-base 2xl:text-lg font-medium">Camilo Ramalho Mata, 181</p>
+                      <p className="text-xs xl:text-sm 2xl:text-base text-muted-foreground">Astorga - PR</p>
                     </div>
                     <Button 
                       size="sm"
                       onClick={handleLocationClick}
-                      className="bg-church-primary hover:bg-church-primary-dark text-white rounded-full px-4"
+                      className="bg-[#009bde] hover:bg-[#008ac6] text-white rounded-full px-4 xl:px-6 2xl:px-8 xl:py-3 2xl:py-4 xl:text-base 2xl:text-lg"
                     >
                       Ver Mapa
                     </Button>
-                  </CardContent>
-                </Card>
+                  </GlassCardContent>
+                </GlassCard>
               </div>
             </div>
           </div>
@@ -158,8 +176,8 @@ const Contato = () => {
                 e obter direções detalhadas até nossa igreja.
               </p>
               
-              <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl overflow-hidden shadow-xl">
-                <CardContent className="p-0">
+              <GlassCard className="rounded-lg md:rounded-2xl xl:rounded-3xl overflow-hidden shadow-xl">
+                <GlassCardContent className="p-0">
                   <div className="relative">
                     <div className="w-full h-[400px] md:h-[500px] relative">
                       <iframe
@@ -175,8 +193,8 @@ const Contato = () => {
                     </div>
                     
                     <div className="absolute bottom-4 left-4 right-4">
-                      <Card className="bg-white/95 backdrop-blur-sm border-0">
-                        <CardContent className="p-4">
+                      <GlassCard className="bg-white/95 backdrop-blur-sm border-0">
+                        <GlassCardContent className="p-4">
                           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                             <div>
                               <h3 className="text-3xl font-semibold mb-4 text-foreground">Igreja Renovada</h3>
@@ -186,18 +204,18 @@ const Contato = () => {
                             </div>
                             <Button 
                               onClick={handleLocationClick}
-                              className="bg-church-primary hover:bg-church-primary-dark text-white rounded-lg md:rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                              className="bg-[#009bde] hover:bg-[#008ac6] text-white rounded-lg md:rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                             >
                               <ExternalLink className="w-4 h-4 mr-2" />
                               Abrir no Maps
                             </Button>
                           </div>
-                        </CardContent>
-                      </Card>
+                        </GlassCardContent>
+                      </GlassCard>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </GlassCardContent>
+              </GlassCard>
             </div>
           </div>
         </section>
@@ -205,8 +223,8 @@ const Contato = () => {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl overflow-hidden shadow-lg bg-white dark:bg-slate-900">
-                <CardContent className="p-8 md:p-12">
+              <GlassCard className="rounded-lg md:rounded-2xl xl:rounded-3xl overflow-hidden shadow-lg">
+                <GlassCardContent className="p-8 md:p-12">
                   <div className="text-center mb-8">
                     <div className="w-20 h-20 bg-church-primary/10 dark:bg-church-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
                       <Users className="w-10 h-10 text-church-primary" />
@@ -243,8 +261,8 @@ const Contato = () => {
                       <p className="text-sm text-yellow-700 dark:text-yellow-300">Recomendamos chegar 15 minutos antes do início do culto para um melhor acolhimento.</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </GlassCardContent>
+              </GlassCard>
             </div>
           </div>
         </section>
@@ -264,7 +282,7 @@ const Contato = () => {
                 <Button 
                   size="lg"
                   onClick={handleLocationClick}
-                  className="bg-church-primary hover:bg-church-primary-dark text-white rounded-lg md:rounded-2xl text-lg px-8 py-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                  className="bg-[#009bde] hover:bg-[#008ac6] text-white rounded-lg md:rounded-2xl text-lg px-8 py-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                 >
                   <MapPin className="w-5 h-5 mr-2" />
                   Como Chegar
@@ -273,7 +291,7 @@ const Contato = () => {
                   size="lg"
                   variant="outline"
                   onClick={handleEmailClick}
-                  className="rounded-lg md:rounded-2xl text-lg px-8 py-6 border-church-primary text-church-primary hover:bg-church-primary hover:text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                  className="rounded-lg md:rounded-2xl text-lg px-8 py-6 border-[#009bde] text-[#009bde] hover:bg-[#009bde] hover:text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                 >
                   <Mail className="w-5 h-5 mr-2" />
                   Nos Envie um Email

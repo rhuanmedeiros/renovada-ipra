@@ -21,6 +21,23 @@ Debug rápido: abrir `http://localhost:5173` (ou porta mostrada pelo Vite). Use 
 
 Nota: README menciona alternativas com `bun` — preferir `npm` a menos que o README diga o oposto.
 
+## Refatoração: remoção de código morto (padrão)
+
+Quando o objetivo for excluir códigos mortos (arquivos/exports não usados), siga este fluxo **sem mudar o UX** e com risco mínimo:
+
+- Comece pelos entrypoints e rotas (o que define o bundle): `src/main.tsx` e `src/App.tsx`.
+- Use **flags temporárias via CLI** (não mexer em `tsconfig*` a menos que seja pedido):
+	- `npx tsc --noEmit --noUnusedLocals --noUnusedParameters`
+- Use um grafo para detectar módulos órfãos:
+	- `npx -y madge src --extensions ts,tsx --ts-config tsconfig.json --orphans`
+- Faça limpeza **conservadora** em `src/components/ui/`:
+	- Remova primeiro apenas demos/arquivos vazios/duplicatas claras.
+	- Evite apagar componentes de UI só porque estão órfãos; faça em lotes pequenos (5–10) e valide.
+- Valide a cada lote:
+	- `npm run lint`
+	- `npm run build`
+- Não remover assets (`public/`, `src/assets/`) sem confirmar uso por import/strings/CSS.
+
 ## Padrões e convenções específicas deste projeto
 
 - TypeScript obrigatório; novos componentes e hooks devem ser .tsx/.ts.

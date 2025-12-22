@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import batismoWebm from "@/assets/Imagens-Fotos/Mobile/batismo.webm";
 import video1webm from "@/assets/Imagens-Fotos/Mobile/video1.webm";
 import video4webm from "@/assets/Imagens-Fotos/Mobile/video4.webm";
 import video5webm from "@/assets/Imagens-Fotos/Mobile/video5.webm";
 
 const videos = [
+  { webm: batismoWebm },
   { webm: video1webm },
   { webm: video4webm },
   { webm: video5webm },
@@ -14,9 +16,24 @@ type VideoRef = HTMLVideoElement | null;
 
 const MobileHeroBackground = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.matchMedia("(min-width: 1024px)").matches;
+    }
+    return false;
+  });
   const videoRefs = useRef<VideoRef[]>([]);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    const handleChange = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
   const playVideo = useCallback((index: number) => {
+    if (isDesktop) return;
     const video = videoRefs.current[index];
     if (!video) return;
 
@@ -27,13 +44,15 @@ const MobileHeroBackground = () => {
         // Autoplay was prevented.
       });
     }
-  }, []);
+  }, [isDesktop]);
 
   const handleVideoEnd = () => {
     setCurrentIndex((prev) => (prev + 1) % videos.length);
   };
 
   useEffect(() => {
+    if (isDesktop) return;
+    
     videoRefs.current.forEach((video, index) => {
       if (!video) return;
 
@@ -43,7 +62,9 @@ const MobileHeroBackground = () => {
         video.pause();
       }
     });
-  }, [currentIndex, playVideo]);
+  }, [currentIndex, playVideo, isDesktop]);
+
+  if (isDesktop) return null;
 
   return (
     <div className="absolute inset-0 lg:hidden -z-10">

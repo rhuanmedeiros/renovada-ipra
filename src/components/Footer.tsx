@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Church, Instagram, Youtube, MapPin, Clock, Phone, Mail, Facebook, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
-import iconRenovada from "@/assets/ICON-RENOVADA.png";
+import iconRenovada from "@/assets/Icon.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-white border-t border-slate-700">
+    <footer className="bg-black/60 backdrop-blur-lg text-white border-t border-white/20">
       <div className="container mx-auto px-4 py-16 xl:py-20 2xl:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 xl:gap-12 2xl:gap-16 mb-8 xl:mb-12 2xl:mb-16">
           {/* Logo and Description */}

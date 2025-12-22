@@ -2,8 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { ThemeToggle } from "./ui/theme-toggle";
-import iconRenovada from "@/assets/ICON-RENOVADA.png";
+import iconRenovada from "@/assets/Icon.svg";
 
 // Itens do menu unificados - edite aqui para adicionar/remover itens
 const menuItems = [
@@ -31,7 +30,7 @@ const DesktopHeader = () => {
   const menuItemHover = "hover:text-primary";
 
   return (
-    <header className="fixed top-0 w-full bg-background/80 backdrop-blur-sm border-b border-border z-[9999] transition-colors duration-200 hidden md:block">
+    <header className="fixed top-0 w-full bg-black/10 backdrop-blur-lg border-b border-white/20 z-[9999] transition-colors duration-200 hidden md:block">
       <div className="container mx-auto px-6 py-4 xl:py-6 2xl:py-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -55,14 +54,11 @@ const DesktopHeader = () => {
 
           {/* CTA Button + Menu Toggle */}
           <div className="flex items-center space-x-4 xl:space-x-6">
-            <div className="hidden md:block">
-              <ThemeToggle />
-            </div>
             <Link to="/doacoes">
               <div className="hidden sm:inline-flex">
                 <Button 
                   size="sm"
-                  className="bg-church-primary hover:bg-church-primary-dark text-white dark:text-black rounded-lg md:rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg xl:px-6 xl:py-3 xl:text-base 2xl:px-8 2xl:py-4 2xl:text-lg"
+                    className="bg-[#009bde] hover:bg-[#008ac6] text-white rounded-lg md:rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg xl:px-6 xl:py-3 xl:text-base 2xl:px-8 2xl:py-4 2xl:text-lg"
                 >
                   Contribua
                 </Button>
@@ -98,17 +94,12 @@ const DesktopHeader = () => {
                   </Link>
                 ))}
               </div>
-
-              {/* Theme Toggle for Mobile */}
-              <div className="flex items-center justify-start py-4 border-t border-border mt-2">
-                <ThemeToggle />
-              </div>
               
               <Link to="/doacoes" onClick={closeMenu}>
                 <div className="w-full mt-2">
                   <Button 
                     size="sm"
-                    className="w-full bg-church-primary hover:bg-church-primary-dark text-white dark:text-black rounded-lg md:rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                    className="w-full bg-[#009bde] hover:bg-[#008ac6] text-white rounded-lg md:rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                   >
                     Contribua
                   </Button>

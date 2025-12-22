@@ -37,29 +37,27 @@ const Index = () => {
   ];
 
   // Componente reutilizável para os botões de ação
-  const ActionButton = ({ 
-    button, 
-    isDesktop = false 
+    const ActionButton = ({ 
+    button
   }: { 
-    button: typeof actionButtons[0], 
-    isDesktop?: boolean 
+    button: typeof actionButtons[0]
   }) => (
     <Link to={button.link}>
       <Button 
-        size={isDesktop ? "lg" : "default"}
-        variant={button.variant}
-        className={`w-full justify-between h-auto transform transition-all duration-300 hover:scale-[1.02] ${
-          isDesktop 
-            ? "rounded-2xl xl:rounded-3xl text-base xl:text-lg 2xl:text-xl px-6 xl:px-8 2xl:px-8 py-4 xl:py-6 2xl:py-8" 
-            : "rounded-lg text-sm px-4 py-2.5"
-        }`}
+        size="default"
+        className={`w-full justify-between h-auto transform transition-all duration-300 hover:scale-[1.02] rounded-lg lg:rounded-2xl xl:rounded-3xl text-sm lg:text-base xl:text-lg px-4 lg:px-6 xl:px-8 py-2.5 lg:py-4 ${
+          button.variant === "default"
+            ? "!bg-[#009bde] hover:!bg-[#008ac6] !text-white !border-transparent"
+            : "border-[#009bde] text-[#009bde] bg-white/90 dark:bg-slate-900/80 hover:bg-[#009bde] hover:text-white"
+        } !shadow-none`}
+        style={button.variant === "default" ? { backgroundColor: "#009bde", color: "#fff" } : undefined}
       >
-        <div className={isDesktop ? "text-left" : ""}>
-          <div className={isDesktop ? "font-semibold" : ""}>
+        <div className="text-left">
+          <div className="font-semibold">
             {button.text}
           </div>
         </div>
-        <ArrowRight className={isDesktop ? "w-5 h-5 xl:w-6 xl:h-6 2xl:w-8 2xl:h-8" : "w-4 h-4"} />
+        <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
       </Button>
     </Link>
   );
@@ -77,19 +75,19 @@ const Index = () => {
               <div className="max-w-7xl xl:max-w-8xl 2xl:max-w-9xl mx-auto">
                 <div className="hidden lg:grid grid-cols-12 gap-6 xl:gap-8 2xl:gap-10 items-center">
                   <div className="col-span-6">
-                    <HeroVideo url="https://www.youtube.com/watch?v=2ypEiChnom8" />
+                    <HeroVideo url="https://www.youtube.com/watch?v=LOQvrMobXy0" />
                   </div>
 
                   <div className="col-span-6 flex flex-col gap-4 xl:gap-6 2xl:gap-8">
                     {actionButtons.map((button) => (
-                      <ActionButton key={button.id} button={button} isDesktop={true} />
+                      <ActionButton key={button.id} button={button} />
                     ))}
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-3 w-full max-w-xl lg:hidden pb-24 sm:pb-24">
                   {actionButtons.map((button) => (
-                    <ActionButton key={button.id} button={button} isDesktop={false} />
+                    <ActionButton key={button.id} button={button} />
                   ))}
                 </div>
               </div>
@@ -126,7 +124,7 @@ const Index = () => {
                       <Link to="/doacoes">
                         <Button 
                           size="lg"
-                          className="bg-church-primary hover:bg-church-primary-dark text-white dark:text-black rounded-lg md:rounded-2xl xl:rounded-3xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg px-8 py-3 xl:px-12 xl:py-6 2xl:px-16 2xl:py-8 text-base xl:text-xl 2xl:text-2xl font-semibold"
+                          className="bg-[#009bde] hover:bg-[#008ac6] text-white rounded-lg md:rounded-2xl xl:rounded-3xl transition-all duration-300 hover:scale-[1.02] !shadow-none px-8 py-3 xl:px-12 xl:py-6 2xl:px-16 2xl:py-8 text-base xl:text-xl 2xl:text-2xl font-semibold"
                         >
                           Contribua
                         </Button>

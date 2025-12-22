@@ -63,6 +63,16 @@ export const sermonSeriesData: SermonSeries[] = [
       {
         title: '08 - OS DOIS TEMPLOS - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
         url: 'https://youtu.be/2ypEiChnom8?si=j7_ANz4WDCGTc5na'
+      },
+      {
+        title: '09 - TEMPOS DE REFRIGÉRIO - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
+        url: 'https://www.youtube.com/watch?v=s4luWy_1BlM',
+        date: ''
+      },
+      {
+        title: '10 - PROFECIA VIVA - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
+        url: 'https://www.youtube.com/watch?v=aMSn2mVlR-Q',
+        date: ''
       }
     ]
   },

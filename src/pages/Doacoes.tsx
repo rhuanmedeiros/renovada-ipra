@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { GlassCard, GlassCardContent, GlassCardHeader, GlassCardTitle } from "@/components/ui/glass-card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
@@ -14,7 +14,7 @@ import {
   Copy,
   Check
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { DynamicBackgroundDesktop } from "@/components/DynamicBackgroundDesktop";
 
 const Doacoes = () => {
@@ -23,6 +23,19 @@ const Doacoes = () => {
   const { toast } = useToast();
   const [copiedPix, setCopiedPix] = useState(false);
   const [showQuiloModal, setShowQuiloModal] = useState(false);
+  const [overlayOpacity, setOverlayOpacity] = useState(0.85);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const y = window.scrollY;
+      // Start more opaque and reveal the photo background as the user scrolls.
+      const nextOpacity = Math.max(0.35, 0.85 - (y / 800));
+      setOverlayOpacity(nextOpacity);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -62,7 +75,12 @@ CNPJ: 01.570.203/0001-86`;
 
   return (
   <DynamicBackgroundDesktop enableMobile={true}>
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative">
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 -z-10 bg-black transition-opacity duration-300"
+        style={{ opacity: overlayOpacity }}
+      />
       <Header />
       
       <main className="pt-16">
@@ -74,14 +92,14 @@ CNPJ: 01.570.203/0001-86`;
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {/* PIX */}
-                <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl shadow-lg flex flex-col transform transition-all duration-300 hover:scale-[1.02]">
-                  <CardHeader className="text-center pb-4">
+                <GlassCard className="rounded-lg md:rounded-2xl xl:rounded-3xl shadow-lg flex flex-col transform transition-all duration-300 hover:scale-[1.02]">
+                  <GlassCardHeader className="text-center pb-4">
                     <div className="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Smartphone className="w-7 h-7 md:w-8 md:h-8 text-primary" />
                     </div>
-                    <CardTitle className="text-xl md:text-2xl">PIX</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4 flex-1 flex flex-col px-6">
+                    <GlassCardTitle className="text-xl md:text-2xl">PIX</GlassCardTitle>
+                  </GlassCardHeader>
+                  <GlassCardContent className="space-y-4 flex-1 flex flex-col px-6">
                     <div className="flex-1 space-y-4">
                       <div>
                         <p className="text-sm text-muted-foreground mb-2">Chave PIX (CNPJ):</p>
@@ -106,18 +124,18 @@ CNPJ: 01.570.203/0001-86`;
                       <Smartphone className="w-4 h-4 mr-2" />
                       Doar via PIX
                     </Button>
-                  </CardContent>
-                </Card>
+                  </GlassCardContent>
+                </GlassCard>
 
                 {/* Transferência Bancária */}
-                <Card className="rounded-lg md:rounded-2xl xl:rounded-3xl shadow-lg flex flex-col transform transition-all duration-300 hover:scale-[1.02]">
-                  <CardHeader className="text-center pb-4">
+                <GlassCard className="rounded-lg md:rounded-2xl xl:rounded-3xl shadow-lg flex flex-col transform transition-all duration-300 hover:scale-[1.02]">
+                  <GlassCardHeader className="text-center pb-4">
                     <div className="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                       <CreditCard className="w-7 h-7 md:w-8 md:h-8 text-primary" />
                     </div>
-                    <CardTitle className="text-xl md:text-2xl">Transferência Bancária</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4 flex-1 flex flex-col px-6">
+                    <GlassCardTitle className="text-xl md:text-2xl">Transferência Bancária</GlassCardTitle>
+                  </GlassCardHeader>
+                  <GlassCardContent className="space-y-4 flex-1 flex flex-col px-6">
                     <div className="flex-1">
                       <div className="space-y-3">
                         <div>
@@ -149,8 +167,8 @@ CNPJ: 01.570.203/0001-86`;
                       <CreditCard className="w-4 h-4 mr-2" />
                       Copiar Dados Bancários
                     </Button>
-                  </CardContent>
-                </Card>
+                  </GlassCardContent>
+                </GlassCard>
               </div>
             </div>
           </div>
@@ -175,8 +193,8 @@ CNPJ: 01.570.203/0001-86`;
         <section className="py-12 md:py-16 lg:py-20 bg-gradient-section">
           <div className="container mx-auto px-4 md:px-8 lg:px-16">
             <div className="max-w-3xl mx-auto">
-              <Card className="rounded-lg md:rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-[1.01]">
-                <CardContent className="p-6 md:p-8 lg:p-10 text-center space-y-6">
+              <GlassCard className="rounded-lg md:rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-[1.01]">
+                <GlassCardContent className="p-6 md:p-8 lg:p-10 text-center space-y-6">
                   <div className="w-16 h-16 md:w-20 md:h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
                     <ShoppingCart className="w-8 h-8 md:w-10 md:h-10 text-orange-600" />
                   </div>
@@ -223,8 +241,8 @@ CNPJ: 01.570.203/0001-86`;
                       Participar da Campanha
                     </Button>
                   </div>
-                </CardContent>
-              </Card>
+                </GlassCardContent>
+              </GlassCard>
             </div>
           </div>
         </section>
@@ -232,8 +250,8 @@ CNPJ: 01.570.203/0001-86`;
         {/* Modal Quilo do Amor */}
         {showQuiloModal && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[90] p-4">
-            <Card className="max-w-md w-full rounded-lg md:rounded-2xl xl:rounded-3xl">
-              <CardContent className="p-8 text-center space-y-6">
+            <GlassCard className="max-w-md w-full rounded-lg md:rounded-2xl xl:rounded-3xl">
+              <GlassCardContent className="p-8 text-center space-y-6">
                 <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
                   <Heart className="w-8 h-8 text-orange-600" />
                 </div>
@@ -263,8 +281,8 @@ CNPJ: 01.570.203/0001-86`;
                     Fechar
                   </Button>
                 </div>
-              </CardContent>
-            </Card>
+              </GlassCardContent>
+            </GlassCard>
           </div>
         )}
 
