@@ -28,7 +28,6 @@ interface DynamicBackgroundDesktopProps {
 
 export function DynamicBackgroundDesktop({ children, enableMobile = false }: DynamicBackgroundDesktopProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [headerHeight, setHeaderHeight] = useState(0);
 
   const shuffledImages = useMemo(() => [...desktopImages].sort(() => Math.random() - 0.5), []);
 
@@ -43,25 +42,6 @@ export function DynamicBackgroundDesktop({ children, enableMobile = false }: Dyn
     return () => clearInterval(interval);
   }, [shuffledImages.length]);
 
-  useEffect(() => {
-    const updateHeaderHeight = () => {
-      const headerElement = document.querySelector('header');
-      if (headerElement) {
-        setHeaderHeight(headerElement.getBoundingClientRect().height);
-      }
-    };
-
-    updateHeaderHeight();
-    window.addEventListener('resize', updateHeaderHeight);
-
-    return () => {
-      window.removeEventListener('resize', updateHeaderHeight);
-    };
-  }, []);
-
-  const backgroundTop = headerHeight ? `${headerHeight}px` : undefined;
-  const backgroundHeight = headerHeight ? `calc(100vh - ${headerHeight}px)` : undefined;
-
   return (
     <>
       <div className={enableMobile ? "block" : "hidden lg:block"} aria-hidden>
@@ -72,17 +52,11 @@ export function DynamicBackgroundDesktop({ children, enableMobile = false }: Dyn
             style={{
               backgroundImage: `url('${src}')`,
               opacity: currentIndex === index ? 1 : 0,
-              top: backgroundTop,
-              height: backgroundHeight,
             }}
           />
         ))}
         <div
           className="fixed top-0 left-0 right-0 bottom-0 -z-10 bg-gradient-to-b from-black/50 via-black/30 to-black/50 pointer-events-none"
-          style={{
-            top: backgroundTop,
-            height: backgroundHeight,
-          }}
         />
       </div>
 

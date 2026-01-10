@@ -30,7 +30,7 @@ const DesktopHeader = () => {
   const menuItemHover = "hover:text-primary";
 
   return (
-    <header className="fixed top-0 w-full bg-black/10 backdrop-blur-lg border-b border-white/20 z-[9999] transition-colors duration-200 hidden md:block">
+    <header className="fixed top-0 w-full bg-black/20 backdrop-blur-lg border-b border-white/20 z-[9999] transition-colors duration-200 hidden md:block">
       <div className="container mx-auto px-6 py-4 xl:py-6 2xl:py-8">
         <div className="flex items-center justify-between">
           {/* Logo */}

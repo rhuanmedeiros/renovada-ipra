@@ -1,5 +1,5 @@
 import serieAtual from "@/assets/Series/1- 40-dias.png";
-import seriechegueMais from "@/assets/Series/Banner Chegue+.svg";
+import seriechegueMais from "@/assets/Series/BannerChegueMais.png";
 import espiritosantoImg from "@/assets/Series/CapaSerieEspiritoSanto.png";
 
 export interface SermonVideo {
