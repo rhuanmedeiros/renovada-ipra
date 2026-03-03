@@ -15,7 +15,7 @@ export interface Ministerio {
 // Dados para a página de ministérios (apenas ministérios 1, 2 e 3)
 export const ministeriosData: Ministerio[] = [
   {
-    titulo: "Ministério de Jovens",
+    titulo: "Jovens e Adolescentes",
     descricao: "Um espaço para jovens crescerem na fé, fazerem amizades e descobrirem seu propósito.",
     imagem: jovemsFoto,
     botao: "Saiba Mais",
@@ -23,7 +23,7 @@ export const ministeriosData: Ministerio[] = [
     isExternal: true
   },
   {
-    titulo: "Ministério Infantil",
+    titulo: "Crianças",
     descricao: "Programas especiais para crianças aprenderem sobre Deus de forma divertida e segura.",
     imagem: ministerioCriancas,
     botao: "Saiba Mais",
@@ -40,7 +40,7 @@ export interface CardInicialData extends Ministerio {
 // Dados para a página inicial (todos os 4 cards)
 export const cardsInicialData: CardInicialData[] = [
   {
-    titulo: "Aliança Jovem",
+    titulo: "Jovens e Adolescentes",
     descricao: "Um espaço para jovens crescerem na fé, fazerem amizades e descobrirem seu propósito.",
     descricaoMobile: " ",
     imagem: jovemsFoto,
@@ -49,8 +49,8 @@ export const cardsInicialData: CardInicialData[] = [
     isExternal: true
   },
   {
-    titulo: " ",
-    descricao: " ",
+    titulo: "Crianças",
+    descricao: "Programas especiais para crianças aprenderem sobre Deus de forma divertida e segura.",
     descricaoMobile: " ",
     imagem: ministerioCriancas,
     botao: "Saiba Mais",

@@ -59,7 +59,7 @@ const Cultos = () => {
                       {schedule.map((s) => (
                         <div key={s.id} className="flex items-center justify-between p-4 rounded-2xl border group transition-all duration-300" style={{background: 'transparent'}}>
                           <div className="flex items-center gap-3">
-                            <div className={`w-3 h-3 rounded-full ${s.id === 'sabados' ? 'bg-orange-500' : 'bg-church-primary'}`}></div>
+                            <div className={`w-3 h-3 rounded-full ${s.id.startsWith('sabados') ? 'bg-orange-500' : 'bg-church-primary'}`}></div>
                             <div>
                               <span className="font-semibold text-lg text-foreground">{s.day}</span>
                               {s.note && <div className="text-xs text-muted-foreground">{s.note}</div>}
@@ -67,7 +67,7 @@ const Cultos = () => {
                           </div>
                           <div className="text-right">
                             {s.times.map((t) => (
-                              <div key={t} className={`font-bold ${s.id === 'sabados' ? 'text-orange-500' : 'text-church-primary'} text-lg`}>{t}</div>
+                              <div key={t} className={`font-bold ${s.id.startsWith('sabados') ? 'text-orange-500' : 'text-church-primary'} text-lg`}>{t}</div>
                             ))}
                           </div>
                         </div>

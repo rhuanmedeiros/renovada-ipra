@@ -22,10 +22,10 @@ const MinisteriosSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 xl:mb-20 2xl:mb-24">
           <h2 className="text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-4 xl:mb-6 2xl:mb-8">
-            Conheça nossos Ministérios
+            Conheça nossas Redes
           </h2>
           <p className="text-xl xl:text-2xl 2xl:text-3xl text-muted-foreground max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto leading-relaxed">
-            Encontre seu lugar e propósito através dos nossos diversos ministérios
+            Encontre seu lugar e propósito através das nossas diversas redes
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto">

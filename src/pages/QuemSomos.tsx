@@ -1,9 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import videoSrc from "@/assets/videoplayback.mp4";
-import pastorWilliam from "@/assets/Pastores/Untitled design/1.png";
-import pastorHuan from "@/assets/Pastores/Untitled design/3.png";
-import pastorPalma from "@/assets/Pastores/Untitled design/2.png";
+import pastorWilliam from "@/assets/Pastores/Untitled design/1.webp";
+import pastorHuan from "@/assets/Pastores/Untitled design/3.webp";
+import pastorPalma from "@/assets/Pastores/Untitled design/2.webp";
 import presbiterosImg from "@/assets/Presbiteros/presbiteros.jpg";
 import { DynamicBackgroundDesktop } from "@/components/DynamicBackgroundDesktop";
 import { GlassCard } from "@/components/ui/glass-card";
@@ -53,6 +53,9 @@ const QuemSomos = () => {
                   <img 
                     src={pastorWilliam}
                     alt="Pastor William Poso"
+                    fetchPriority="high"
+                    loading="eager"
+                    decoding="sync"
                     className="w-full h-full object-cover rounded-full translate-x-[15%] -translate-y-[25%] md:translate-x-[20%] md:-translate-y-[30%] xl:translate-x-[0%] xl:-translate-y-[15%]"
                     style={{
                       filter: 'grayscale(10%)'
@@ -77,6 +80,8 @@ const QuemSomos = () => {
                   <img 
                     src={pastorHuan}
                     alt="Pastor Huan Marvyn"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover rounded-full translate-x-[15%] -translate-y-[35%] md:translate-x-[20%] md:-translate-y-[25%] xl:translate-x-[0%] xl:-translate-y-[15%]"
                     style={{
                       filter: 'grayscale(10%)'
@@ -100,6 +105,8 @@ const QuemSomos = () => {
                 <div className="absolute top-0 right-0 w-40 h-40 md:w-56 md:h-56 xl:w-72 xl:h-72 2xl:w-80 2xl:h-80 opacity-90 dark:opacity-100 pointer-events-none transition-transform duration-300 hover:scale-105">
                   <img src={pastorPalma}
                     alt="Pastor Wilian Palma"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover rounded-full translate-x-[15%] -translate-y-[35%] md:translate-x-[20%] md:-translate-y-[30%] xl:translate-x-[0%] xl:-translate-y-[15%]"
                     style={{
                       filter: 'grayscale(10%)'
@@ -174,10 +181,14 @@ const QuemSomos = () => {
 
               <GlassCard className="p-6 rounded-2xl shadow transition-all duration-300">
                 <h3 className="text-3xl font-semibold mb-4 text-foreground">Valores</h3>
-                <ul className="list-disc list-inside text-muted-foreground">
-                  <li>Adoração</li>
-                  <li>Comunhão</li>
-                  <li>Missão</li>
+                <ul className="space-y-2 text-muted-foreground text-sm">
+                  <li><strong className="text-foreground">ADORAÇÃO</strong>: Ninguém pode fazer mais do que Deus.</li>
+                  <li><strong className="text-foreground">COMUNHÃO</strong>: Ninguém pode viver sozinho.</li>
+                  <li><strong className="text-foreground">DISCIPULADO</strong>: Pessoas transformadas crescem.</li>
+                  <li><strong className="text-foreground">MINISTÉRIO</strong>: Pessoas salvas servem pessoas.</li>
+                  <li><strong className="text-foreground">MISSÃO</strong>: Pessoas encontradas encontram pessoas.</li>
+                  <li><strong className="text-foreground">CELEBRAÇÃO</strong>: Domingo, melhor dia da semana.</li>
+                  <li><strong className="text-foreground">EXCELÊNCIA</strong>: A excelência glorifica a Deus e inspira pessoas.</li>
                 </ul>
               </GlassCard>
             </div>
