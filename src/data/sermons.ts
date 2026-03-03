@@ -1,6 +1,6 @@
 import serieAtual from "@/assets/Series/1- 40-dias.png";
-import seriechegueMais from "@/assets/Series/BannerChegueMais.png";
-import espiritosantoImg from "@/assets/Series/CapaSerieEspiritoSanto.png";
+import serieChegueMais from "@/assets/Series/BannerChegueMais.png";
+import serieEspiritosanto from "@/assets/Series/CapaSerieEspiritoSanto.png";
 
 export interface SermonVideo {
   title: string;
@@ -21,58 +21,109 @@ export const sermonSeriesData: SermonSeries[] = [
   {
     id: 'espirito-santo',
     title: 'Espirito Santo',
-    banner: espiritosantoImg,
+    banner: serieEspiritosanto,
     description: 'O Espírito não veio apenas visitar a Igreja — Ele veio viver nela.',
     videos: [
       {
         title: '01 - O PODER QUE MOVE A IGREJA - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
         url: 'https://www.youtube.com/embed/zUFkmcMNQEI',
-        date: ''
+        date: '12/10/2025'
       },
       {
         title: '02 - ANTES DO VENTO SOPRAR - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
-        url: 'https://www.youtube.com/watch?v=62iImcdVXFY',
-        date: ''
+        url: 'https://www.youtube.com/embed/62iImcdVXFY',
+        date: '19/10/2025'
       },
       {
         title: '03 - ISTO É O QUE FOI DITO - SÉRIE ESPÍRITO SANTO - PR. HUAN MARVYN',
         url: 'https://www.youtube.com/embed/q6AW7Ey8xPg',
-        date: ''
+        date: '26/10/2025'
       },
       {
         title: '04 - ESTE JESUS, A QUEM VOCÊS CRUCIFICARAM - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
         url: 'https://www.youtube.com/embed/xyR5KU3Nrgk',
-        date: ''
+        date: '02/11/2025'
       },
       {
         title: '05 - QUANDO A VERDADE ATINGE O CORAÇÃO NADA MAIS FICA COMO ANTES - SÉRIE ESPÍRITO SANTO - PB IVERSON',
         url: 'https://www.youtube.com/embed/6wSmLkafMyU',
-        date: ''
-      }
-      ,
+        date: '09/11/2025'
+      },
       {
         title: '06 - AVIVAMENTO COMEÇA COM COMPROMETIMENTO - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
         url: 'https://www.youtube.com/embed/r8WCGpTeUsY',
-        date: ''
+        date: '16/11/2025'
       },
       {
         title: '07 - ENTRE A DOR E A GRAÇA - SÉRIE ESPÍRITO SANTO - PR. WILLIAN PALMA',
         url: 'https://www.youtube.com/embed/qFuK4DmrFlU',
-        date: ''
+        date: '23/11/2025'
       },
       {
         title: '08 - OS DOIS TEMPLOS - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
-        url: 'https://youtu.be/2ypEiChnom8?si=j7_ANz4WDCGTc5na'
+        url: 'https://www.youtube.com/embed/2ypEiChnom8',
+        date: '30/11/2025'
       },
       {
         title: '09 - TEMPOS DE REFRIGÉRIO - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
-        url: 'https://www.youtube.com/watch?v=s4luWy_1BlM',
-        date: ''
+        url: 'https://www.youtube.com/embed/s4luWy_1BlM',
+        date: '07/12/2025'
       },
       {
         title: '10 - PROFECIA VIVA - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
-        url: 'https://www.youtube.com/watch?v=aMSn2mVlR-Q',
-        date: ''
+        url: 'https://www.youtube.com/embed/aMSn2mVlR-Q',
+        date: '14/12/2025'
+      },
+      {
+        title: '11 - ESPÍRITO PERTURBADOR - SÉRIE ESPÍRITO SANTO - PR. WILLIAN PALMA',
+        url: 'https://www.youtube.com/embed/MDH3t8q7E0k',
+        date: '21/12/2025'
+      },
+      {
+        title: '12 - PODER EM MEIO À PRESSÃO - SÉRIE ESPÍRITO SANTO - PR. HUAN MARVYN',
+        url: 'https://www.youtube.com/embed/Nsku9doZX6g',
+        date: '28/12/2025'
+      },
+      {
+        title: '13 - CRISTO, A PEDRA REJEITADA - SÉRIE ESPÍRITO SANTO - PR. WILLIAN PALMA',
+        url: 'https://www.youtube.com/embed/02C1f4P__vs',
+        date: '04/01/2026'
+      },
+      {
+        title: '14 - EVIDÊNCIAS INCONTORNÁVEIS - SÉRIE ESPÍRITO SANTO - PR. HUAN MARVYN',
+        url: 'https://www.youtube.com/embed/NdKqEgZ-6dE',
+        date: '11/01/2026'
+      }
+      ,
+      {
+        title: '15 - ORAÇÃO É A NOSSA RESPOSTA - PR. WILLIAM POSO',
+        url: 'https://www.youtube.com/embed/RO2GRIujN3U',
+        date: '07/02/2026'
+      },
+      {
+        title: '16 - QUANDO DEUS ME ABALA - PR. WILLIAM POSO',
+        url: 'https://www.youtube.com/embed/KDLi48BLC3Q',
+        date: '07/02/2026'
+      },
+      {
+        title: '17 - TESTEMUNHO DE BARNABÉ - PR. WILLIAM POSO',
+        url: 'https://www.youtube.com/embed/BI85fHTpeBc',
+        date: '09/02/2026'
+      },
+      {
+        title: '18 - O PREÇO DA MENTIRA - PR. WILLIAM POSO',
+        url: 'https://www.youtube.com/embed/UPieJpByxmo',
+        date: '09/02/2026'
+      },
+      {
+        title: '19 - ILUMINADOS - PR. WILLIAM POSO',
+        url: 'https://www.youtube.com/embed/7aaSwLMXFCw',
+        date: '18/02/2026'
+      },
+      {
+        title: '20 - HOMENS QUE A CELA NÃO CONTEVE - PR. WILLIAM POSO',
+        url: 'https://www.youtube.com/embed/bwDaI3o9Grg',
+        date: '23/02/2026'
       }
     ]
   },
@@ -127,7 +178,7 @@ export const sermonSeriesData: SermonSeries[] = [
   {
     id: 'chegue-mais',
     title: 'Chegue+',
-    banner: seriechegueMais,
+    banner: serieChegueMais,
     description: 'Uma série sobre se aproximar mais de Deus e experimentar Sua presença de forma mais intensa.',
     videos: [
       {

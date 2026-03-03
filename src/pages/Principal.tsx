@@ -75,7 +75,7 @@ const Index = () => {
               <div className="max-w-7xl xl:max-w-8xl 2xl:max-w-9xl mx-auto">
                 <div className="hidden lg:grid grid-cols-12 gap-6 xl:gap-8 2xl:gap-10 items-center">
                   <div className="col-span-6">
-                    <HeroVideo url="https://www.youtube.com/watch?v=LOQvrMobXy0" />
+                    <HeroVideo url="https://www.youtube.com/embed/bwDaI3o9Grg" />
                   </div>
 
                   <div className="col-span-6 flex flex-col gap-4 xl:gap-6 2xl:gap-8">
