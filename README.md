@@ -61,26 +61,38 @@ Consulte [`GOOGLE_SHEETS_SETUP.md`](GOOGLE_SHEETS_SETUP.md) para configuração 
 
 ## 🚀 Deploy & Produção
 
-### Vercel (Recomendado)
-```bash
-# Instalar CLI
-npm i -g vercel
+Este projeto é configurado para ser compilado em arquivos estáticos, que podem ser enviados para qualquer servidor de hospedagem web via FTP.
 
-# Deploy
-vercel --prod
-```
+### Compilando o site (Build)
 
-### Netlify
+Antes de enviar, você precisa gerar a versão de produção do site. Este comando cria uma pasta `dist` com todos os arquivos otimizados.
+
 ```bash
 npm run build
-# Upload da pasta dist/ no painel da Netlify
 ```
 
-### Build Local
+Depois de executar o comando, todo o conteúdo do site estará na pasta `dist/`.
+
+### Enviando via FTP (usando FileZilla)
+
+1.  **Abra o FileZilla** e conecte-se ao seu servidor de hospedagem com suas credenciais (Host, Nome de usuário, Senha, Porta).
+2.  **Navegue até a pasta `dist`** no seu computador (painel esquerdo, "Site local").
+3.  **Navegue até a pasta de destino** no seu servidor (geralmente `public_html`, `www` ou similar) no painel direito ("Site remoto").
+4.  **Selecione todos os arquivos e pastas** dentro da pasta `dist` e arraste-os para o painel do servidor remoto.
+5.  Aguarde a transferência ser concluída. Seu site estará no ar!
+
+### Testando localmente antes do envio
+
+Você pode (e deve) testar a versão de produção localmente antes de enviá-la para o servidor.
+
 ```bash
-npm run build    # Gera pasta dist/
-npm run preview  # Testa build localmente
+# Gera a pasta dist/
+npm run build
+
+# Inicia um servidor local para testar o conteúdo da pasta dist/
+npm run preview
 ```
+
 
 ## 🚀 Começando
 
