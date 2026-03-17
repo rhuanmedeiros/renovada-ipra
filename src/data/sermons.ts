@@ -124,6 +124,16 @@ export const sermonSeriesData: SermonSeries[] = [
         title: '20 - HOMENS QUE A CELA NÃO CONTEVE - PR. WILLIAM POSO',
         url: 'https://www.youtube.com/embed/bwDaI3o9Grg',
         date: '23/02/2026'
+      },
+      {
+        title: '21 - LEALDADE SOB PRESSÃO - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
+        url: 'https://www.youtube.com/embed/9suVx2zSR3Y',
+        date: '02/03/2026'
+      },
+      {
+        title: '22 - CARNE RASGADA - SÉRIE ESPÍRITO SANTO - PR. WILLIAM POSO',
+        url: 'https://www.youtube.com/embed/icicdqi7xVM',
+        date: '09/03/2026'
       }
     ]
   },
