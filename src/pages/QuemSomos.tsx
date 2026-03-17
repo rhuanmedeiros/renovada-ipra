@@ -4,7 +4,7 @@ import videoSrc from "@/assets/videoplayback.mp4";
 import pastorWilliam from "@/assets/Pastores/Untitled design/1.webp";
 import pastorHuan from "@/assets/Pastores/Untitled design/3.webp";
 import pastorPalma from "@/assets/Pastores/Untitled design/2.webp";
-import presbiterosImg from "@/assets/Presbiteros/presbiteros.jpg";
+import presbiterosImg from "@/assets/Presbiteros/presbiteros.webp";
 import { DynamicBackgroundDesktop } from "@/components/DynamicBackgroundDesktop";
 import { GlassCard } from "@/components/ui/glass-card";
 import { useEffect, useState } from "react";

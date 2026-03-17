@@ -4,7 +4,7 @@ import SermonSeries from "@/components/SermonSeries";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { sermonSeriesData } from "@/data/sermons";
 import WhatsAppFloat from "@/components/ui/whatsapp-float";
-import celebracaoImg from "@/assets/Celebracao.png";
+import celebracaoImg from "@/assets/Celebracao.webp";
 
 const Sermons = () => {
   useScrollToTop(); // Garante scroll para o topo ao carregar

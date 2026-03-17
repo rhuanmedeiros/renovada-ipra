@@ -1,25 +1,22 @@
-import { useState, useEffect, useMemo } from 'react';
-import img1 from '@/assets/Imagens-Fotos/Desktop/520191041_795019422865943_6100859052433879623_n.webp';
-import img2 from '@/assets/Imagens-Fotos/Desktop/524482078_794275336273685_7723963141826783969_n.webp';
-import img3 from '@/assets/Imagens-Fotos/Desktop/534201160_814916540876231_2278445023843112331_n.webp';
-import img4 from '@/assets/Imagens-Fotos/Desktop/535997589_817295737304978_6309155406787893981_n.webp';
-import img5 from '@/assets/Imagens-Fotos/Desktop/545215094_831102705924281_8839826495501625272_n.webp';
-import img6 from '@/assets/Imagens-Fotos/Desktop/548698672_839094641791754_5132832739276806333_n.webp';
-import img7 from '@/assets/Imagens-Fotos/Desktop/552897306_842351404799411_7339377440594509843_n.webp';
-import img8 from '@/assets/Imagens-Fotos/Desktop/IMG_1272_Original.webp';
-import img9 from '@/assets/Imagens-Fotos/Desktop/IMG_4749_Original.webp';
-import img10 from '@/assets/Imagens-Fotos/Desktop/IMG_4862_Original.webp';
-import img11 from '@/assets/Imagens-Fotos/Desktop/IMG_4887_Original.webp';
-import img12 from '@/assets/Imagens-Fotos/Desktop/IMG_5989_Original.webp';
-import img13 from '@/assets/Imagens-Fotos/Desktop/IMG_6473_Original.webp';
-import img14 from '@/assets/Imagens-Fotos/Desktop/IMG_8168_Original.webp';
-import img15 from '@/assets/Imagens-Fotos/Desktop/IMG_8523_Original.webp';
-import img16 from '@/assets/Imagens-Fotos/Desktop/IMG_9145_Original.webp';
+import { useState, useEffect, useCallback } from 'react';
 
-const desktopImages: string[] = [
-  img1, img2, img3, img4, img5, img6, img7,
-  img8, img9, img10, img11, img12, img13, img14, img15, img16
-];
+// Importar apenas as URLs — Vite já resolve para paths de assets
+const imageModules = import.meta.glob<{ default: string }>(
+  '@/assets/Imagens-Fotos/Desktop/*.webp',
+  { eager: false }
+);
+
+const imagePaths = Object.keys(imageModules);
+
+// Função para embaralhar array (Fisher-Yates)
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 interface DynamicBackgroundDesktopProps {
   children: React.ReactNode;
@@ -28,33 +25,65 @@ interface DynamicBackgroundDesktopProps {
 
 export function DynamicBackgroundDesktop({ children, enableMobile = false }: DynamicBackgroundDesktopProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<Record<number, string>>({});
+  const [shuffledPaths] = useState(() => shuffle(imagePaths));
 
-  const shuffledImages = useMemo(() => [...desktopImages].sort(() => Math.random() - 0.5), []);
+  // Carrega uma imagem sob demanda e retorna a URL resolvida
+  const loadImage = useCallback(async (index: number) => {
+    if (loadedImages[index] || !shuffledPaths[index]) return;
+    
+    const modulePath = shuffledPaths[index];
+    const loader = imageModules[modulePath];
+    if (!loader) return;
+    
+    try {
+      const mod = await loader();
+      setLoadedImages(prev => ({ ...prev, [index]: mod.default }));
+    } catch {
+      // Silenciar erro de import
+    }
+  }, [shuffledPaths, loadedImages]);
 
-  // Preload removed to improve initial load performance
-  // Images will be loaded as they are needed or by the browser's background-image handling
+  // Carrega a primeira imagem imediatamente e a segunda logo em seguida
+  useEffect(() => {
+    loadImage(0);
+    const timer = setTimeout(() => loadImage(1), 1000);
+    return () => clearTimeout(timer);
+  }, [loadImage]);
 
+  // Pré-carrega a próxima imagem antes da transição
+  useEffect(() => {
+    const nextIndex = (currentIndex + 1) % shuffledPaths.length;
+    loadImage(nextIndex);
+  }, [currentIndex, shuffledPaths.length, loadImage]);
+
+  // Rotação do carrossel
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % shuffledImages.length);
+      setCurrentIndex((prev) => (prev + 1) % shuffledPaths.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [shuffledImages.length]);
+  }, [shuffledPaths.length]);
 
   return (
     <>
       <div className={enableMobile ? "block" : "hidden lg:block"} aria-hidden>
-        {shuffledImages.map((src, index) => (
-          <div
-            key={src}
-            className="fixed top-0 left-0 right-0 bottom-0 -z-20 w-screen h-screen bg-cover bg-no-repeat bg-center transition-opacity duration-1000 ease-in-out"
-            style={{
-              backgroundImage: `url('${src}')`,
-              opacity: currentIndex === index ? 1 : 0,
-            }}
-          />
-        ))}
+        {shuffledPaths.map((_, index) => {
+          const src = loadedImages[index];
+          if (!src) return null; // Não renderizar div vazia sem imagem
+          
+          return (
+            <div
+              key={index}
+              className="fixed top-0 left-0 right-0 bottom-0 -z-20 w-screen h-screen bg-cover bg-no-repeat bg-center transition-opacity duration-1000 ease-in-out"
+              style={{
+                backgroundImage: `url('${src}')`,
+                opacity: currentIndex === index ? 1 : 0,
+              }}
+            />
+          );
+        })}
         <div
           className="fixed top-0 left-0 right-0 bottom-0 -z-10 bg-gradient-to-b from-black/50 via-black/30 to-black/50 pointer-events-none"
         />
